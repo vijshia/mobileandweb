@@ -1,0 +1,8 @@
+.allure/
+.settings/
+log/
+node_modules/
+target/
+.classpath
+.project
+package-lock.json
