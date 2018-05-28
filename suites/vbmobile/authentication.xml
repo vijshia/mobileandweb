@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Vbmobile - Authentication Tests" verbose="1">
+
+    <test name="Login Existing Account" group-by-instances="true">
+        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
+        <groups>
+            <run>
+                <include name="login" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+        </classes>
+    </test>
+    
+    <test name="Logout Existing Account" group-by-instances="true">
+        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
+        <groups>
+            <run>
+                <include name="logout" />
+            </run>
+        </groups>
+        <classes>
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+        </classes>
+    </test>
+</suite>
