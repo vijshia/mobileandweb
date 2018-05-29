@@ -10,6 +10,7 @@ import com.kone.framework.context.TestContext;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import ru.yandex.qatools.allure.annotations.Step;
 
 public class MainScreen extends BaseScreen {
 	
@@ -22,6 +23,7 @@ public class MainScreen extends BaseScreen {
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
 	
+	@Step("Open side menu")
 	public SideMenuScreen openSideMenu() {
 		findElement(menuButton).click();
 		SideMenuScreen sideMenuScreen = new SideMenuScreen();

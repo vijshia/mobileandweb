@@ -9,6 +9,7 @@ import com.kone.framework.context.TestContext;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import ru.yandex.qatools.allure.annotations.Step;
 
 public class SideMenuScreen extends BaseScreen{
 	
@@ -21,6 +22,7 @@ public static AppiumDriver<MobileElement> driver;
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
 	
+	@Step("Click logout from side menu")
 	public LoginScreen clickLogoutMenu() {
 		findElement(logoutMenu).click();
 		LoginScreen loginScreen = new LoginScreen();
