@@ -11,38 +11,28 @@ public class VbmobileAuthenticationTests extends VbmobileBaseTest{
     
 	private LoginScreen loginScreen;
 	private MainScreen mainScreen;
+	protected String loginUser;
+	protected String loginPassword;
+	protected String frontline;
 	
-	public VbmobileAuthenticationTests(String user, String password) {
+	public VbmobileAuthenticationTests(String user, String password, String frontline) {
 		
 		this.loginUser = user;
 		this.loginPassword = password;
+		this.frontline = frontline;
 		
 		loginScreen = new LoginScreen();
 		mainScreen = new MainScreen();
 	}
 	
-//    @BeforeMethod(groups = { "login" })
-//    void appStateLoggedOut() {
-//    	ensureLoggedOut();
-//    }
-	
     @Test(groups={ "login" })
     void loginTest() {
-    	System.out.println("START --------- Login Test ---------");
-    	mainScreen = loginScreen.signIn(this.loginUser, this.loginPassword);
-    	System.out.println("END ----------- Login Test ---------");
+    	loginScreen.signIn(this.loginUser, this.loginPassword, this.frontline);
     }
-    
-//    @BeforeMethod(groups = { "logout" })
-//    void appStateLoggedIn() {
-//    	ensureLoggedIn(this.loginEmail, this.loginPassword);
-//    }
     
     @Test(groups={ "logout" })
     void logoutTest() {
-    	System.out.println("START --------- Logout Test ---------");
     	mainScreen.openSideMenu().clickLogoutMenu();
-    	System.out.println("END --------- Logout Test ---------");
     }
 
 }

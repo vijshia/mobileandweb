@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Vbmobile - Authentication Tests" verbose="1">
+<suite name="Mobile Site Survey Tests" verbose="1">
 	<listeners>
     	<listener class-name="com.kone.framework.listener.TestNGListener" />
   	</listeners>
-	
-    <test name="Login Existing Account" group-by-instances="true">
+  	
+  	<test name="Login and Logout Tests" group-by-instances="true">
         <parameter name="dataSource" value="properties/testdata/testdata.properties" />
         <groups>
-            <run>
-                <include name="login" />
-            </run>
-        </groups>
+            <dependencies>
+                <group name="login" depends-on="login_salesforce" />
+                <group name="logout" depends-on="login" />
+            </dependencies>
+		  </groups>
         <classes>
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
-        </classes>
-    </test>
-    
-    <test name="Logout Existing Account" group-by-instances="true">
-        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
-        <groups>
-            <run>
-                <include name="logout" />
-            </run>
-        </groups>
-        <classes>
+            <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
             <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
         </classes>
     </test>

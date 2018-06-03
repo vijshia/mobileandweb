@@ -1,4 +1,4 @@
-package com.kone.framework.properties;
+package com.kone.framework.utility;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,7 +29,7 @@ public class PropertiesLoader extends Properties{
         try {
             instance.load(new FileInputStream(new File("properties/config.properties")));
         } catch (IOException e) {
-            System.err.println("Failed to read `" 
+            Log.error("Failed to read `" 
                                + System.getProperty("user.dir") 
                                + "/properties/config.properties`. Please make sure it exists!");
             System.exit(1);

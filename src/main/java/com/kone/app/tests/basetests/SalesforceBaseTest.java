@@ -5,24 +5,25 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import com.kone.framework.appium.AppiumServer;
-import com.kone.framework.context.TestContext;
+import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
 
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import ru.yandex.qatools.allure.annotations.Step;
 
 
-public class VbmobileBaseTest {
+public class SalesforceBaseTest {
 	
-	protected static AndroidDriver<MobileElement> driver;
+	protected static WebDriver wdriver;
 	
 	private static Properties appData;
 	private static Properties testData;
+	
+	protected String loginUser;
+	protected String loginPassword;
 	
 	static {
 		appData = new Properties();
@@ -43,18 +44,15 @@ public class VbmobileBaseTest {
 		}
 	}
 	
-	@BeforeSuite(alwaysRun = true)
-	public void getDriver() throws InterruptedException {
-		driver = (AndroidDriver<MobileElement>)TestContext.driver;
-		wait(15000);
-		driver.context("WEBVIEW_com.kone.vbmobile.debug");
-		Log.info("Selected context: " + driver.getContext());
+	@BeforeSuite(alwaysRun = false)
+	public void getDriver() {
+		wdriver = WebContext.wdriver;
 	}
 	
 	
-	@AfterSuite(alwaysRun = true)
-	public void stopApiumServer() {
-		AppiumServer.sever.stopServer();
+	@AfterSuite(alwaysRun = false)
+	public void closeWebdriver() {
+		wdriver.close();
 	}
 	
 	@Step("Waiting for {0} millisecond(s)")

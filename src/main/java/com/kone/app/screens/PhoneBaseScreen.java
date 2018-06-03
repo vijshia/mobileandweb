@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.kone.framework.context.TestContext;
+import com.kone.framework.utility.Log;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
@@ -18,14 +19,13 @@ import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.android.AndroidKeyMetastate;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+import ru.yandex.qatools.allure.annotations.Step;
 
-public class BaseScreen {
+public class PhoneBaseScreen {
 	
 	public static AndroidDriver<MobileElement> driver;
 	
-	protected static int defaultTimeoutSeconds = 10;
-	
-	public BaseScreen() {
+	public PhoneBaseScreen() {
 		
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
@@ -67,6 +67,7 @@ public class BaseScreen {
 	
 	public MobileElement findElement(By by) {
 	    
+		System.out.println("Find element: " + by);
 		MobileElement ele;
 		
 		try {
@@ -111,17 +112,20 @@ public class BaseScreen {
 		return (MobileElement) driver.findElement(by);
 	}
 	
-    public MobileElement waitForElementPresent(By by, int seconds) {
+	@Step("Wait for element present: {0} - Timeout: {1} seconds")
+    public MobileElement waitForElementPresent(By by, long seconds) {
     	
+    	Log.info("Wait for element present: " + by + " / With Timeout: " + seconds);
     	WebDriverWait wait = new WebDriverWait(driver, seconds);
     	wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     	return driver.findElement(by);
     }
     
-    public MobileElement waitForElementNotPresent(By by, int seconds) {
+	@Step("Wait for element Not present: {0} - Timeout: {1} seconds")
+    public void waitForElementNotPresent(By by, long seconds) {
     	
+    	Log.info("Wait for element Not present: " + by + " / With Timeout: " + seconds);
     	WebDriverWait wait = new WebDriverWait(driver, seconds);
     	wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
-    	return driver.findElement(by);
     }
 }

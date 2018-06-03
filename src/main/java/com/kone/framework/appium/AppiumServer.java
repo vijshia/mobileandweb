@@ -4,11 +4,13 @@ import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
 
-import com.kone.framework.properties.PropertiesLoader;
+import com.kone.framework.utility.Log;
+import com.kone.framework.utility.PropertiesLoader;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
+
 
 public class AppiumServer {
 	
@@ -37,51 +39,61 @@ public class AppiumServer {
 	
 	static {
 		
-		port = Integer.parseInt(PropertiesLoader.instance.getProperty("appium.port", "4723"));
+		port = Integer.parseInt(PropertiesLoader.instance.
+				getProperty("appium.server.port", "4723"));
+		
 		//Build the Appium service
 		builder = new AppiumServiceBuilder();
-		builder.withIPAddress(PropertiesLoader.instance.getProperty("appium.server.url", "127.0.0.1"));
+		builder.withIPAddress(PropertiesLoader.instance.
+				getProperty("appium.server.url", "127.0.0.1"));
 		builder.usingPort(port);
 		builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
-		builder.withArgument(GeneralServerFlag.LOG_LEVEL,"error");
-		builder.withLogFile(new File("log/appium.log"));
+		builder.withArgument(GeneralServerFlag.LOG_LEVEL,
+				PropertiesLoader.instance.
+				getProperty("appium.server.loglevel", "error"));
+		//builder.withLogFile(new File("log/appium.log"));
+		
 		service = AppiumDriverLocalService.buildService(builder);
 	}
 	
-	public void startServer() throws InterruptedException {
+	public void startServer() {
 		
 		if(!isServerRunning()) {
-			System.out.println("Starting Appium server at port " + port);
+			Log.info("Starting Appium server at port " + port);
 			service.start();
 			
 			// Wait for server starting
 			for(int i=1; i < 60; i++) {
 				if(isServerRunning()) {
-					System.out.println("Appium server is started at port " + port);
+					Log.info("Appium server is started at port " + port);
 					break;
 				}else {
-					Thread.sleep(3000); // wait for 3 seconds
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					} // wait for 3 seconds
 				}				
 			}
 			
 			if(!isServerRunning()) {
-				System.out.println("Failed to start Appium server at port " + port);
+				Log.error("Failed to start Appium server at port " + port);
 			}			
 		
 		} else {
-			System.out.println("Appium server is already running at port " + port);
+			Log.warn("Appium server is already running at port " + port);
 		}
 	}
 	
 	public void stopServer() {
 		
-		System.out.println("Stopping Appium server at port " + port);
+		Log.info("Stopping Appium server at port " + port);
 		service.stop();
 		
 		if(isServerRunning()) {
-			System.out.println("Failed to stop Appium server at port " + port);
+			Log.error("Failed to stop Appium server at port " + port);
 		}else {
-			System.out.println("Appium server is stoped at port " + port);
+			Log.info("Appium server is stoped at port " + port);
 		}
 	}
 }
