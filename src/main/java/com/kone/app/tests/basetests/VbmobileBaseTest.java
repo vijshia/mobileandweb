@@ -46,9 +46,8 @@ public class VbmobileBaseTest {
 	@BeforeSuite(alwaysRun = true)
 	public void getDriver() throws InterruptedException {
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
-		wait(15000);
 		driver.context("WEBVIEW_com.kone.vbmobile.debug");
-		Log.info("Selected context: " + driver.getContext());
+		Log.info("Context is switched to: " + driver.getContext());
 	}
 	
 	
