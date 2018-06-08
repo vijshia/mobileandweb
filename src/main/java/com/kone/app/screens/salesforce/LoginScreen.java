@@ -3,10 +3,8 @@ package com.kone.app.screens.salesforce;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import com.kone.app.screens.WebBaseScreen;
 import com.kone.framework.context.WebContext;
-
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class LoginScreen extends WebBaseScreen {
@@ -21,8 +19,7 @@ public static WebDriver wdriver;
 	private By passwordInput = By.id("password");
 	private By signInButton = By.id("Login");
 
-	
-	@Step("Login to Sandbox")
+	@Step("Login to SalesForce")
 	public MainScreen signIn (String email, String password) {
 
 		waitForElementPresent(usernameInput, 30);
@@ -35,7 +32,6 @@ public static WebDriver wdriver;
 		return mainScreen;
 	}
 
-	
 	public boolean isDisplayed() {
 		return waitForElementPresent(usernameInput, 5) != null;
 	}

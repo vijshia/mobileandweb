@@ -19,7 +19,7 @@ public class PropertiesLoader extends Properties{
 			                  String defaulVal) {
         String propVal;
         if (StringUtils.isEmpty(propVal = System.getProperty(prop))) {
-        	propVal = super.getProperty(prop);
+        	propVal = super.getProperty(prop);	
         }
 
         return propVal == null ? defaulVal : propVal;
@@ -28,6 +28,7 @@ public class PropertiesLoader extends Properties{
     static {
         try {
             instance.load(new FileInputStream(new File("properties/config.properties")));
+            System.out.println("==PropertiesLoader static method=="+instance);
         } catch (IOException e) {
             Log.error("Failed to read `" 
                                + System.getProperty("user.dir") 

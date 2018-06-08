@@ -22,8 +22,8 @@ public class SalesforceBaseTest {
 	private static Properties appData;
 	private static Properties testData;
 	
-	protected String loginUser;
-	protected String loginPassword;
+/*	protected String loginUser;
+	protected String loginPassword;*/
 	
 	static {
 		appData = new Properties();
@@ -50,10 +50,10 @@ public class SalesforceBaseTest {
 	}
 	
 	
-	@AfterSuite(alwaysRun = false)
+/*	@AfterSuite(alwaysRun = false)
 	public void closeWebdriver() {
 		wdriver.close();
-	}
+	}*/
 	
 	@Step("Waiting for {0} millisecond(s)")
     public void wait(int milliseconds) {

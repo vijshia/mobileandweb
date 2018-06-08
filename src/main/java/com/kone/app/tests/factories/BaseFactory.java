@@ -43,17 +43,24 @@ public class BaseFactory {
         String dataSource = context.getCurrentXmlTest().getParameter("dataSource");
         testData.load(new FileInputStream(new File(dataSource)));
 
-        String emails = testData.getProperty("salesforce.login.user");
-        String passwords = testData.getProperty("salesforce.login.password");
+        String salesforceEmails = testData.getProperty("salesforce.login.user2");
+        String salesforcepasswords = testData.getProperty("salesforce.login.password2");
+        String siteUsernames = testData.getProperty("mobileSiteSurvey.login.user");
+        String sitePasswords = testData.getProperty("mobileSiteSurvey.login.password");
 
-        String[] email = emails.split(",");
-        String[] password = passwords.split(",");
+        String[] salesforceEmail = salesforceEmails.split(",");
+        String[] salesforcepassword = salesforcepasswords.split(",");
+        String[] siteUsername = siteUsernames.split(",");
+        String[] sitePassword = sitePasswords.split(",");
+        
 
-        Object[][] data = new Object[email.length][2];
+        Object[][] data = new Object[salesforceEmail.length][4];
 
-        for (int i = 0; i < email.length; i++) {
-            data[i][0] = email[i].trim();
-            data[i][1] = password[i].trim();
+        for (int i = 0; i < salesforceEmail.length; i++) {
+            data[i][0] = salesforceEmail[i].trim();
+            data[i][1] = salesforcepassword[i].trim();
+            data[i][2] = siteUsername[i].trim();
+            data[i][3] = sitePassword[i].trim();
         }
 
         return data;

@@ -26,7 +26,7 @@ public class PhoneBaseScreen {
 	public static AndroidDriver<MobileElement> driver;
 	
 	public PhoneBaseScreen() {
-		
+	
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
 	

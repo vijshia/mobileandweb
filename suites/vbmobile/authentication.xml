@@ -15,7 +15,7 @@
 		  </groups>
         <classes>
             <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+            <!--class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" /-->
         </classes>
     </test>
 </suite>
