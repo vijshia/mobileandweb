@@ -3,14 +3,14 @@ package com.kone.app.tests.basetests.vbmobile;
 import org.testng.annotations.Test;
 
 import com.kone.app.screens.vbmobile.LoginScreen;
-import com.kone.app.screens.vbmobile.MainScreen;
+import com.kone.app.screens.vbmobile.SurveyManagerScreen;
 import com.kone.app.tests.basetests.VbmobileBaseTest;
 
 
 public class VbmobileAuthenticationTests extends VbmobileBaseTest{
     
 	private LoginScreen loginScreen;
-	private MainScreen mainScreen;
+	private SurveyManagerScreen surveyManagerScreen;
 	protected String loginUser;
 	protected String loginPassword;
 	protected String frontline;
@@ -22,7 +22,7 @@ public class VbmobileAuthenticationTests extends VbmobileBaseTest{
 		this.frontline = frontline;
 		
 		loginScreen = new LoginScreen();
-		mainScreen = new MainScreen();
+		surveyManagerScreen = new SurveyManagerScreen();
 	}
 	
     @Test(groups={ "login" })
@@ -32,7 +32,7 @@ public class VbmobileAuthenticationTests extends VbmobileBaseTest{
     
     @Test(groups={ "logout" })
     void logoutTest() {
-    	mainScreen.openSideMenu().clickLogoutMenu();
+    	surveyManagerScreen.openSideMenu().logout();
     }
 
 }

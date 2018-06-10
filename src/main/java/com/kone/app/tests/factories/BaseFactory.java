@@ -12,15 +12,15 @@ public class BaseFactory {
 	
 	private Properties testData = new Properties();
 	
-    @DataProvider(name = "accountData")
+    @DataProvider(name = "siteSurveyAccountData")
     public Object[][] accountDataProvider(ITestContext context) throws IOException {
 
         String dataSource = context.getCurrentXmlTest().getParameter("dataSource");
         testData.load(new FileInputStream(new File(dataSource)));
 
-        String emails = testData.getProperty("login.user");
-        String passwords = testData.getProperty("login.password");
-        String frontlines = testData.getProperty("login.frontline");
+        String emails = testData.getProperty("mobileSiteSurvey.login.user");
+        String passwords = testData.getProperty("mobileSiteSurvey.login.password");
+        String frontlines = testData.getProperty("mobileSiteSurvey.login.frontline");
 
         String[] email = emails.split(",");
         String[] password = passwords.split(",");

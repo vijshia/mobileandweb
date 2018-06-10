@@ -27,8 +27,8 @@ public static AndroidDriver<MobileElement> driver;
 	private By releaseNote = By.xpath("//*[contains(text(), 'Release notes')]");
 	private By downloading = By.xpath("//*[contains(text(), 'Downloading')]");
 	
-	@Step("Login")
-	public MainScreen signIn(String email, String password, String frontline) {
+	@Step("Login vb-mobile with username {0} and fronline {2}")
+	public SurveyManagerScreen signIn(String email, String password, String frontline) {
 
 		waitForElementPresent(usernameInput, 30);
 		driver.findElement(usernameInput).sendKeys(email);
@@ -45,13 +45,15 @@ public static AndroidDriver<MobileElement> driver;
 		waitForElementPresent(releaseNote, 5);
 		driver.findElement(closeButton).click();
 		
-		MainScreen mainScreen = new MainScreen();
-		Assert.assertTrue(mainScreen.isDisplayed(), "Failed to login");
-		return mainScreen;
+		SurveyManagerScreen surveyManagerScreen = new SurveyManagerScreen();
+		Assert.assertTrue(surveyManagerScreen.
+				isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
+				"Failed to login");
+		return surveyManagerScreen;
 	}
 	
-	public boolean isDisplayed() {
-		return waitForElementPresent(usernameInput, 30) != null;
+	public boolean isDisplayed(long timeout) {
+		return waitForElementPresent(usernameInput, timeout) != null;
 	}
 
 }

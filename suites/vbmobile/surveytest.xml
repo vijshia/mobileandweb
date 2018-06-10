@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Mobile Site Survey Tests" verbose="1">
+	<listeners>
+    	<listener class-name="com.kone.framework.listener.TestNGListener" />
+  	</listeners>
+  	
+  	<test name="Login Vbmobile" group-by-instances="true">
+        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
+        <groups>
+            <run>
+            	<include name = "login" />
+         	</run>
+		  </groups>
+        <classes>
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+        </classes>
+     </test>
+    
+     <test name="Answer A Survey" group-by-instances="true">
+        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
+        <groups>
+            <run>
+            	<include name = "survey" />
+         	</run>
+		  </groups>
+        <classes>
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
+        </classes>
+    </test>
+</suite>

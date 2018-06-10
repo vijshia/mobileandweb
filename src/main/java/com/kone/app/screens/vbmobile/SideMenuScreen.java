@@ -16,6 +16,7 @@ public class SideMenuScreen extends PhoneBaseScreen{
 public static AppiumDriver<MobileElement> driver;
     
     private By newTaskMenu = By.xpath("//*[text()='New Task']");
+    private By tasksMenu = By.xpath("//*[text()='Tasks']");
     private By logoutMenu = By.xpath("//*[text()='Logout']");
 	
 	public SideMenuScreen() {
@@ -23,17 +24,30 @@ public static AppiumDriver<MobileElement> driver;
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
 	
-	@Step("Click logout from side menu")
-	public LoginScreen clickLogoutMenu() {
+	@Step("Click Logout from side menu")
+	public LoginScreen logout() {
 		
 		driver.findElement(logoutMenu).click();
 		LoginScreen loginScreen = new LoginScreen();
-		Assert.assertTrue(loginScreen.isDisplayed(), "Failed to logout");
+		Assert.assertTrue(loginScreen.
+				isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
+				"Failed to logout");
 		return loginScreen;
 	}
 	
-	public boolean isDisplayed() {
-		return waitForElementPresent(newTaskMenu, 30) != null;
+	@Step("Open Tasks from side menu")
+	public TasksScreen openTasks() {
+		
+		driver.findElement(tasksMenu).click();
+		TasksScreen tasksScreen = new TasksScreen();
+		Assert.assertTrue(tasksScreen.
+				isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
+				"Failed to open Tasks");
+		return tasksScreen;
+	}
+	
+	public boolean isDisplayed(long timeout) {
+		return waitForElementPresent(newTaskMenu, timeout) != null;
 	}
 
 }
