@@ -78,7 +78,6 @@ public class TestNGListener extends TestListenerAdapter   {
     	String [] className = iTestResult.getTestClass().getName().split("\\.");
     	Log.startTestCase(className[className.length - 1] +
     			          "." + iTestResult.getMethod().getMethodName());
-    	System.out.println("==TestNGListener_CLass==");
     }
     
     @Override

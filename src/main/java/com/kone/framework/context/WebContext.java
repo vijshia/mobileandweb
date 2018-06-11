@@ -24,6 +24,7 @@ public class WebContext {
 		Log.info("Creating web driver.");
 		String browserType = getCapVal("selenium.browser", "None");
 		if(browserType.equals("firefox")) {
+			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\drivers\\geckodriver.exe");
 			wdriver = new FirefoxDriver();
 			Log.info("Created Firefox driver.");
 		} else if(browserType.equals("chrome")){

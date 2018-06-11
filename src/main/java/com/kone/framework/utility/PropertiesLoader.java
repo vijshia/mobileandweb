@@ -28,7 +28,6 @@ public class PropertiesLoader extends Properties{
     static {
         try {
             instance.load(new FileInputStream(new File("properties/config.properties")));
-            System.out.println("==PropertiesLoader static method=="+instance);
         } catch (IOException e) {
             Log.error("Failed to read `" 
                                + System.getProperty("user.dir") 

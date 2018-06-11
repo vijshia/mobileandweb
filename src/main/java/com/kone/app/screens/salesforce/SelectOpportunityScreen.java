@@ -23,12 +23,9 @@ public class SelectOpportunityScreen extends WebBaseScreen {
 	@Step("Selecting Existing Opportunity and click on SiteSurvey Link")
 	public SiteLoginScreen clickonOpportunity() {
 		clickonButton(lnk_SearchedOpportunity);
-		Log.info("--***lnk_SearchedOpportunity CLICKED***--");
 		waitForElementPresent(lnk_NewSiteSurvey, 20);
 		URL=gettingCurrentURL();
-		Log.info("--***"+URL+"***--");
 		clickonButton(lnk_NewSiteSurvey);
-		Log.info("--***lnk_NewSiteSurvey CLICKED***--");
 		
 		SiteLoginScreen siteLoginScreen=new SiteLoginScreen();
 		Assert.assertTrue(siteLoginScreen.isDisplayed());
