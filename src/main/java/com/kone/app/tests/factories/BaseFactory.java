@@ -8,6 +8,8 @@ import java.util.Properties;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 
+import com.kone.framework.utility.ExcelReader;
+
 public class BaseFactory {
 	
 	private Properties testData = new Properties();
@@ -64,6 +66,22 @@ public class BaseFactory {
         }
 
         return data;
+    }
+    
+    @DataProvider(name = "surveyDataProvider")
+    public Object[][] surveyDataProvider(ITestContext context) throws IOException {
+    	
+    	ExcelReader exlReader = new ExcelReader("properties/testdata/Survey_TestData.xlsx");
+    	
+    	Object[][] data = new Object[1][1];
+    	
+    	try {
+			data[0][0] = exlReader.GetSurveyData("FRB_Budget");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    	
+    	return data;
     }
 
 }

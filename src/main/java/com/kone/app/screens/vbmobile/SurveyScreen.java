@@ -1,10 +1,13 @@
 package com.kone.app.screens.vbmobile;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import com.kone.app.screens.PhoneBaseScreen;
 import com.kone.framework.context.TestContext;
+import com.kone.framework.utility.Log;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -38,16 +41,26 @@ public static AndroidDriver<MobileElement> driver;
 		
 		waitForElementPresent(sectionListButton, DEFAULT_WAIT_ELEMENT_TIMEOUT);
 		
-		driver.findElement(sectionListButton).click();
+		/* Check if section is already opened */
+		By currentSection = By.xpath("//button/span[contains(text(), '" + section + "')]");
 		
-		By sectionTitle = By.xpath("//span[contains(text(),'" + section + "') and " +
-		                           "contains(@do-translate, 'c4lm_title')]");
-		
-		scrollToElement(sectionTitle);
-		waitForElementPresent(sectionTitle, DEFAULT_WAIT_ELEMENT_TIMEOUT);
-		
-		driver.findElement(sectionTitle).click();
-		waitForElementPresent(filterButton, DEFAULT_WAIT_ELEMENT_TIMEOUT);
+		if (!isElementPresent(currentSection, 2)) {
+			
+			driver.findElement(sectionListButton).click();
+			
+			By sectionTitle = By.xpath("//span[contains(text(),'" + section + "') and " +
+			                           "contains(@do-translate, 'c4lm_title')]");
+			
+			scrollToElement(sectionTitle);
+			waitForElementPresent(sectionTitle, DEFAULT_WAIT_ELEMENT_TIMEOUT);
+			
+			driver.findElement(sectionTitle).click();
+			waitForElementPresent(filterButton, DEFAULT_WAIT_ELEMENT_TIMEOUT);
+			
+		} else {
+			
+			Log.info("Section " + section + " is already opened");
+		}
 	}
 
 	/**
@@ -149,7 +162,7 @@ public static AndroidDriver<MobileElement> driver;
 	 * @param  answer: the number to be enter
 	 */
 	@Step("Answer [{1}] to question containing text [{0}]")
-	public void answerWithNumber(String question, long answer) {
+	public void answerWithNumber(String question, String answer) {
 		
 		String questionXpath = "//md-list-item" +
                                "//*[contains(text(), '" + question + "')]" +
@@ -159,7 +172,7 @@ public static AndroidDriver<MobileElement> driver;
 		
 		if(scrollToElement(questionElement)) {
 			
-			driver.findElement(questionElement).sendKeys("" + answer);
+			driver.findElement(questionElement).sendKeys(answer);
 			driver.hideKeyboard();
 		
 		} else {
@@ -217,8 +230,10 @@ public static AndroidDriver<MobileElement> driver;
 			for(int i=0; i < answers.length; i++) {
 				String answerXpath = questionXpath + 
 						             "/..//md-checkbox[contains(@aria-label, '" + 
-						             answers[i] + "')]";
-				driver.findElementByXPath(answerXpath).click();
+						             answers[i].trim() + "')]";
+				By answerElement = By.xpath(answerXpath);
+				scrollToElement(answerElement);
+				driver.findElement(answerElement).click();
 			}
 		
 		} else {
@@ -228,6 +243,10 @@ public static AndroidDriver<MobileElement> driver;
 		}
 	}
 	
+	/**
+	 * Test step method to complete the survey 
+	 * and verify that it is ready to be uploaded.
+	 */
 	@Step("Complete the survey")
 	public UploadScreen completeSurvey() {
 		
@@ -241,6 +260,36 @@ public static AndroidDriver<MobileElement> driver;
 				isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
 				"Failed to complete the survey");
 		return uploadScreen;
+	}
+	
+	@Step("Answer survey questions")
+	public void answerSurvey(ArrayList<String[]> surveyData) {
+		
+		for (String[] item : surveyData) {
+			Log.info("Question: " + item[0] + "/" + item[1] + "/" + item[2] + "/" + item[3]);
+			/* Open the survey section */
+			openSection(item[0]);
+			
+			/* Answer the question based on its type */
+			String type = item[1].toLowerCase();
+			String question = item[2];
+			String answer = item[3];
+			
+			if (type.equals("dropdown")) {
+				answerFromDropdown(question, answer);
+			} else if (type.equals("dropdownsearch")) {
+				answerFromDropdownWithSearch(question, answer);
+			} else if (type.equals("radio")) {
+				answerRadioButtonQuestion(question, answer);
+			} else if (type.equals("number")) {
+				answerWithNumber(question, answer);
+			} else if (type.equals("multiplechoices")) {
+				String[] answers = answer.split(",");
+				answerMultipleChoices(question, answers);
+			} else if (type.equals("text")) {
+				answerWithText(question, answer);
+			}
+		}
 	}
 	
 	public boolean isDisplayed(long timeout) {

@@ -188,13 +188,13 @@ public class PhoneBaseScreen {
     public boolean isElementPresent(By by, long seconds) {
     	
     	Log.info("Check if an element present: " + by + " / With Timeout: " + seconds);
-    	WebDriverWait wait = new WebDriverWait(driver, seconds);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     	
     	try {
+    		WebDriverWait wait = new WebDriverWait(driver, seconds);
+    		wait.until(ExpectedConditions.visibilityOfElementLocated(by));	
 			driver.findElement(by);
 			return true;
-		} catch (NoSuchElementException e) {
+		} catch (Exception e) {
 			return false;
 		}
     }
