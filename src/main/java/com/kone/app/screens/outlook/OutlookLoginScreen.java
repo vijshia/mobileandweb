@@ -30,13 +30,13 @@ public class OutlookLoginScreen extends WebBaseScreen {
 			clickonButton(btn_Next);
 		}
 		By btn_Sign = By.xpath("//*[starts-with(@id,'formsAuthenticationArea')]");//*[starts-with(@id,'KmsiDescription') or starts-with(@id,'formsAuthenticationArea')]
-		List<String> Values = gettingTextfromList(btn_Sign);
-		if (Values.contains("Sign in")) {
-			enteringValueinTextField(txt_Emailpassword, password);
-			clickonButton(btn_Emailsignin_id);
+//		List<String> Values = gettingTextfromList(btn_Sign);
+//		if (Values.contains("Sign in")) {
+//			enteringValueinTextField(txt_Emailpassword, password);
+//			clickonButton(btn_Emailsignin_id);
 			/*waitForElementtobeClickable(btn_Staysignedin_No, 20);
 			clickonButton(Checkbox_DontShow);
 			clickonButton(btn_Staysignedin_No);*/
-		}
+//		}
 	}
 }

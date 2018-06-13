@@ -30,8 +30,9 @@ public class SiteHomeScreen extends WebBaseScreen{
 	private By btn_ok=By.id("typeSelectorOkBtn");
 	private By btn_createTask=By.xpath("//*[contains(@ng-click,'createTask')]");
 	
+	public static String MSS_Street;
+	
 	private String MSS_CustomerContact;
-	private String MSS_Street;
 	private String MSS_PostalCode;
 	private String MSS_City;
 	private String MSS_SelectPlannedTypes;
