@@ -46,6 +46,11 @@ public class TestContext {
 				String[] elements = property.split("\\.");
 				String capName = elements[elements.length - 1];
 				String capValue = PropertiesLoader.instance.getProperty(property);
+				
+				if(property.contains("chromedriverExecutable")) {
+					capValue = System.getProperty("user.dir") + capValue;
+				}
+				
 				Log.info("    -> Set appium desired capability " + capName +
 						 "=" + capValue);
 				caps.setCapability(capName, capValue);

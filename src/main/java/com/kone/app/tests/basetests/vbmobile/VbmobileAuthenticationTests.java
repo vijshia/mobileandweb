@@ -25,14 +25,14 @@ public class VbmobileAuthenticationTests extends VbmobileBaseTest{
 		surveyManagerScreen = new SurveyManagerScreen();
 	}
 	
-    @Test(groups={ "login" })
+    @Test(groups={ "vbmobie_login" })
     void loginTest() {
     	loginScreen.signIn(this.loginUser, this.loginPassword, this.frontline);
     }
     
-    @Test(groups={ "logout" })
-    void logoutTest() {
-    	surveyManagerScreen.openSideMenu().logout();
-    }
+//    @Test(groups={ "vbmobie_logout" })
+//    void logoutTest() {
+//    	surveyManagerScreen.openSideMenu().logout();
+//    }
 
 }

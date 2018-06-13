@@ -34,7 +34,7 @@ public class SurveyManagerScreen extends PhoneBaseScreen {
 	}
 	
 	@Step("Open survey id {0}")
-	public SurveyScreen openSurveyById(String taskId) {
+	public SurveyScreen openSurvey(String taskId) {
 		
 		By surveyTaskId = By.xpath("//span[text()='" + taskId + "']");
 		driver.findElement(surveyTaskId).click();

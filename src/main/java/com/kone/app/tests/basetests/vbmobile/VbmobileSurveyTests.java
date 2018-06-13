@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 import org.testng.annotations.Test;
 
+import com.kone.app.screens.konesitesurvey.SiteHomeScreen;
 import com.kone.app.screens.vbmobile.SurveyManagerScreen;
 import com.kone.app.screens.vbmobile.SurveyScreen;
 import com.kone.app.screens.vbmobile.TasksScreen;
 import com.kone.app.tests.basetests.VbmobileBaseTest;
+import com.kone.framework.utility.Log;
 
 
 public class VbmobileSurveyTests extends VbmobileBaseTest{
@@ -19,12 +21,12 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
 	protected String loginUser;
 	protected String loginPassword;
 	protected String frontline;
-	protected String taskId = "28708";  /* Temporarily set here, should be fetched from salesforce test */
+	protected String surveyName;
 	protected ArrayList<String[]> surveyData;
 	
 	public VbmobileSurveyTests(ArrayList<String[]> surveyData) {
 		
-		this.surveyData = surveyData;		
+		this.surveyData = surveyData;
 		surveyManagerScreen = new SurveyManagerScreen();
 	}
     
@@ -33,8 +35,9 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
     	tasksScreen = surveyManagerScreen.
     					openSideMenu().
     					openTasks();
-    	tasksScreen.downloadTaksById(taskId);
-    	surveyScreen = surveyManagerScreen.openSurveyById(taskId);
+    	surveyName = SiteHomeScreen.MSS_Street;
+    	tasksScreen.downloadTaksById(surveyName);
+    	surveyScreen = surveyManagerScreen.openSurvey(surveyName);
     	surveyScreen.answerSurvey(surveyData);
     	surveyScreen.completeSurvey();
     }

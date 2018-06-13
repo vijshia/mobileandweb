@@ -71,12 +71,12 @@ public class BaseFactory {
     @DataProvider(name = "surveyDataProvider")
     public Object[][] surveyDataProvider(ITestContext context) throws IOException {
     	
-    	ExcelReader exlReader = new ExcelReader("properties/testdata/Survey_TestData.xlsx");
+    	ExcelReader exlReader = new ExcelReader("properties/testdata/KONEMobileSiteSurvey_TestData.xlsx");
     	
     	Object[][] data = new Object[1][1];
     	
     	try {
-			data[0][0] = exlReader.GetSurveyData("FRB_Budget");
+			data[0][0] = exlReader.GetSurveyData("Mobile_Data");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
