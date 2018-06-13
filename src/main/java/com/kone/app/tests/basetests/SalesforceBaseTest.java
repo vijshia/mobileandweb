@@ -50,7 +50,7 @@ public class SalesforceBaseTest {
 	}
 	
 	
-/*	@AfterSuite(alwaysRun = false)
+	/*@AfterSuite(alwaysRun = false)
 	public void closeWebdriver() {
 		wdriver.close();
 	}*/

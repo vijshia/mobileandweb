@@ -7,10 +7,8 @@ import com.kone.framework.utility.Log;
 import ru.yandex.qatools.allure.annotations.Step;
 import static com.kone.app.screens.salesforce.LoginScreen.wdriver;
 import static org.testng.Assert.assertTrue;
-
 import java.util.HashMap;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.testng.Assert;
 

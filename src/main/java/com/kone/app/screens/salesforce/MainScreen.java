@@ -19,7 +19,7 @@ public class MainScreen extends WebBaseScreen {
 	private By txt_Homesearchbox=By.id("phSearchInput");
 	private By btn_Homesearchbox=By.id("phSearchButton");
 	
-	private String SF_Opportunity_Name;
+	public static String SF_Opportunity_Name;
 	
 	public MainScreen() {
 		wdriver = WebContext.wdriver;

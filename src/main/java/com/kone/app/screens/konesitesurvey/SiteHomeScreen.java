@@ -5,6 +5,8 @@ import org.testng.Assert;
 import com.kone.app.screens.WebBaseScreen;
 import ru.yandex.qatools.allure.annotations.Step;
 import static com.kone.app.screens.salesforce.SelectOpportunityScreen.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import com.kone.app.screens.salesforce.MainScreen;
 import com.kone.framework.utility.ExcelReader;
 import static com.kone.app.screens.konesitesurvey.SiteLoginScreen.excelPath;
@@ -13,7 +15,7 @@ import static com.kone.app.screens.konesitesurvey.SiteLoginScreen.excelData;
 public class SiteHomeScreen extends WebBaseScreen{
 	
 	private By popup_toSelectLIS=By.xpath("//*[contains(text(),'(LIS)')]");
-	private By tocheck_customerData=By.xpath("//*[text()='Customer Id SAP']/..//input");
+	private By tocheck_customerData=By.xpath("//*[text()='Customer Id SAP']/..//input");  //*[@class='form-control ng-pristine ng-untouched ng-valid ng-not-empty']
 	private By btn_toNavigateLIO=By.xpath("//*[contains(text(),'LIO')]");
 	private By header_check=By.xpath("//*[@ng-show='opportunityId']");
 	private By txt_customerContact=By.xpath("(//*[@class='btn btn-default waves-effect']/../..//input)[last()-1]");
@@ -23,7 +25,7 @@ public class SiteHomeScreen extends WebBaseScreen{
 	private By lookup_surveyor=By.id("selectSurveyorBtn");
 	private By lnk_assigntoMe=By.id("searchSurveyorSelectMeBtn");
 	private By lookup_plannedSType=By.id("openTypeSelectorBtn");
-	private By lnk_selectPlannedTypes=By.xpath("//*[contains(text(),'Full')]");
+	public static By lnk_selectPlannedTypes=By.xpath("//*[contains(text(),'Replace')]");
 	private By tocheck_selectPlannedTypes=By.xpath("//div[@ng-repeat='selectedType in selectedTypes track by $index']");
 	private By btn_ok=By.id("typeSelectorOkBtn");
 	private By btn_createTask=By.xpath("//*[contains(@ng-click,'createTask')]");
@@ -32,23 +34,28 @@ public class SiteHomeScreen extends WebBaseScreen{
 	private String MSS_Street;
 	private String MSS_PostalCode;
 	private String MSS_City;
+	private String MSS_SelectPlannedTypes;
 	
 	@Step("Check if the Task has been created")
 	public MainScreen createTask() {	
+		
+		String dateformat = new SimpleDateFormat("ddMMMhhmm_ssaa").format(Calendar.getInstance().getTime());
 		
 		ExcelReader excelReader=new ExcelReader(excelPath);
 		try {
 			excelData=excelReader.GetData("Web_Login_Data");
 			
 			MSS_CustomerContact=excelData.get("MSS_CustomerContact").get(0);
-			MSS_Street=excelData.get("MSS_Street").get(0);
+			String exl_MSS_Street=excelData.get("MSS_Street").get(0);
+			MSS_Street=exl_MSS_Street+"_"+dateformat;
 			MSS_PostalCode=excelData.get("MSS_PostalCode").get(0);
 			MSS_City=excelData.get("MSS_City").get(0);
+			MSS_SelectPlannedTypes=excelData.get("MSS_SelectPlannedTypes").get(0);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		for(int i=0; i<50; ) {
+		for(int i=0; i<10; ) {
 			String attribute=gettingAttributebyClass(tocheck_customerData);
 		if(attribute.contains("ng-empty")) {
 			i++;
@@ -73,8 +80,8 @@ public class SiteHomeScreen extends WebBaseScreen{
 			waitForElementPresent(lnk_assigntoMe, 20);
 			clickonButton(lnk_assigntoMe);
 			clickonButton(lookup_plannedSType);
-			waitForElementPresent(lnk_selectPlannedTypes, 10);
-			clickonButton(lnk_selectPlannedTypes);
+			waitForElementPresent(stringtoXpathContains(MSS_SelectPlannedTypes), 10);
+			clickonButton(stringtoXpathContains(MSS_SelectPlannedTypes));
 			waitForElementPresent(tocheck_selectPlannedTypes, 20);
 			clickonButton(btn_ok);
 			scrollDownJavaScript();
