@@ -73,10 +73,10 @@ public class WebBaseScreen {
 		return wdriver.findElement(by);
 	}*/
 	
-	@Step("Entering value in: {0}")
+	@Step("Entering Password in: {0}")
 	public WebElement enteringPassword(By by, String value) {
 
-		Log.info("Entering Passwrod in the text field " + by);
+		Log.info("Entering Password in the text field " + by);
 		wdriver.findElement(by).sendKeys(value);
 		return wdriver.findElement(by);
 	}
