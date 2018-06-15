@@ -2,6 +2,7 @@ package com.kone.framework.utility;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -67,6 +68,45 @@ public class ExcelReader {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return null;
+	}
+	
+	/**
+	 * Get the survey data from an excel sheet
+	 * 
+	 * @param sheetname
+	 * @return a list of string array, each of
+	 *         question and answer is stored in
+	 *         one array.
+	 * @throws Exception
+	 */
+	public ArrayList<String[]> GetSurveyData(String sheetname) throws Exception {
+		
+		try {
+			
+			ArrayList<String[]> surveyData = new ArrayList<String[]>();
+			sh = wb.getSheet(sheetname);
+				
+			for(int r = 1; r < sh.getLastRowNum() + 1; r++) {
+				
+				String[] rowData = new String[4];
+				Row valueRow = sh.getRow(r);
+				
+				for(int c=0; c < 4; c++) {
+					Cell rowCell = valueRow.getCell(c);
+					rowData[c] = cellToString(rowCell).trim();
+				}
+				
+				surveyData.add(rowData);
+			}
+			
+			return surveyData;			
+		} 
+		
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 

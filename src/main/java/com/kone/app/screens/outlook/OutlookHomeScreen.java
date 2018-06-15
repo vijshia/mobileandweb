@@ -21,7 +21,7 @@ public class OutlookHomeScreen extends WebBaseScreen {
 
 	public static String taskID;
 
-	@Step("Login to OutLook")
+	@Step("Get Task ID from mail")
 	public OutlookHomeScreen getTaskID() {
 		
 		List<WebElement> MailTimeStamps = gettingWebElementsfromList(lnk_MailTimeStamp);

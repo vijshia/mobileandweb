@@ -8,6 +8,8 @@ import java.util.Properties;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 
+import com.kone.framework.utility.ExcelReader;
+
 public class BaseFactory {
 	
 	private Properties testData = new Properties();
@@ -66,8 +68,9 @@ public class BaseFactory {
         return data;
     }
     
+/*<<<<<<< HEAD
     
-    /*@DataProvider(name = "outLookAccountData")
+    @DataProvider(name = "outLookAccountData")
     public Object[][] outLookAccountDataProvider(ITestContext context) throws IOException {
 
         String dataSource = context.getCurrentXmlTest().getParameter("dataSource");
@@ -103,6 +106,23 @@ public class BaseFactory {
         }
 
         return data;
-    }*/
+    }
+======= */
+    @DataProvider(name = "surveyDataProvider")
+    public Object[][] surveyDataProvider(ITestContext context) throws IOException {
+    	
+    	ExcelReader exlReader = new ExcelReader("properties/testdata/KONEMobileSiteSurvey_TestData.xlsx");
+    	
+    	Object[][] data = new Object[1][1];
+    	
+    	try {
+			data[0][0] = exlReader.GetSurveyData("Mobile_Data");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    	
+    	return data;
+    }
+//>>>>>>> 34d0f4d1d225b9792778d59b1b770d0623af976b
 
 }
