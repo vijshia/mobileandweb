@@ -3,6 +3,8 @@ package com.kone.app.screens.konesitesurvey;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import com.kone.app.screens.WebBaseScreen;
+import com.kone.app.screens.outlook.OutlookURLLaunch;
+
 import ru.yandex.qatools.allure.annotations.Step;
 import static com.kone.app.screens.salesforce.SelectOpportunityScreen.URL;
 import java.text.SimpleDateFormat;
@@ -39,7 +41,7 @@ public class SiteHomeScreen extends WebBaseScreen{
 	private String MSS_SelectPlannedTypes;
 	
 	@Step("Check if the Task has been created")
-	public MainScreen createTask() {	
+	public OutlookURLLaunch createTask() {	
 		
 		dateformat = new SimpleDateFormat("ddMMMhhmm_ssaa").format(Calendar.getInstance().getTime());
 		
@@ -88,10 +90,14 @@ public class SiteHomeScreen extends WebBaseScreen{
 			clickonButton(btn_ok);
 			scrollDownJavaScript();
 			clickonButton(btn_createTask);
-		
-		MainScreen salesForceMainScreen=new MainScreen();
+			
+		OutlookURLLaunch outlookURLLaunch=new OutlookURLLaunch();
+		Assert.assertTrue(outlookURLLaunch.isDisplayed());
+		return outlookURLLaunch;
+			
+/*		MainScreen salesForceMainScreen=new MainScreen();
 		Assert.assertTrue(salesForceMainScreen.isDisplayed());
-		return salesForceMainScreen;	
+		return salesForceMainScreen;*/	
 	}
 	
 	@Step("Check if the Select LIS or LIO Pop-up is displayed")

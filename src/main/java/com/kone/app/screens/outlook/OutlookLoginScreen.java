@@ -41,7 +41,7 @@ public class OutlookLoginScreen extends WebBaseScreen {
 				break;				//i++;
 			}
 		}
-		enteringValueinTextField(txt_Emailpassword, password);
+		enteringPassword(txt_Emailpassword, password);
 		clickonButton(btn_Emailsignin_id);
 		waitForElementtobeClickable(btn_Staysignedin_No, 20);
 		clickonButton(Checkbox_DontShow);

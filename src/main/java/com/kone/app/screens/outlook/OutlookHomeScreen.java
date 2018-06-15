@@ -32,7 +32,7 @@ public class OutlookHomeScreen extends WebBaseScreen {
 				String a = gettingText(mailBody).substring(gettingText(mailBody).indexOf("Task Id:"));
 				String b[] = a.split("Survey");
 				String c[] = b[0].split("Id:");
-				taskID = c[1].trim(); 							//	System.out.println(taskID);
+				taskID = c[1].trim(); 								System.out.println(taskID);
 				break;
 			}
 		}

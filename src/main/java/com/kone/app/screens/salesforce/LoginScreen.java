@@ -24,8 +24,9 @@ public static WebDriver wdriver;
 		email = email + ".qa";
 		
 		waitForElementPresent(usernameInput, 30);
-		wdriver.findElement(usernameInput).sendKeys(email);		
-		wdriver.findElement(passwordInput).sendKeys(password);
+		wdriver.findElement(usernameInput).sendKeys(email);	
+		enteringPassword(passwordInput, password);
+//		wdriver.findElement(passwordInput).sendKeys(password);
 		wdriver.findElement(signInButton).click();
 		
 		MainScreen mainScreen = new MainScreen();

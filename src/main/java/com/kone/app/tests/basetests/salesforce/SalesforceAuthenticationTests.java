@@ -9,6 +9,7 @@ import com.kone.app.screens.salesforce.MainScreen;
 import com.kone.app.screens.salesforce.SelectOpportunityScreen;
 import com.kone.app.tests.basetests.SalesforceBaseTest;
 import com.kone.app.screens.outlook.OutlookLoginScreen;
+import com.kone.app.screens.outlook.OutlookURLLaunch;
 import com.kone.app.screens.outlook.OutlookHomeScreen;
 
 
@@ -21,6 +22,7 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 	private SiteHomeScreen siteHomeScreen;
 	private OutlookLoginScreen outlookloginScreen;
 	private OutlookHomeScreen outlookHomeScreen;
+	private OutlookURLLaunch outlookURLLaunch;
 	
 	protected String salesForceloginUser;
 	protected String salesForceloginPassword;
@@ -51,8 +53,8 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
     	searchResultScreen=mainScreen.searchOpportunity();
     	siteLoginScreen=searchResultScreen.clickonOpportunity();
     	siteHomeScreen=siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword);
-    	siteHomeScreen.createTask();
-		
+    	outlookURLLaunch=siteHomeScreen.createTask();
+    	outlookloginScreen=outlookURLLaunch.launchOutLookURL();
     	outlookHomeScreen=outlookloginScreen.emailLogin(this.salesForceloginUser, this.sitePassword);
     	outlookHomeScreen.getTaskID();
     }

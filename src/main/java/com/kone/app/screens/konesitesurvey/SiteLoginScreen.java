@@ -41,7 +41,7 @@ public class SiteLoginScreen extends WebBaseScreen {
 		
 		waitForElementPresent(txt_userName, 10);
 		enteringValueinTextField(txt_userName, username);
-		enteringValueinTextField(txt_password, password);
+		enteringPassword(txt_password, password);
 		clickonButton(lookup_frontLine);
 		waitForElementPresent(txt_frontLine, 10);
 		enteringValueinTextField(txt_frontLine, MSS_Frontline_Country);
