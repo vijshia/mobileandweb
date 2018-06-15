@@ -59,7 +59,7 @@ public class SiteHomeScreen extends WebBaseScreen{
 			e.printStackTrace();
 		}
 		
-		for(int i=0; i<50; ) {
+		for(int i=0; i<30; ) {
 			String attribute=gettingAttributebyClass(tocheck_customerData);
 		if(attribute.contains("ng-empty")) {
 			i++;
