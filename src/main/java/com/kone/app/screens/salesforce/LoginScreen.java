@@ -21,7 +21,8 @@ public static WebDriver wdriver;
 
 	@Step("Login to SalesForce")
 	public MainScreen signIn (String email, String password) {
-
+		email = email + ".qa";
+		
 		waitForElementPresent(usernameInput, 30);
 		wdriver.findElement(usernameInput).sendKeys(email);		
 		wdriver.findElement(passwordInput).sendKeys(password);

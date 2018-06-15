@@ -50,10 +50,10 @@ public class SalesforceBaseTest {
 	}
 	
 	
-	@AfterSuite(alwaysRun = false)
+/*	@AfterSuite(alwaysRun = false)
 	public void closeWebdriver() {
 		wdriver.close();
-	}
+	}*/
 	
 	@Step("Waiting for {0} millisecond(s)")
     public void wait(int milliseconds) {

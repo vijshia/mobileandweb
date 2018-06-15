@@ -4,7 +4,6 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +16,7 @@ import com.kone.framework.utility.Log;
 import ru.yandex.qatools.allure.annotations.Step;
 import static com.kone.app.screens.konesitesurvey.SiteHomeScreen.lnk_selectPlannedTypes;
 import static com.kone.app.screens.salesforce.SelectOpportunityScreen.lnk_SearchedOpportunity;
+import static com.kone.app.screens.outlook.OutlookLoginScreen.btn_Sign;
 
 public class WebBaseScreen {
 
@@ -53,6 +53,25 @@ public class WebBaseScreen {
 		wait.until(ExpectedConditions.elementToBeClickable(by));
 		return wdriver.findElement(by);
 	}
+	
+	@Step("Wait for Presence of Element Located: {0} - Timeout: {1} seconds")
+	public WebElement waitForpresenceOfElementLocated(By by, int seconds) {
+
+		Log.info("Wait for Presence of Element Located: " + by + " / With Timeout: " + seconds);
+		WebDriverWait wait = new WebDriverWait(wdriver, seconds);
+		wait.until(ExpectedConditions.presenceOfElementLocated(by));
+		return wdriver.findElement(by);
+	}
+	
+/*	@Step("Wait for element present stalenessOf: {0} - Timeout: {1} seconds")
+	public WebElement waitForElementPresentstalenessOf(By by, int seconds) {
+
+		Log.info("Wait for element present stalenessOf: " + by + " / With Timeout: " + seconds);
+		WebDriverWait wait = new WebDriverWait(wdriver, seconds);
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		wait.until((ExpectedConditions.stalenessOf(element)));
+		return wdriver.findElement(by);
+	}*/
 
 	@Step("Entering value in: {0} - value: {1}")
 	public WebElement enteringValueinTextField(By by, String value) {
@@ -112,7 +131,7 @@ public class WebBaseScreen {
 		List<String> Values = new LinkedList<>();
 
 		try {
-			String str = by.toString();
+			Log.info("Getting WebElements to getText " + by);
 			localvariable = wdriver.findElements(by);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -120,6 +139,7 @@ public class WebBaseScreen {
 		for (WebElement Value : localvariable) {
 			Values.add(Value.getText());
 		}
+		Log.info("Returning List of retrived Text " + by);
 		return Values;
 	}
 
@@ -136,6 +156,32 @@ public class WebBaseScreen {
 		}
 		return null;
 	}
+	
+	@Step("Get WebElement: {0}")
+	public WebElement gettingWebElement(By by) {
+
+		try {
+			Log.info("Getting WebElement " + by);
+			WebElement getwebelement = wdriver.findElement(by);
+			return getwebelement;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@Step("Get WebElements from List: {0}")
+	public List<WebElement> gettingWebElementsfromList(By by) {
+		List<WebElement> localvariable = null;
+		try {
+			Log.info("Getting List of WebElements " + by);
+			localvariable = wdriver.findElements(by);
+			return localvariable;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	@Step("Page Scroll Down using Robot:")
 	public WebElement scrollDownRobot() {
@@ -144,6 +190,19 @@ public class WebBaseScreen {
 			Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 			robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@Step("Page Scroll Down using Robot:")
+	public WebElement scrollUpRobot() {
+
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_PAGE_UP);
+			robot.keyRelease(KeyEvent.VK_PAGE_UP);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -174,7 +233,7 @@ public class WebBaseScreen {
 		return null;
 	}
 
-	@Step("Converting userdata to Xpath: {0}")
+	@Step("Converting userdata to Xpath key Contains : {0}")
 	public By stringtoXpathContains(String To_Replaced) {
 		try {
 			String str3 = lnk_selectPlannedTypes.toString();
@@ -191,6 +250,19 @@ public class WebBaseScreen {
 	public By stringtoXpathSearchedOpportunity(String To_Replaced) {
 		try {
 			String str3 = lnk_SearchedOpportunity.toString();
+			String Value_Replaced = str3.replace("Replace", To_Replaced);
+			String Full_Replaced = Value_Replaced.replace("By.xpath: //", "//");
+			Replaced_Xpath = By.xpath(Full_Replaced);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return Replaced_Xpath;
+	}
+	
+	@Step("Converting userdata to Xpath key Contains : {0}")
+	public By stringtoXpathEquals(String To_Replaced) {
+		try {
+			String str3 = btn_Sign.toString();
 			String Value_Replaced = str3.replace("Replace", To_Replaced);
 			String Full_Replaced = Value_Replaced.replace("By.xpath: //", "//");
 			Replaced_Xpath = By.xpath(Full_Replaced);

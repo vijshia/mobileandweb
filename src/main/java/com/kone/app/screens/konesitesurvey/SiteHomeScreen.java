@@ -31,6 +31,7 @@ public class SiteHomeScreen extends WebBaseScreen{
 	private By btn_createTask=By.xpath("//*[contains(@ng-click,'createTask')]");
 	
 	public static String MSS_Street;
+	public static String dateformat;
 	
 	private String MSS_CustomerContact;
 	private String MSS_PostalCode;
@@ -40,7 +41,7 @@ public class SiteHomeScreen extends WebBaseScreen{
 	@Step("Check if the Task has been created")
 	public MainScreen createTask() {	
 		
-		String dateformat = new SimpleDateFormat("ddMMMhhmm_ssaa").format(Calendar.getInstance().getTime());
+		dateformat = new SimpleDateFormat("ddMMMhhmm_ssaa").format(Calendar.getInstance().getTime());
 		
 		ExcelReader excelReader=new ExcelReader(excelPath);
 		try {
@@ -56,7 +57,7 @@ public class SiteHomeScreen extends WebBaseScreen{
 			e.printStackTrace();
 		}
 		
-		for(int i=0; i<10; ) {
+		for(int i=0; i<50; ) {
 			String attribute=gettingAttributebyClass(tocheck_customerData);
 		if(attribute.contains("ng-empty")) {
 			i++;
@@ -98,6 +99,4 @@ public class SiteHomeScreen extends WebBaseScreen{
 		return waitForElementPresent(popup_toSelectLIS, 15) != null;
 
 	}
-	
-
 }

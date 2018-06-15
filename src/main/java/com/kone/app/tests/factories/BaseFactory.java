@@ -65,5 +65,44 @@ public class BaseFactory {
 
         return data;
     }
+    
+    
+    /*@DataProvider(name = "outLookAccountData")
+    public Object[][] outLookAccountDataProvider(ITestContext context) throws IOException {
+
+        String dataSource = context.getCurrentXmlTest().getParameter("dataSource");
+        testData.load(new FileInputStream(new File(dataSource)));
+        
+        String salesforceEmails = testData.getProperty("salesforce.login.user2");
+        String salesforcepasswords = testData.getProperty("salesforce.login.password2");
+        String siteUsernames = testData.getProperty("mobileSiteSurvey.login.user");
+        String sitePasswords = testData.getProperty("mobileSiteSurvey.login.password");
+        
+        String outLookUsernames = testData.getProperty("outLook.login.user");
+        String outLookPasswords = testData.getProperty("outLook.login.password");
+        
+        String[] salesforceEmail = salesforceEmails.split(",");
+        String[] salesforcepassword = salesforcepasswords.split(",");
+        String[] siteUsername = siteUsernames.split(",");
+        String[] sitePassword = sitePasswords.split(",");
+        
+        String[] outLookUsername = outLookUsernames.split(",");
+        String[] outLookPassword = outLookPasswords.split(",");
+        
+
+        Object[][] data = new Object[salesforceEmail.length][6];
+
+        for (int i = 0; i < salesforceEmail.length; i++) {
+            data[i][0] = salesforceEmail[i].trim();
+            data[i][1] = salesforcepassword[i].trim();
+            data[i][2] = siteUsername[i].trim();
+            data[i][3] = sitePassword[i].trim();
+        	
+            data[i][4] = outLookUsername[i].trim();
+            data[i][5] = outLookPassword[i].trim();
+        }
+
+        return data;
+    }*/
 
 }
