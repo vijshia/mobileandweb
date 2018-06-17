@@ -19,7 +19,7 @@ public class PropertiesLoader extends Properties{
 			                  String defaulVal) {
         String propVal;
         if (StringUtils.isEmpty(propVal = System.getProperty(prop))) {
-        	propVal = super.getProperty(prop);
+        	propVal = super.getProperty(prop);	
         }
 
         return propVal == null ? defaulVal : propVal;

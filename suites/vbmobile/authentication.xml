@@ -9,13 +9,14 @@
         <parameter name="dataSource" value="properties/testdata/testdata.properties" />
         <groups>
             <dependencies>
+                <!--group name="login" depends-on="login_outlook" /-->
                 <group name="login" depends-on="login_salesforce" />
-                <group name="logout" depends-on="login" />
+                <!--group name="logout" depends-on="login" /-->
             </dependencies>
 		  </groups>
         <classes>
             <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+            <!--class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" /-->
         </classes>
     </test>
 </suite>
