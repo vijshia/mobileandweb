@@ -1,18 +1,19 @@
-package com.kone.app.screens.salesforce;
+package com.kone.app.pages.salesforce;
 
-import com.kone.app.screens.WebBaseScreen;
+import com.kone.app.pages.WebBasePage;
+import com.kone.app.pages.konesitesurvey.SiteLoginPage;
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
 import ru.yandex.qatools.allure.annotations.Step;
+
+import static com.kone.app.pages.salesforce.MainPage.SF_Opportunity_Name;
 import static com.kone.framework.context.WebContext.wdriver;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import com.kone.app.screens.konesitesurvey.SiteLoginScreen;
-import static com.kone.app.screens.salesforce.MainScreen.SF_Opportunity_Name;
 
-public class SelectOpportunityScreen extends WebBaseScreen {
+public class SelectOpportunityPage extends WebBasePage {
 
-	public SelectOpportunityScreen() {
+	public SelectOpportunityPage() {
 		wdriver = WebContext.wdriver;
 	}
 	
@@ -21,14 +22,14 @@ public class SelectOpportunityScreen extends WebBaseScreen {
 	private By lnk_NewSiteSurvey=By.xpath("//*[text()='Request a New Site Survey']");
 	
 	@Step("Selecting Existing Opportunity and click on SiteSurvey Link")
-	public SiteLoginScreen clickonOpportunity() {
+	public SiteLoginPage clickonOpportunity() {
 		
 		clickonButton(stringtoXpathSearchedOpportunity(SF_Opportunity_Name));
 		waitForElementPresent(lnk_NewSiteSurvey, 20);
 		URL=gettingCurrentURL();
 		clickonButton(lnk_NewSiteSurvey);
 		
-		SiteLoginScreen siteLoginScreen=new SiteLoginScreen();
+		SiteLoginPage siteLoginScreen=new SiteLoginPage();
 		Assert.assertTrue(siteLoginScreen.isDisplayed());
 		return siteLoginScreen;
 		

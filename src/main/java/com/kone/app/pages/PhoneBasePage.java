@@ -1,4 +1,4 @@
-package com.kone.app.screens;
+package com.kone.app.pages;
 
 import java.lang.reflect.Field;
 import java.time.Duration;
@@ -23,7 +23,7 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class PhoneBaseScreen {
+public class PhoneBasePage {
 	
 	public static AndroidDriver<MobileElement> driver;
 	
@@ -31,7 +31,7 @@ public class PhoneBaseScreen {
 	protected static final long DEFAULT_WAIT_ELEMENT_TIMEOUT = 10;
 	protected static final long DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT = 30;
 	
-	public PhoneBaseScreen() {
+	public PhoneBasePage() {
 		
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}

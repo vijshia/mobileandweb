@@ -1,20 +1,24 @@
-package com.kone.app.screens.konesitesurvey;
+package com.kone.app.pages.konesitesurvey;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import com.kone.app.screens.WebBaseScreen;
-import com.kone.app.screens.outlook.OutlookURLLaunch;
+
+import com.kone.app.pages.WebBasePage;
+import com.kone.app.pages.outlook.OutlookURLLaunch;
+import com.kone.app.pages.salesforce.MainPage;
 
 import ru.yandex.qatools.allure.annotations.Step;
-import static com.kone.app.screens.salesforce.SelectOpportunityScreen.URL;
+
+import static com.kone.app.pages.konesitesurvey.SiteLoginPage.excelData;
+import static com.kone.app.pages.konesitesurvey.SiteLoginPage.excelPath;
+import static com.kone.app.pages.salesforce.SelectOpportunityPage.URL;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import com.kone.app.screens.salesforce.MainScreen;
-import com.kone.framework.utility.ExcelReader;
-import static com.kone.app.screens.konesitesurvey.SiteLoginScreen.excelPath;
-import static com.kone.app.screens.konesitesurvey.SiteLoginScreen.excelData;
 
-public class SiteHomeScreen extends WebBaseScreen{
+import com.kone.framework.utility.ExcelReader;
+
+public class SiteHomePage extends WebBasePage{
 	
 	private By popup_toSelectLIS=By.xpath("//*[contains(text(),'(LIS)')]");
 	private By tocheck_customerData=By.xpath("//*[text()='Customer Id SAP']/..//input");  //*[@class='form-control ng-pristine ng-untouched ng-valid ng-not-empty']

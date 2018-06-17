@@ -1,17 +1,19 @@
-package com.kone.app.screens.salesforce;
+package com.kone.app.pages.salesforce;
+
+import static com.kone.app.pages.konesitesurvey.SiteLoginPage.excelData;
+import static com.kone.app.pages.konesitesurvey.SiteLoginPage.excelPath;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import com.kone.app.screens.WebBaseScreen;
-import com.kone.app.screens.konesitesurvey.SiteLoginScreen;
+
+import com.kone.app.pages.WebBasePage;
+import com.kone.app.pages.konesitesurvey.SiteLoginPage;
 import com.kone.framework.context.WebContext;
 import ru.yandex.qatools.allure.annotations.Step;
 import com.kone.framework.utility.ExcelReader;
-import static com.kone.app.screens.konesitesurvey.SiteLoginScreen.excelPath;
-import static com.kone.app.screens.konesitesurvey.SiteLoginScreen.excelData;
 
-public class MainScreen extends WebBaseScreen {
+public class MainPage extends WebBasePage {
 	
     public static WebDriver wdriver;
     
@@ -21,12 +23,12 @@ public class MainScreen extends WebBaseScreen {
 	
 	public static String SF_Opportunity_Name;
 	
-	public MainScreen() {
+	public MainPage() {
 		wdriver = WebContext.wdriver;
 	}
 	
 	@Step("Search for Existing Opportunity")
-	public SelectOpportunityScreen searchOpportunity() {
+	public SelectOpportunityPage searchOpportunity() {
 		
 		ExcelReader excelReader=new ExcelReader(excelPath);
 		try {
@@ -40,7 +42,7 @@ public class MainScreen extends WebBaseScreen {
 		enteringValueinTextField(txt_Homesearchbox, SF_Opportunity_Name);
 		clickonButton(btn_Homesearchbox);
 		
-		SelectOpportunityScreen selectOpportunityScreen= new SelectOpportunityScreen();
+		SelectOpportunityPage selectOpportunityScreen= new SelectOpportunityPage();
 		Assert.assertTrue(selectOpportunityScreen.isDisplayed());
 		return selectOpportunityScreen;
 	}	

@@ -1,4 +1,4 @@
-package com.kone.app.tests.basetests;
+package com.kone.app.tests.testcases;
 
 import java.io.File;
 import java.io.FileInputStream;

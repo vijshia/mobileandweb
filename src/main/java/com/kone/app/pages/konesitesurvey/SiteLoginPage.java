@@ -1,24 +1,25 @@
-package com.kone.app.screens.konesitesurvey;
+package com.kone.app.pages.konesitesurvey;
 
-import com.kone.app.screens.WebBaseScreen;
+import com.kone.app.pages.WebBasePage;
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.ExcelReader;
 import com.kone.framework.utility.Log;
 import ru.yandex.qatools.allure.annotations.Step;
-import static com.kone.app.screens.salesforce.LoginScreen.wdriver;
+
+import static com.kone.app.pages.salesforce.LoginPage.wdriver;
 import static org.testng.Assert.assertTrue;
 import java.util.HashMap;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class SiteLoginScreen extends WebBaseScreen {
+public class SiteLoginPage extends WebBasePage {
 	
 	public static String excelPath=System.getProperty("user.dir") + "\\properties\\testdata\\KONEMobileSiteSurvey_TestData.xlsx";
 	public static HashMap<String,List<String>> excelData;
 	private String MSS_Frontline_Country;
 	
-	public SiteLoginScreen() {
+	public SiteLoginPage() {
 		wdriver = WebContext.wdriver;
 	}	
 
@@ -30,7 +31,7 @@ public class SiteLoginScreen extends WebBaseScreen {
 	private By btn_login=By.id("loginBtn");
 
 	@Step("Login to Mobile Site Survey ")
-	public SiteHomeScreen siteSurveySignIn(String username, String password) {
+	public SiteHomePage siteSurveySignIn(String username, String password) {
 		ExcelReader excelReader=new ExcelReader(excelPath);
 		try {
 			excelData=excelReader.GetData("Web_Login_Data");
@@ -50,7 +51,7 @@ public class SiteLoginScreen extends WebBaseScreen {
 		String frontLine=gettingText(txt_frontLine);
 		clickonButton(btn_login);
 		
-		SiteHomeScreen siteHomeScreen=new SiteHomeScreen();
+		SiteHomePage siteHomeScreen=new SiteHomePage();
 		Assert.assertTrue(siteHomeScreen.isDisplayed());
 		return siteHomeScreen;
 	}

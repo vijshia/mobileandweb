@@ -1,4 +1,6 @@
-package com.kone.app.screens.outlook;
+package com.kone.app.pages.outlook;
+
+import static com.kone.app.pages.konesitesurvey.SiteHomePage.MSS_Street;
 
 import java.util.List;
 import org.openqa.selenium.By;
@@ -6,12 +8,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.kone.app.screens.WebBaseScreen;
-import com.kone.app.screens.salesforce.MainScreen;
-import ru.yandex.qatools.allure.annotations.Step;
-import static com.kone.app.screens.konesitesurvey.SiteHomeScreen.MSS_Street;
 
-public class OutlookHomeScreen extends WebBaseScreen {
+import com.kone.app.pages.WebBasePage;
+import com.kone.app.pages.salesforce.MainPage;
+
+import ru.yandex.qatools.allure.annotations.Step;
+
+public class OutlookHomePage extends WebBasePage {
 
 	private By header_Office365 = By.xpath("//*[text()='Office 365']");
 	private By lnk_MailTimeStamp = By.xpath("//*[starts-with(text(),'New Survey Task Created')]/../../..//span[contains(text(),'PM') or contains(text(),'AM')]");
@@ -22,7 +25,7 @@ public class OutlookHomeScreen extends WebBaseScreen {
 	public static String taskID;
 
 	@Step("Get Task ID from mail")
-	public OutlookHomeScreen getTaskID() {
+	public OutlookHomePage getTaskID() {
 		
 		List<WebElement> MailTimeStamps = gettingWebElementsfromList(lnk_MailTimeStamp);
 		for (WebElement MailTimeStamp : MailTimeStamps) { 		// System.out.println("TimeStamp=> "+MailTimeStamp.getText());
@@ -37,7 +40,7 @@ public class OutlookHomeScreen extends WebBaseScreen {
 			}
 		}
 
-		OutlookHomeScreen outlookHomeScreen = new OutlookHomeScreen();
+		OutlookHomePage outlookHomeScreen = new OutlookHomePage();
 		return outlookHomeScreen;
 	}
 

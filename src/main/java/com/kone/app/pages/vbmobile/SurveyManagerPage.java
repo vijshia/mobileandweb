@@ -1,10 +1,10 @@
-package com.kone.app.screens.vbmobile;
+package com.kone.app.pages.vbmobile;
 
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import com.kone.app.screens.PhoneBaseScreen;
+import com.kone.app.pages.PhoneBasePage;
 import com.kone.framework.context.TestContext;
 
 import io.appium.java_client.AppiumDriver;
@@ -12,21 +12,21 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class SurveyManagerScreen extends PhoneBaseScreen {
+public class SurveyManagerPage extends PhoneBasePage {
 	
     public static AppiumDriver<MobileElement> driver;
     
     private By menuButton = By.xpath("//*[@aria-label='SideMenu']");
 	
-	public SurveyManagerScreen() {
+	public SurveyManagerPage() {
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
 	
 	@Step("Open side menu")
-	public SideMenuScreen openSideMenu() {
+	public SideMenuPage openSideMenu() {
 		
 		driver.findElement(menuButton).click();
-		SideMenuScreen sideMenuScreen = new SideMenuScreen();
+		SideMenuPage sideMenuScreen = new SideMenuPage();
 		Assert.assertTrue(sideMenuScreen.
 				isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
 				"Failed to open side menu");
@@ -34,11 +34,11 @@ public class SurveyManagerScreen extends PhoneBaseScreen {
 	}
 	
 	@Step("Open survey id {0}")
-	public SurveyScreen openSurvey(String taskId) {
+	public SurveyPage openSurvey(String taskId) {
 		
 		By surveyTaskId = By.xpath("//span[text()='" + taskId + "']");
 		driver.findElement(surveyTaskId).click();
-		SurveyScreen surveyScreen = new SurveyScreen();
+		SurveyPage surveyScreen = new SurveyPage();
 		Assert.assertTrue(surveyScreen.
 				isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
 				"Failed to open survey id " + taskId);

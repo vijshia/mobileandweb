@@ -1,9 +1,9 @@
-package com.kone.app.screens.vbmobile;
+package com.kone.app.pages.vbmobile;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import com.kone.app.screens.PhoneBaseScreen;
+import com.kone.app.pages.PhoneBasePage;
 import com.kone.framework.context.TestContext;
 
 import io.appium.java_client.AppiumDriver;
@@ -11,7 +11,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class TasksScreen extends PhoneBaseScreen{
+public class TasksPage extends PhoneBasePage{
 	
 public static AppiumDriver<MobileElement> driver;
 
@@ -24,13 +24,13 @@ public static AppiumDriver<MobileElement> driver;
     private By downloadButton = By.xpath("//span[text()='Download']");
     private By plannedSurveyType = By.xpath("//span[text()='Planned Survey Type']");
 	
-	public TasksScreen() {
+	public TasksPage() {
 		
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
 	
 	@Step("Download task which has id {0}")
-	public SurveyManagerScreen downloadTaksById(String taskId) {
+	public SurveyManagerPage downloadTaksById(String taskId) {
 		
 		waitForElementPresent(plannedSurveyType, 30); /* Wait for tasks loaded*/
 		driver.findElement(searchButton).click();
@@ -40,7 +40,7 @@ public static AppiumDriver<MobileElement> driver;
 		waitForElementPresent(taskIdNumber, DEFAULT_WAIT_ELEMENT_TIMEOUT);
 		driver.findElement(taskCheckBox).click();
 		driver.findElement(downloadButton).click();
-		SurveyManagerScreen surveyManagerScreen = new SurveyManagerScreen();
+		SurveyManagerPage surveyManagerScreen = new SurveyManagerPage();
 		Assert.assertTrue(surveyManagerScreen.
 				isDisplayed(TASK_DOWNLOAD_TIMEOUT),
 				"Failed download task " + taskId);

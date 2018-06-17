@@ -1,16 +1,16 @@
-package com.kone.app.tests.basetests.vbmobile;
+package com.kone.app.tests.testcases.vbmobile;
 
 import org.testng.annotations.Test;
 
-import com.kone.app.screens.vbmobile.LoginScreen;
-import com.kone.app.screens.vbmobile.SurveyManagerScreen;
-import com.kone.app.tests.basetests.VbmobileBaseTest;
+import com.kone.app.pages.vbmobile.LoginPage;
+import com.kone.app.pages.vbmobile.SurveyManagerPage;
+import com.kone.app.tests.testcases.VbmobileBaseTest;
 
 
 public class VbmobileAuthenticationTests extends VbmobileBaseTest{
     
-	private LoginScreen loginScreen;
-	private SurveyManagerScreen surveyManagerScreen;
+	private LoginPage loginScreen;
+	private SurveyManagerPage surveyManagerScreen;
 	protected String loginUser;
 	protected String loginPassword;
 	protected String frontline;
@@ -21,8 +21,8 @@ public class VbmobileAuthenticationTests extends VbmobileBaseTest{
 		this.loginPassword = password;
 		this.frontline = frontline;
 		
-		loginScreen = new LoginScreen();
-		surveyManagerScreen = new SurveyManagerScreen();
+		loginScreen = new LoginPage();
+		surveyManagerScreen = new SurveyManagerPage();
 	}
 	
     @Test(groups={ "vbmobie_login" })

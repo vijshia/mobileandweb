@@ -1,27 +1,27 @@
-package com.kone.app.tests.basetests.salesforce;
+package com.kone.app.tests.testcases.salesforce;
 
 import org.testng.annotations.Test;
 
-import com.kone.app.screens.konesitesurvey.SiteHomeScreen;
-import com.kone.app.screens.konesitesurvey.SiteLoginScreen;
-import com.kone.app.screens.salesforce.LoginScreen;
-import com.kone.app.screens.salesforce.MainScreen;
-import com.kone.app.screens.salesforce.SelectOpportunityScreen;
-import com.kone.app.tests.basetests.SalesforceBaseTest;
-import com.kone.app.screens.outlook.OutlookLoginScreen;
-import com.kone.app.screens.outlook.OutlookURLLaunch;
-import com.kone.app.screens.outlook.OutlookHomeScreen;
+import com.kone.app.pages.konesitesurvey.SiteHomePage;
+import com.kone.app.pages.konesitesurvey.SiteLoginPage;
+import com.kone.app.pages.outlook.OutlookHomePage;
+import com.kone.app.pages.outlook.OutlookLoginPage;
+import com.kone.app.pages.outlook.OutlookURLLaunch;
+import com.kone.app.pages.salesforce.LoginPage;
+import com.kone.app.pages.salesforce.MainPage;
+import com.kone.app.pages.salesforce.SelectOpportunityPage;
+import com.kone.app.tests.testcases.SalesforceBaseTest;
 
 
 public class SalesforceAuthenticationTests extends SalesforceBaseTest{
     
-	private LoginScreen loginScreen;
-	private MainScreen mainScreen;
-	private SelectOpportunityScreen searchResultScreen;
-	private SiteLoginScreen siteLoginScreen;
-	private SiteHomeScreen siteHomeScreen;
-	private OutlookLoginScreen outlookloginScreen;
-	private OutlookHomeScreen outlookHomeScreen;
+	private LoginPage loginScreen;
+	private MainPage mainScreen;
+	private SelectOpportunityPage searchResultScreen;
+	private SiteLoginPage siteLoginScreen;
+	private SiteHomePage siteHomeScreen;
+	private OutlookLoginPage outlookloginScreen;
+	private OutlookHomePage outlookHomeScreen;
 	private OutlookURLLaunch outlookURLLaunch;
 	
 	protected String salesForceloginUser;
@@ -40,7 +40,7 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 		/*this.outLookloginUser = outlookUsername;
 		this.outLookPassword = outlookPassword;*/
 		
-		loginScreen = new LoginScreen();
+		loginScreen = new LoginPage();
 //		outlookloginScreen=new OutlookLoginScreen();
 	}
 	

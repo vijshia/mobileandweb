@@ -1,11 +1,11 @@
-package com.kone.app.screens.vbmobile;
+package com.kone.app.pages.vbmobile;
 
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import com.kone.app.screens.PhoneBaseScreen;
+import com.kone.app.pages.PhoneBasePage;
 import com.kone.framework.context.TestContext;
 import com.kone.framework.utility.Log;
 
@@ -13,11 +13,11 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class SurveyScreen extends PhoneBaseScreen {
+public class SurveyPage extends PhoneBasePage {
 	
 public static AndroidDriver<MobileElement> driver;
 	
-	public SurveyScreen() {
+	public SurveyPage() {
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
 	
@@ -248,14 +248,14 @@ public static AndroidDriver<MobileElement> driver;
 	 * and verify that it is ready to be uploaded.
 	 */
 	@Step("Complete the survey")
-	public UploadScreen completeSurvey() {
+	public UploadPage completeSurvey() {
 		
 		driver.findElement(bottomSheetButton).click();
 		driver.findElement(completeButton).click();
 		waitForElementPresent(completeSurveyButton,
 				              DEFAULT_WAIT_ELEMENT_TIMEOUT);
 		driver.findElement(completeSurveyButton).click();
-		UploadScreen uploadScreen = new UploadScreen();
+		UploadPage uploadScreen = new UploadPage();
 		Assert.assertTrue(uploadScreen.
 				isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
 				"Failed to complete the survey");

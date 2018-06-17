@@ -1,20 +1,20 @@
-package com.kone.app.screens.vbmobile;
+package com.kone.app.pages.vbmobile;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-import com.kone.app.screens.PhoneBaseScreen;
+import com.kone.app.pages.PhoneBasePage;
 import com.kone.framework.context.TestContext;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class LoginScreen extends PhoneBaseScreen {
+public class LoginPage extends PhoneBasePage {
 	
 public static AndroidDriver<MobileElement> driver;
 	
-	public LoginScreen() {
+	public LoginPage() {
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
 	
@@ -28,7 +28,7 @@ public static AndroidDriver<MobileElement> driver;
 	private By downloading = By.xpath("//*[contains(text(), 'Downloading')]");
 	
 	@Step("Login vb-mobile with username {0} and fronline {2}")
-	public SurveyManagerScreen signIn(String email, String password, String frontline) {
+	public SurveyManagerPage signIn(String email, String password, String frontline) {
 
 		waitForElementPresent(usernameInput, 30);
 		driver.findElement(usernameInput).sendKeys(email);
@@ -45,7 +45,7 @@ public static AndroidDriver<MobileElement> driver;
 		waitForElementPresent(releaseNote, 5);
 		driver.findElement(closeButton).click();
 		
-		SurveyManagerScreen surveyManagerScreen = new SurveyManagerScreen();
+		SurveyManagerPage surveyManagerScreen = new SurveyManagerPage();
 		Assert.assertTrue(surveyManagerScreen.
 				isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
 				"Failed to login");

@@ -1,17 +1,18 @@
-package com.kone.app.screens.salesforce;
+package com.kone.app.pages.salesforce;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import com.kone.app.screens.WebBaseScreen;
+
+import com.kone.app.pages.WebBasePage;
 import com.kone.framework.context.WebContext;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class LoginScreen extends WebBaseScreen {
+public class LoginPage extends WebBasePage {
 	
 public static WebDriver wdriver;
 	
-	public LoginScreen() {
+	public LoginPage() {
 		wdriver = WebContext.wdriver;
 	}
 	
@@ -20,7 +21,7 @@ public static WebDriver wdriver;
 	private By signInButton = By.id("Login");
 
 	@Step("Login to SalesForce")
-	public MainScreen signIn (String email, String password) {
+	public MainPage signIn (String email, String password) {
 		email = email + ".qa";
 		
 		waitForElementPresent(usernameInput, 30);
@@ -29,7 +30,7 @@ public static WebDriver wdriver;
 //		wdriver.findElement(passwordInput).sendKeys(password);
 		wdriver.findElement(signInButton).click();
 		
-		MainScreen mainScreen = new MainScreen();
+		MainPage mainScreen = new MainPage();
 		Assert.assertTrue(mainScreen.isDisplayed(), "Failed to login");
 		return mainScreen;
 	}

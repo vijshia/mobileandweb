@@ -1,4 +1,4 @@
-package com.kone.app.screens;
+package com.kone.app.pages;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -14,16 +14,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
 import ru.yandex.qatools.allure.annotations.Step;
-import static com.kone.app.screens.konesitesurvey.SiteHomeScreen.lnk_selectPlannedTypes;
-import static com.kone.app.screens.salesforce.SelectOpportunityScreen.lnk_SearchedOpportunity;
-import static com.kone.app.screens.outlook.OutlookLoginScreen.btn_Sign;
 
-public class WebBaseScreen {
+import static com.kone.app.pages.konesitesurvey.SiteHomePage.lnk_selectPlannedTypes;
+import static com.kone.app.pages.outlook.OutlookLoginPage.btn_Sign;
+import static com.kone.app.pages.salesforce.SelectOpportunityPage.lnk_SearchedOpportunity;
+
+public class WebBasePage {
 
 	public static WebDriver wdriver;
 	private By Replaced_Xpath;
 
-	public WebBaseScreen() {
+	public WebBasePage() {
 		wdriver = WebContext.wdriver;
 	}
 

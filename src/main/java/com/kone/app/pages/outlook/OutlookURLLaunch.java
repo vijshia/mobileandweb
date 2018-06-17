@@ -1,19 +1,21 @@
-package com.kone.app.screens.outlook;
+package com.kone.app.pages.outlook;
 
-import com.kone.app.screens.WebBaseScreen;
+import com.kone.app.pages.WebBasePage;
+import com.kone.app.pages.outlook.OutlookLoginPage;
+
 import ru.yandex.qatools.allure.annotations.Step;
-import com.kone.app.screens.outlook.OutlookLoginScreen;
-import static com.kone.app.screens.WebBaseScreen.wdriver;
+
+import static com.kone.app.pages.WebBasePage.wdriver;
 
 import org.testng.Assert;
 
-public class OutlookURLLaunch extends WebBaseScreen {
+public class OutlookURLLaunch extends WebBasePage {
 
 	@Step("Launch OutLook URL")
-	public OutlookLoginScreen launchOutLookURL() {
+	public OutlookLoginPage launchOutLookURL() {
 		wdriver.navigate().to("https://outlook.office365.com");
 	
-		OutlookLoginScreen outlookLoginScreen = new OutlookLoginScreen();
+		OutlookLoginPage outlookLoginScreen = new OutlookLoginPage();
 		Assert.assertTrue(outlookLoginScreen.isDisplayed());
 		return outlookLoginScreen;
 	}

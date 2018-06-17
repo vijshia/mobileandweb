@@ -1,15 +1,15 @@
-package com.kone.app.screens.vbmobile;
+package com.kone.app.pages.vbmobile;
 
 import org.openqa.selenium.By;
 
-import com.kone.app.screens.PhoneBaseScreen;
+import com.kone.app.pages.PhoneBasePage;
 import com.kone.framework.context.TestContext;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class UploadScreen extends PhoneBaseScreen{
+public class UploadPage extends PhoneBasePage{
 	
 public static AppiumDriver<MobileElement> driver;
 
@@ -17,7 +17,7 @@ public static AppiumDriver<MobileElement> driver;
 	
     private By backupText = By.xpath("//*[text()='Create backup after upload of selected surveys?']");
 	
-	public UploadScreen() {
+	public UploadPage() {
 		
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}

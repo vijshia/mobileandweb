@@ -1,14 +1,15 @@
-package com.kone.app.screens.outlook;
+package com.kone.app.pages.outlook;
 
 import java.util.List;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import com.kone.app.screens.WebBaseScreen;
-import com.kone.app.screens.salesforce.MainScreen;
+
+import com.kone.app.pages.WebBasePage;
+import com.kone.app.pages.salesforce.MainPage;
 import com.kone.framework.context.WebContext;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class OutlookLoginScreen extends WebBaseScreen {
+public class OutlookLoginPage extends WebBasePage {
 	
 	private By txt_EmailSignin = By.xpath("//*[@type='email' or @placeholder='someone@example.com ' or contains(@aria-label,'email')]");
 	private By btn_Next = By.xpath("//*[contains(@type, 'submit') or contains(@value,'Next')]");
@@ -21,7 +22,7 @@ public class OutlookLoginScreen extends WebBaseScreen {
 	public static By btn_Sign=By.xpath("//*[text()='Replace']");
 
 	@Step("Login to OutLook")
-	public OutlookHomeScreen emailLogin(String username, String password) {
+	public OutlookHomePage emailLogin(String username, String password) {
 		
 		waitForElementPresent(txt_EmailSignin, 20);
 		String UserAccount_Check_New = gettingText(txt_EmailSignin);
@@ -47,7 +48,7 @@ public class OutlookLoginScreen extends WebBaseScreen {
 		clickonButton(Checkbox_DontShow);
 		clickonButton(btn_Staysignedin_No);
 		
-		OutlookHomeScreen outlookHomeScreen=new OutlookHomeScreen();
+		OutlookHomePage outlookHomeScreen=new OutlookHomePage();
 		Assert.assertTrue(outlookHomeScreen.isDisplayed());
 		return outlookHomeScreen;
 	}

@@ -1,22 +1,22 @@
-package com.kone.app.tests.basetests.vbmobile;
+package com.kone.app.tests.testcases.vbmobile;
 
 import java.util.ArrayList;
 
 import org.testng.annotations.Test;
 
-import com.kone.app.screens.konesitesurvey.SiteHomeScreen;
-import com.kone.app.screens.vbmobile.SurveyManagerScreen;
-import com.kone.app.screens.vbmobile.SurveyScreen;
-import com.kone.app.screens.vbmobile.TasksScreen;
-import com.kone.app.tests.basetests.VbmobileBaseTest;
+import com.kone.app.pages.konesitesurvey.SiteHomePage;
+import com.kone.app.pages.vbmobile.SurveyManagerPage;
+import com.kone.app.pages.vbmobile.SurveyPage;
+import com.kone.app.pages.vbmobile.TasksPage;
+import com.kone.app.tests.testcases.VbmobileBaseTest;
 import com.kone.framework.utility.Log;
 
 
 public class VbmobileSurveyTests extends VbmobileBaseTest{
     
-	private SurveyManagerScreen surveyManagerScreen;
-	private TasksScreen tasksScreen;
-	private SurveyScreen surveyScreen;
+	private SurveyManagerPage surveyManagerScreen;
+	private TasksPage tasksScreen;
+	private SurveyPage surveyScreen;
 	
 	protected String loginUser;
 	protected String loginPassword;
@@ -27,7 +27,7 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
 	public VbmobileSurveyTests(ArrayList<String[]> surveyData) {
 		
 		this.surveyData = surveyData;
-		surveyManagerScreen = new SurveyManagerScreen();
+		surveyManagerScreen = new SurveyManagerPage();
 	}
     
     @Test(groups= {"survey"})
@@ -35,7 +35,7 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
     	tasksScreen = surveyManagerScreen.
     					openSideMenu().
     					openTasks();
-    	surveyName = SiteHomeScreen.MSS_Street;
+    	surveyName = SiteHomePage.MSS_Street;
     	tasksScreen.downloadTaksById(surveyName);
     	surveyScreen = surveyManagerScreen.openSurvey(surveyName);
     	surveyScreen.answerSurvey(surveyData);
