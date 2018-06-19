@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
 import ru.yandex.qatools.allure.annotations.Step;
-
 import static com.kone.app.pages.konesitesurvey.SiteHomePage.lnk_selectPlannedTypes;
 import static com.kone.app.pages.outlook.OutlookLoginPage.btn_Sign;
 import static com.kone.app.pages.salesforce.SelectOpportunityPage.lnk_SearchedOpportunity;
