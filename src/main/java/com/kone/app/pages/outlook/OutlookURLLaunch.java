@@ -7,10 +7,13 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.kone.app.pages.WebBasePage.wdriver;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 
 public class OutlookURLLaunch extends WebBasePage {
 
+    private By searchButton = By.id("phSearchButton");
+    
 	@Step("Launch OutLook URL")
 	public OutlookLoginPage launchOutLookURL() {
 		wdriver.navigate().to("https://outlook.office365.com");
@@ -22,6 +25,6 @@ public class OutlookURLLaunch extends WebBasePage {
 	
 	@Step("Check if OutLook URL has been Launched")
 	public boolean isDisplayed() {
-		return gettingCurrentURL() != null;
+		return waitForElementPresent(searchButton, 15) != null;
 	}
 }

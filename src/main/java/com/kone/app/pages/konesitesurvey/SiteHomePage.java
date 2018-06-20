@@ -96,17 +96,12 @@ public class SiteHomePage extends WebBasePage{
 			clickonButton(btn_ok);
 			scrollDownJavaScript();
 			clickonButton(btn_createTask);
-/*			waitForElementPresent(stringtoXpathContains("Successfully created task"), 30);
-			Assert.assertTrue(gettingWebElement(By.xpath("//*[text()='Successfully created task']")).isDisplayed());*/
-			Assert.assertTrue(true);
+			waitForElementPresent(stringtoXpathContains("Successfully created task"), 30);
+			Assert.assertTrue(gettingWebElement(By.xpath("//*[text()='Successfully created task']")).isDisplayed());
 			
 		OutlookURLLaunch outlookURLLaunch=new OutlookURLLaunch();
 		Assert.assertTrue(outlookURLLaunch.isDisplayed());
 		return outlookURLLaunch;
-			
-/*		MainScreen salesForceMainScreen=new MainScreen();
-		Assert.assertTrue(salesForceMainScreen.isDisplayed());
-		return salesForceMainScreen;*/	
 	}
 	
 	@Step("Check if the Select LIS or LIO Pop-up is displayed")
