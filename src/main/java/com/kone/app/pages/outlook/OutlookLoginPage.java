@@ -55,6 +55,6 @@ public class OutlookLoginPage extends WebBasePage {
 	
 	@Step("Check if Sign in header is displayed with the text someone@example.com")
 	public boolean isDisplayed() {
-		return waitForElementPresent(txt_EmailSignin, 150) != null;
+		return waitForElementPresent(txt_EmailSignin, 30) != null;
 	}
 }
