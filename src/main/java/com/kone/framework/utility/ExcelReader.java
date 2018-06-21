@@ -40,16 +40,19 @@ public class ExcelReader {
 		}
 	}
 
-	public HashMap<String, List<String>> GetData(String sheetname) throws Exception {
+//	public HashMap<String, List<String>> GetData(String sheetname) throws Exception {
+	public HashMap<String, String> GetData(String sheetname) throws Exception {
 		try {
 			sh = wb.getSheet(sheetname);
-			HashMap<String, List<String>> hm_ex_data = Data_from_Excel(sheetname);
+//			HashMap<String, List<String>> hm_ex_data = Data_from_Excel(sheetname);
+			HashMap<String, String> hm_ex_data = Data_from_Excel(sheetname);
 			String Data_Header = null;
 			Row header_row = sh.getRow(sh.getFirstRowNum());
 			int header_row_Count = header_row.getLastCellNum();
 			for (int j = 0; j < header_row_Count; j++) {
 				Data_Header = header_row.getCell(j).getStringCellValue();
-				List<String> Data_valueS = new LinkedList<String>();
+//				List<String> Data_valueS = new LinkedList<String>();
+				String Data_valueS = null;
 				for (int k = 1; k < sh.getLastRowNum() + 1; k++) {
 					int last = sh.getLastRowNum();
 					Row value_row = sh.getRow(k);
@@ -59,7 +62,7 @@ public class ExcelReader {
 						a_1 = cellToString(a1);
 					}
 					if (a_1 != "NA" && !a_1.isEmpty() && a_1 != null) {
-						Data_valueS.add(a_1);
+						Data_valueS = a_1;
 					}
 				}
 				hm_ex_data.put(Data_Header, Data_valueS);
@@ -110,9 +113,9 @@ public class ExcelReader {
 		return null;
 	}
 
-	public HashMap<String, List<String>> Data_from_Excel(String sheet_name) throws Exception {
-		HashMap<String, List<String>> hm_data = null;
-		hm_data = new HashMap<String, List<String>>();
+	public HashMap<String, String> Data_from_Excel(String sheet_name) throws Exception {
+		HashMap<String, String> hm_data = null;
+		hm_data = new HashMap<String, String>();
 		return hm_data;
 	}
 	/*
@@ -124,7 +127,7 @@ public class ExcelReader {
 	private String cellToString(Cell cell) {
 		Object result = null;
 		FormulaEvaluator formulaEvaluator = wb.getCreationHelper().createFormulaEvaluator();
-		// if (cell != null) {
+
 		switch (formulaEvaluator.evaluateInCell(cell).getCellTypeEnum()) {
 		case NUMERIC:
 			DataFormatter formatter = new DataFormatter();
@@ -138,7 +141,6 @@ public class ExcelReader {
 			break;
 		default:
 			result = "NA";
-			// }
 		}
 		return result.toString();
 	}

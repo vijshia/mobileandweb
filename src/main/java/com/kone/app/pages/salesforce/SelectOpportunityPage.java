@@ -5,8 +5,6 @@ import com.kone.app.pages.konesitesurvey.SiteLoginPage;
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
 import ru.yandex.qatools.allure.annotations.Step;
-
-import static com.kone.app.pages.salesforce.MainPage.SF_Opportunity_Name;
 import static com.kone.framework.context.WebContext.wdriver;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -22,9 +20,9 @@ public class SelectOpportunityPage extends WebBasePage {
 	private By lnk_NewSiteSurvey=By.xpath("//*[text()='Request a New Site Survey']");
 	
 	@Step("Selecting Existing Opportunity and click on SiteSurvey Link")
-	public SiteLoginPage clickonOpportunity() {
+	public SiteLoginPage clickonOpportunity(String salesforceopportunityname) {
 		
-		clickonButton(stringtoXpathSearchedOpportunity(SF_Opportunity_Name));
+		clickonButton(stringtoXpathSearchedOpportunity(salesforceopportunityname));
 		waitForElementPresent(lnk_NewSiteSurvey, 20);
 		URL=gettingCurrentURL();
 		clickonButton(lnk_NewSiteSurvey);
@@ -36,8 +34,8 @@ public class SelectOpportunityPage extends WebBasePage {
 	}
 	
 	@Step("Check if the main page is displayed")
-	public boolean isDisplayed() {
-		return waitForElementPresent(stringtoXpathSearchedOpportunity(SF_Opportunity_Name), 15) != null;
+	public boolean isDisplayed(String salesforceopportunityname) {
+		return waitForElementPresent(stringtoXpathSearchedOpportunity(salesforceopportunityname), 15) != null;
 	}
 
 }

@@ -2,17 +2,11 @@ package com.kone.app.pages.konesitesurvey;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.outlook.OutlookURLLaunch;
 import com.kone.app.pages.salesforce.MainPage;
-
 import ru.yandex.qatools.allure.annotations.Step;
-
-import static com.kone.app.pages.konesitesurvey.SiteLoginPage.excelData;
-import static com.kone.app.pages.konesitesurvey.SiteLoginPage.excelPath;
 import static com.kone.app.pages.salesforce.SelectOpportunityPage.URL;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -40,29 +34,11 @@ public class SiteHomePage extends WebBasePage{
 	public static String MSS_Street;
 	public static String dateformat;
 	
-	private String MSS_CustomerContact;
-	private String MSS_PostalCode;
-	private String MSS_City;
-	private String MSS_SelectPlannedTypes;
-	
 	@Step("Check if the Task has been created")
-	public OutlookURLLaunch createTask() {	
+	public OutlookURLLaunch createTask(String sitecustomercontact, String sitestreet, String sitepostalcode, String sitecity, String siteselectplannedtypes) {	
 		
 		dateformat = new SimpleDateFormat("ddMMMhhmm_ssaa").format(Calendar.getInstance().getTime());
-		
-		ExcelReader excelReader=new ExcelReader(excelPath);
-		try {
-			excelData=excelReader.GetData("Web_Login_Data");
-			
-			MSS_CustomerContact=excelData.get("MSS_CustomerContact").get(0);
-			String exl_MSS_Street=excelData.get("MSS_Street").get(0);
-			MSS_Street=exl_MSS_Street+"_"+dateformat;
-			MSS_PostalCode=excelData.get("MSS_PostalCode").get(0);
-			MSS_City=excelData.get("MSS_City").get(0);
-			MSS_SelectPlannedTypes=excelData.get("MSS_SelectPlannedTypes").get(0);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		MSS_Street=sitestreet+"_"+dateformat;
 		
 /*		for(int i=0; i<30; ) {
 			String attribute=gettingAttributebyClass(tocheck_customerData);
@@ -82,16 +58,16 @@ public class SiteHomePage extends WebBasePage{
         String one=urltoSplit[5].trim();
 		if(getHeaderText.contains(one)) {*/
 			waitForElementtobeClickable(txt_customerContact, 30);
-			enteringValueinTextField(txt_customerContact, MSS_CustomerContact);
+			enteringValueinTextField(txt_customerContact, sitecustomercontact);
 			enteringValueinTextField(txt_street, MSS_Street);
-			enteringValueinTextField(txt_postalCode, MSS_PostalCode);
-			enteringValueinTextField(txt_city, MSS_City);
+			enteringValueinTextField(txt_postalCode, sitepostalcode);
+			enteringValueinTextField(txt_city, sitecity);
 			clickonButton(lookup_surveyor);
 			waitForElementPresent(lnk_assigntoMe, 20);
 			clickonButton(lnk_assigntoMe);
 			clickonButton(lookup_plannedSType);
-			waitForElementPresent(stringtoXpathContains(MSS_SelectPlannedTypes), 10);
-			clickonButton(stringtoXpathContains(MSS_SelectPlannedTypes));
+			waitForElementPresent(stringtoXpathContains(siteselectplannedtypes), 10);
+			clickonButton(stringtoXpathContains(siteselectplannedtypes));
 			waitForElementPresent(tocheck_selectPlannedTypes, 20);
 			clickonButton(btn_ok);
 			scrollDownJavaScript();

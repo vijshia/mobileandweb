@@ -3,7 +3,6 @@ package com.kone.app.pages.outlook;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.salesforce.MainPage;
 import com.kone.framework.context.WebContext;
