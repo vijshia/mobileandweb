@@ -8,6 +8,7 @@ import com.kone.app.pages.konesitesurvey.SiteHomePage;
 import com.kone.app.pages.vbmobile.SurveyManagerPage;
 import com.kone.app.pages.vbmobile.SurveyPage;
 import com.kone.app.pages.vbmobile.TasksPage;
+import com.kone.app.pages.vbmobile.UploadPage;
 import com.kone.app.tests.testcases.VbmobileBaseTest;
 import com.kone.framework.utility.Log;
 
@@ -17,6 +18,7 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
 	private SurveyManagerPage surveyManagerScreen;
 	private TasksPage tasksScreen;
 	private SurveyPage surveyScreen;
+	private UploadPage uploadPage;
 	
 	protected String loginUser;
 	protected String loginPassword;
@@ -39,6 +41,7 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
     	tasksScreen.downloadTaksById(surveyName);
     	surveyScreen = surveyManagerScreen.openSurvey(surveyName);
     	surveyScreen.answerSurvey(surveyData);
-    	surveyScreen.completeSurvey();
+    	uploadPage = surveyScreen.completeSurvey();
+    	uploadPage.uploadSurvey();
     }
 }

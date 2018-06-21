@@ -75,18 +75,6 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 				}
 		}
 		
-		this.salesForceloginUser = salesForceloginUser;
-		this.salesForceloginPassword = salesForceloginPassword;
-		this.siteloginUser	= siteloginUser;
-		this.sitePassword	= sitePassword;
-		this.salesForceOpportunityName = salesForceOpportunityName;
-		this.siteFrontlineCountry = siteFrontlineCountry;
-		this.siteCustomerContact = siteCustomerContact;
-		this.siteStreet = siteStreet;
-		this.sitePostalCode = sitePostalCode;
-		this.siteCity = siteCity;
-		this.siteSelectPlannedTypes = siteSelectPlannedTypes;
-		
 		loginScreen = new LoginPage();
 //		outlookloginScreen=new OutlookLoginScreen();
 	}
@@ -101,9 +89,9 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
     	siteLoginScreen=searchResultScreen.clickonOpportunity(this.salesForceOpportunityName);
     	siteHomeScreen=siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword, this.siteFrontlineCountry);
     	outlookURLLaunch=siteHomeScreen.createTask(this.siteCustomerContact, this.siteStreet, this.sitePostalCode, this.siteCity, this.siteSelectPlannedTypes);
-    	outlookloginScreen=outlookURLLaunch.launchOutLookURL();
-    	outlookHomeScreen=outlookloginScreen.emailLogin(this.salesForceloginUser, this.sitePassword);
-    	outlookHomeScreen.getTaskID();
+//    	outlookloginScreen=outlookURLLaunch.launchOutLookURL();
+//    	outlookHomeScreen=outlookloginScreen.emailLogin(this.salesForceloginUser, this.sitePassword);
+//    	outlookHomeScreen.getTaskID();
     }
 		
 /*		this.salesForceloginUser = salesForceUser;
