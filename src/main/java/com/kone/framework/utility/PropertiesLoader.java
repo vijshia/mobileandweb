@@ -26,12 +26,13 @@ public class PropertiesLoader extends Properties{
     }
 	
     static {
+    	
         try {
-            instance.load(new FileInputStream(new File("properties/config.properties")));
+            instance.load(new FileInputStream(new File("input/config/config.properties")));
         } catch (IOException e) {
             Log.error("Failed to read `" 
                                + System.getProperty("user.dir") 
-                               + "/properties/config.properties`. Please make sure it exists!");
+                               + "/input/config/config.properties`. Please make sure it exists!");
             System.exit(1);
         }
     }

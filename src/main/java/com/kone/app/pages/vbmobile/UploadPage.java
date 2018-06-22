@@ -15,15 +15,24 @@ public static AppiumDriver<MobileElement> driver;
 
 	protected static final long TASK_DOWNLOAD_TIMEOUT = 60;
 	
-    private By backupText = By.xpath("//*[text()='Create backup after upload of selected surveys?']");
+    private By successApproveText = By.xpath("//*[text()='Successfully approved task']");
+    private By uploadAndReleaseBtn = By.xpath("//button[@aria-label='upload']");
 	
 	public UploadPage() {
 		
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
 	
+	public void uploadSurvey() {
+		
+		waitForElementPresent(uploadAndReleaseBtn, 30);
+		driver.findElement(uploadAndReleaseBtn).click();
+		waitForElementPresent(successApproveText, 180);
+	}
+	
+	
 	public boolean isDisplayed(long timeout) {
-		return waitForElementPresent(backupText, timeout) != null;
+		return waitForElementPresent(uploadAndReleaseBtn, timeout) != null;
 	}
 
 }
