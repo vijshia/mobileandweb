@@ -1,6 +1,9 @@
 package com.kone.app.pages.konesitesurvey;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.outlook.OutlookURLLaunch;
@@ -11,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import com.kone.framework.utility.ExcelReader;
+import com.kone.framework.utility.Log;
 
 public class SiteHomePage extends WebBasePage{
 	
@@ -30,6 +34,8 @@ public class SiteHomePage extends WebBasePage{
 	private By tocheck_selectPlannedTypes=By.xpath("//div[@ng-repeat='selectedType in selectedTypes track by $index']");
 	private By btn_ok=By.id("typeSelectorOkBtn");
 	private By btn_createTask=By.xpath("//*[contains(@ng-click,'createTask')]");
+	private By newPopUp=By.xpath("//*[@class='modal-body ng-scope']");
+	private By btn_popUpClose=By.xpath("//*[@id='closeReleaseNotesBtn']");
 	
 	public static String MSS_Street;
 	public static String dateformat;
@@ -48,6 +54,11 @@ public class SiteHomePage extends WebBasePage{
 			break;
 		}
 	}*/
+		waitForElementPresent(newPopUp, 50);
+		WebElement newpopupFooter=gettingWebElement(newPopUp);
+	    if(newpopupFooter.isDisplayed()) {
+	    	clickonButton(btn_popUpClose);
+	    }
 		waitForElementPresent(tocheck_customerDatas, 30);
 		clickonButton(btn_toNavigateLIO);
 		waitForElementPresent(header_check, 20);
@@ -82,7 +93,7 @@ public class SiteHomePage extends WebBasePage{
 	
 	@Step("Check if the Select LIS or LIO Pop-up is displayed")
 	public boolean isDisplayed() {
-		return waitForElementPresent(popup_toSelectLIS, 15) != null;
+		return waitForElementPresent(popup_toSelectLIS, 50) != null;
 
 	}
 }

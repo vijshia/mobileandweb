@@ -221,6 +221,7 @@ public class WebBasePage {
 	public WebElement scrollDownJavaScript() {
 
 		try {
+			Log.info("Page Scroll Down has been performed");
 			JavascriptExecutor js = (JavascriptExecutor) wdriver;
 			js.executeScript("scroll(0, 250);");
 		} catch (Exception e) {

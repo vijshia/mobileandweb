@@ -2,11 +2,8 @@ package com.kone.app.pages.outlook;
 
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.outlook.OutlookLoginPage;
-
 import ru.yandex.qatools.allure.annotations.Step;
-
 import static com.kone.app.pages.WebBasePage.wdriver;
-
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
