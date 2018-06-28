@@ -68,7 +68,7 @@
                     </property>
                 </properties>
                 <suiteXmlFiles>
-                    <suiteXmlFile>suites/vbmobile/authentication.xml</suiteXmlFile>
+                    <suiteXmlFile>suites/vbmobile/endtoend.xml</suiteXmlFile>
                 </suiteXmlFiles>
             </configuration>
             <dependencies>
