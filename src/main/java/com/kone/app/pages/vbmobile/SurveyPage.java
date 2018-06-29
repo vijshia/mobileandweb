@@ -252,7 +252,7 @@ public static AndroidDriver<MobileElement> driver;
 		
 		driver.findElement(bottomSheetButton).click();
 		driver.findElement(completeButton).click();
-		Log.info("***Click on element: " + completeButton);
+		Log.info("Click on element: " + completeButton);
 		waitForElementPresent(completeSurveyButton,
 				              DEFAULT_WAIT_ELEMENT_TIMEOUT);
 		driver.findElement(completeSurveyButton).click();

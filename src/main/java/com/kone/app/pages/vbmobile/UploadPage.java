@@ -27,11 +27,10 @@ public static AppiumDriver<MobileElement> driver;
 	
 	public void uploadSurvey() {
 		
-		Log.info("***Wait for element Not present: " + spinner);
 		waitForElementNotPresent(spinner, 100);
 		waitForElementPresent(uploadAndReleaseBtn, 50);
 		driver.findElement(uploadAndReleaseBtn).click();
-		Log.info("***Click on element: " + uploadAndReleaseBtn);
+		Log.info("Click on element: " + uploadAndReleaseBtn);
 		waitForElementPresent(successApproveText, 180);
 	}
 	
