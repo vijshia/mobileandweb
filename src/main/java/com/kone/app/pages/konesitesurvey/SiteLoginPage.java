@@ -32,7 +32,7 @@ public class SiteLoginPage extends WebBasePage {
 		enteringValueinTextField(txt_userName, username);
 		enteringPassword(txt_password, password);
 		clickonButton(lookup_frontLine);
-		waitForElementPresent(txt_frontLine, 10);
+		waitForElementPresent(txt_frontLine, 30);
 		enteringValueinTextField(txt_frontLine, sitefrontlinecountry);
 		clickonButton(lnk_country);
 //		waitForElementPresent(txt_frontLine, 10);
