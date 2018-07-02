@@ -94,7 +94,7 @@ public class SiteHomePage extends WebBasePage{
 	
 	@Step("Check if the Select LIS or LIO Pop-up is displayed")
 	public boolean isDisplayed() {
-		return waitForElementPresent(popup_toSelectLIS, 50) != null;
+		return waitForElementPresent(popup_toSelectLIS, 80) != null;
 
 	}
 }
