@@ -57,7 +57,8 @@ public class SiteHomePage extends WebBasePage{
 		waitForElementPresent(newPopUp, 50);
 		WebElement newpopupFooter=gettingWebElement(newPopUp);
 	    if(newpopupFooter.isDisplayed()) {
-	    	waitForElementPresent(btn_popUpClose, 50);
+	    	waitForElementPresent(btn_popUpClose, 60);
+	    	waitForElementtobeClickable(btn_popUpClose, 60);
 	    	clickonButton(btn_popUpClose);
 	    }
 		waitForElementPresent(tocheck_customerDatas, 30);
