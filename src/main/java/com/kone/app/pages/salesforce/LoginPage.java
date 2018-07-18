@@ -3,7 +3,6 @@ package com.kone.app.pages.salesforce;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import com.kone.app.pages.WebBasePage;
 import com.kone.framework.context.WebContext;
 import ru.yandex.qatools.allure.annotations.Step;

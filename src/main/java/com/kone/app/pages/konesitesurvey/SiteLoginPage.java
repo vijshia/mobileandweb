@@ -31,8 +31,16 @@ public class SiteLoginPage extends WebBasePage {
 		waitForElementPresent(txt_userName, 10);
 		enteringValueinTextField(txt_userName, username);
 		enteringPassword(txt_password, password);
+		
+		// Work around, need to implement absolute fix later.
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		clickonButton(lookup_frontLine);
-		waitForElementPresent(txt_frontLine, 10);
+		waitForElementPresent(txt_frontLine, 30);
 		enteringValueinTextField(txt_frontLine, sitefrontlinecountry);
 		clickonButton(lnk_country);
 //		waitForElementPresent(txt_frontLine, 10);

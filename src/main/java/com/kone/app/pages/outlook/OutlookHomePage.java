@@ -8,10 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.salesforce.MainPage;
-
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class OutlookHomePage extends WebBasePage {

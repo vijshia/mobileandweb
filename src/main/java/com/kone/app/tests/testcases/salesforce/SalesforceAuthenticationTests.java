@@ -81,7 +81,7 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 	
     @Test(groups={ "web", "login_salesforce" })
     void loginSalesForce() {
-    	wdriver.navigate().to("https://kone--qa.cs88.my.salesforce.com/006/o");
+    	wdriver.navigate().to("https://kone--qa.cs85.my.salesforce.com/006/o");
 //    	wdriver.navigate().to("https://test.salesforce.com/");
     	wdriver.manage().window().maximize();
     	mainScreen=loginScreen.signIn(this.salesForceloginUser, this.salesForceloginPassword);
