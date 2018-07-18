@@ -1,16 +1,15 @@
 package com.kone.app.tests.testcases.vbmobile;
 
 import java.util.ArrayList;
-
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.kone.app.pages.konesitesurvey.SiteHomePage;
 import com.kone.app.pages.vbmobile.SurveyManagerPage;
 import com.kone.app.pages.vbmobile.SurveyPage;
 import com.kone.app.pages.vbmobile.TasksPage;
 import com.kone.app.pages.vbmobile.UploadPage;
 import com.kone.app.tests.testcases.VbmobileBaseTest;
-import com.kone.framework.utility.Log;
+
 
 
 public class VbmobileSurveyTests extends VbmobileBaseTest{
@@ -25,6 +24,8 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
 	protected String frontline;
 	protected String surveyName;
 	protected ArrayList<String[]> surveyData;
+	protected String Excel_ValuetoStore;
+	protected String Mobile_MenutoSelect;
 	
 	public VbmobileSurveyTests(ArrayList<String[]> surveyData) {
 		
@@ -33,14 +34,16 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
 	}
     
     @Test(groups= {"survey"})
-    void answerSurveyTest() {
+    @Parameters({"mobileMenutoSelect"})
+    void answerSurveyTest(String mobileMenutoSelect) {
+    	mobileMenutoSelect = "New Task";
     	tasksScreen = surveyManagerScreen.
-    					openSideMenu().
+    					openSideMenu(mobileMenutoSelect).
     					openTasks();
     	surveyName = SiteHomePage.MSS_Street;
     	tasksScreen.downloadTaksById(surveyName);
     	surveyScreen = surveyManagerScreen.openSurvey(surveyName);
-    	surveyScreen.answerSurvey(surveyData);
+    	surveyScreen.answerSurvey(surveyData, mobileMenutoSelect);
     	uploadPage = surveyScreen.completeSurvey();
     	uploadPage.uploadSurvey();
     }

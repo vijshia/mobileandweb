@@ -17,6 +17,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 import static com.kone.app.pages.konesitesurvey.SiteHomePage.lnk_selectPlannedTypes;
 import static com.kone.app.pages.outlook.OutlookLoginPage.btn_Sign;
 import static com.kone.app.pages.salesforce.SelectOpportunityPage.lnk_SearchedOpportunity;
+import static com.kone.app.pages.konesitesurvey.SiteLoginPage.lnk_country;
 
 public class WebBasePage {
 
@@ -84,7 +85,7 @@ public class WebBasePage {
 	@Step("Entering value in: {0} - value: {1}")
 	public WebElement enteringValueinTextField(By by, String value) {
 
-		Log.info("Entering Value in the text field " + by + " / with the value" + value);
+		Log.info("Entering Value in the text field " + by + " / with the value " + value);
 		wdriver.findElement(by).sendKeys(value);
 		return wdriver.findElement(by);
 	}
@@ -94,6 +95,14 @@ public class WebBasePage {
 
 		Log.info("Click action performed in the link or button " + by);
 		wdriver.findElement(by).click();
+		return null;
+	}
+
+	@Step("Clearing value in the Element: {0}")
+	public WebElement clearValue(By by) {
+
+		Log.info("Clear action performed in the text field " + by);
+		wdriver.findElement(by).clear();
 		return null;
 	}
 
@@ -242,7 +251,7 @@ public class WebBasePage {
 		return null;
 	}
 
-	@Step("Converting userdata to Xpath key Contains : {0}")
+	@Step("Converting userdata (Contains) to Xpath key Contains : {0}")
 	public By stringtoXpathContains(String To_Replaced) {
 		try {
 			String str3 = lnk_selectPlannedTypes.toString();
@@ -268,10 +277,23 @@ public class WebBasePage {
 		return Replaced_Xpath;
 	}
 	
-	@Step("Converting userdata to Xpath key Contains : {0}")
+	@Step("Converting userdata (Equals) to Xpath key Contains : {0}")
 	public By stringtoXpathEquals(String To_Replaced) {
 		try {
 			String str3 = btn_Sign.toString();
+			String Value_Replaced = str3.replace("Replace", To_Replaced);
+			String Full_Replaced = Value_Replaced.replace("By.xpath: //", "//");
+			Replaced_Xpath = By.xpath(Full_Replaced);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return Replaced_Xpath;
+	}
+	
+	@Step("Converting userdata (Equals) to Xpath_sitefrontlinecountry key Contains : {0}")
+	public By stringtoXpathEqualssitefrontlinecountry(String To_Replaced) {
+		try {
+			String str3 = lnk_country.toString();
 			String Value_Replaced = str3.replace("Replace", To_Replaced);
 			String Full_Replaced = Value_Replaced.replace("By.xpath: //", "//");
 			Replaced_Xpath = By.xpath(Full_Replaced);

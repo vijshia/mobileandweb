@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Mobile Site Survey End-to-End Test]">
+  <listeners>
+    <listener class-name="com.kone.framework.listener.TestNGListener"/>
+  </listeners>
+  <test name="Create Survey in Salesforce, then Answer in VbMobile(failed)">
+    <parameter name="dataSource" value="properties/testdata/testdata.properties"/>
+    <classes>
+      <class name="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests">
+        <methods>
+          <include name="closeWebdriver"/>
+          <include name="getDriver"/>
+          <include name="loginSalesForce"/>
+        </methods>
+      </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests -->
+      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
+        <methods>
+          <include name="getDriver"/>
+          <include name="stopApiumServer"/>
+          <include name="loginTest"/>
+        </methods>
+      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
+      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests">
+        <methods>
+          <include name="getDriver"/>
+          <include name="answerSurveyTest"/>
+          <include name="stopApiumServer"/>
+        </methods>
+      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests -->
+    </classes>
+  </test> <!-- Create Survey in Salesforce, then Answer in VbMobile(failed) -->
+</suite> <!-- Failed suite [Mobile Site Survey End-to-End Test] -->

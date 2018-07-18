@@ -2,18 +2,16 @@ package com.kone.app.pages;
 
 import java.lang.reflect.Field;
 import java.time.Duration;
-import java.util.Arrays;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
 import com.kone.framework.context.TestContext;
 import com.kone.framework.utility.Log;
-
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -22,14 +20,19 @@ import io.appium.java_client.android.AndroidKeyMetastate;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import ru.yandex.qatools.allure.annotations.Step;
+import static com.kone.app.pages.vbmobile.SideMenuPage.menutoSelect;
 
 public class PhoneBasePage {
 	
 	public static AndroidDriver<MobileElement> driver;
 	
+	private By Replaced_Xpath;
+	
 	protected By searchButton = By.xpath("//md-icon[text()='search']");
 	protected static final long DEFAULT_WAIT_ELEMENT_TIMEOUT = 10;
 	protected static final long DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT = 30;
+	
+	
 	
 	public PhoneBasePage() {
 		
@@ -215,4 +218,46 @@ public class PhoneBasePage {
     	WebDriverWait wait = new WebDriverWait(driver, seconds);
     	wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
+	
+	@Step("Converting userdata to Xpath key Contains : {0}")
+	public By stringtoXpathEquals(String To_Replaced) {
+		try {
+			String str3 = menutoSelect.toString();
+			String Value_Replaced = str3.replace("Replace", To_Replaced);
+			String Full_Replaced = Value_Replaced.replace("By.xpath: //", "//");
+			Replaced_Xpath = By.xpath(Full_Replaced);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return Replaced_Xpath;
+	}
+	
+	@Step("Entering value in: {0} - value: {1}")
+	public WebElement enteringValueinTextField(By by, String value) {
+
+		Log.info("Entering Value in the text field " + by + " / with the value " + value);
+		driver.findElement(by).sendKeys(value);
+		return driver.findElement(by);
+	}
+
+	@Step("Clicking on the Element: {0}")
+	public WebElement clickonButton(By by) {
+
+		Log.info("Click action performed in the link or button " + by);
+		driver.findElement(by).click();
+		return null;
+	}
+	
+	@Step("Get Mobile Elements from List: {0}")
+	public List<MobileElement> gettingMobileElementsfromList(By by) {
+		List<MobileElement> localvariable = null;
+		try {
+			Log.info("Getting List of MobileElements " + by);
+			localvariable = driver.findElements(by);
+			return localvariable;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

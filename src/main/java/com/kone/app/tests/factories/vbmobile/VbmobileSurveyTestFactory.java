@@ -1,6 +1,7 @@
 package com.kone.app.tests.factories.vbmobile;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.testng.annotations.Factory;
 

@@ -3,9 +3,7 @@ package com.kone.app.pages.salesforce;
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.konesitesurvey.SiteLoginPage;
 import com.kone.framework.context.WebContext;
-import com.kone.framework.utility.Log;
 import ru.yandex.qatools.allure.annotations.Step;
-import static com.kone.framework.context.WebContext.wdriver;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -17,15 +15,23 @@ public class SelectOpportunityPage extends WebBasePage {
 	
 	public static String URL;
 	public static By lnk_SearchedOpportunity=By.xpath("//*[text()='Opportunities']/../../../../../../..//a[text()='Replace']");
-	private By lnk_NewSiteSurvey=By.xpath("//*[text()='Request a New Site Survey']");
+	
+	private By lnk_SiteSurvey;
+//	private By btn_Homesearchbox=By.id("phSearchButton");
 	
 	@Step("Selecting Existing Opportunity and click on SiteSurvey Link")
-	public SiteLoginPage clickonOpportunity(String salesforceopportunityname) {
+	public SiteLoginPage clickonOpportunity(String salesforceopportunityname, String mobileMenutoSelect) {
 		
 		clickonButton(stringtoXpathSearchedOpportunity(salesforceopportunityname));
-		waitForElementPresent(lnk_NewSiteSurvey, 20);
-		URL=gettingCurrentURL();
-		clickonButton(lnk_NewSiteSurvey);
+		
+		if(mobileMenutoSelect.equals("Survey Manager")) {
+			lnk_SiteSurvey = stringtoXpathEquals("Link opportunity with existing Site Survey");
+		} else {
+			lnk_SiteSurvey = stringtoXpathEquals("Request a New Site Survey");
+		}
+		
+		waitForElementPresent(lnk_SiteSurvey, 20);
+		clickonButton(lnk_SiteSurvey);
 		
 		SiteLoginPage siteLoginScreen=new SiteLoginPage();
 		Assert.assertTrue(siteLoginScreen.isDisplayed());

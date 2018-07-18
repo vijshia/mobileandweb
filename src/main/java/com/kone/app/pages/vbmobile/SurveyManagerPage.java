@@ -23,12 +23,12 @@ public class SurveyManagerPage extends PhoneBasePage {
 	}
 	
 	@Step("Open side menu")
-	public SideMenuPage openSideMenu() {
+	public SideMenuPage openSideMenu(String mobileMenutoSelect) {
 		
 		driver.findElement(menuButton).click();
 		SideMenuPage sideMenuScreen = new SideMenuPage();
 		Assert.assertTrue(sideMenuScreen.
-				isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
+				isDisplayed(mobileMenutoSelect, DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
 				"Failed to open side menu");
 		return sideMenuScreen;
 	}

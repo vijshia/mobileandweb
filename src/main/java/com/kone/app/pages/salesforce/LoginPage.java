@@ -20,8 +20,12 @@ public static WebDriver wdriver;
 	private By signInButton = By.id("Login");
 
 	@Step("Login to SalesForce")
-	public MainPage signIn (String email, String password) {
-		email = email + ".qa";
+	public MainPage signIn (String salesForceEnvironment, String email, String password) {
+		if(salesForceEnvironment.equals("QA")) {
+			email = email + ".qa";
+		} else if(salesForceEnvironment.equals("FULL")) {
+			email = email + ".full";
+		}
 		
 		waitForElementPresent(usernameInput, 30);
 		wdriver.findElement(usernameInput).sendKeys(email);	

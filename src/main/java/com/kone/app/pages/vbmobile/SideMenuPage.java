@@ -15,7 +15,7 @@ public class SideMenuPage extends PhoneBasePage{
 	
 public static AppiumDriver<MobileElement> driver;
     
-    private By newTaskMenu = By.xpath("//*[text()='New Task']");
+    public static By menutoSelect = By.xpath("//*[text()='Replace']");
     private By tasksMenu = By.xpath("//*[text()='Tasks']");
     private By logoutMenu = By.xpath("//*[text()='Logout']");
 	
@@ -46,8 +46,19 @@ public static AppiumDriver<MobileElement> driver;
 		return tasksScreen;
 	}
 	
-	public boolean isDisplayed(long timeout) {
-		return waitForElementPresent(newTaskMenu, timeout) != null;
+	@Step("Open Survey Manager from side menu")
+	public CreateTaskinSurveyManagerPage surveyManager(String mobileMenutoSelect) {
+		
+		driver.findElement(stringtoXpathEquals(mobileMenutoSelect)).click();
+		
+		CreateTaskinSurveyManagerPage Createtaskinsurveymanagerpage = new CreateTaskinSurveyManagerPage();
+		Assert.assertTrue(Createtaskinsurveymanagerpage.isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
+				"Failed to open Survey Manager");
+		return Createtaskinsurveymanagerpage;
+	}
+	
+	public boolean isDisplayed(String mobileMenutoSelect, long timeout) {
+		return waitForElementPresent(stringtoXpathEquals(mobileMenutoSelect), timeout) != null;
 	}
 
 }

@@ -2,26 +2,25 @@ package com.kone.app.pages.konesitesurvey;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.outlook.OutlookURLLaunch;
-import com.kone.app.pages.salesforce.MainPage;
 import ru.yandex.qatools.allure.annotations.Step;
-import static com.kone.app.pages.salesforce.SelectOpportunityPage.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-import com.kone.framework.utility.ExcelReader;
-import com.kone.framework.utility.Log;
+import java.util.List;
 
 public class SiteHomePage extends WebBasePage{
 	
 	private By popup_toSelectLIS=By.xpath("//*[contains(text(),'(LIS)')]");
-	private By tocheck_customerData=By.xpath("//*[text()='Customer Id SAP']/..//input");  //*[@class='form-control ng-pristine ng-untouched ng-valid ng-not-empty']
+	private By header_SiteSurveyLink=By.xpath("//*[starts-with(text(),'Create Surveying Task(s) for account:') and contains(text(),'Opportunity:')]");
+//	private By tocheck_customerData=By.xpath("//*[text()='Customer Id SAP']/..//input");  //*[@class='form-control ng-pristine ng-untouched ng-valid ng-not-empty']
 	private By tocheck_customerDatas=By.xpath("//*[text()='Customer Id SAP']/..//input[contains(@class, 'ng-not-empty')]");
+/*	private By btn_search=By.xpath("//*[@ng-click='searchEquipment()']");
+	private By spinner=By.id("loading-bar-spinner");*/
 	private By btn_toNavigateLIO=By.xpath("//*[contains(text(),'LIO')]");
+	private By checkbox_LISEquipments=By.xpath("//*[starts-with(@ng-click,'selectEquipments') and @type='checkbox']");
+	private By btn_LISOk=By.xpath("//*[text()=' OK']");
 	private By header_check=By.xpath("//*[@ng-show='opportunityId']");
 	private By txt_customerContact=By.xpath("(//*[@class='btn btn-default waves-effect']/../..//input)[last()-1]");
 	private By txt_street=By.xpath("//*[text()='Street']/..//input");
@@ -41,19 +40,11 @@ public class SiteHomePage extends WebBasePage{
 	public static String dateformat;
 	
 	@Step("Check if the Task has been created")
-	public OutlookURLLaunch createTask(String sitecustomercontact, String sitestreet, String sitepostalcode, String sitecity, String siteselectplannedtypes) {	
+	public OutlookURLLaunch createTask(String surveytype, String sitecustomercontact, String sitestreet, String sitepostalcode, String sitecity, String siteselectplannedtypes) {	
 		
 		dateformat = new SimpleDateFormat("ddMMMhhmm_ssaa").format(Calendar.getInstance().getTime());
 		MSS_Street=sitestreet+"_"+dateformat;
 		
-/*		for(int i=0; i<30; ) {
-			String attribute=gettingAttributebyClass(tocheck_customerData);
-		if(attribute.contains("ng-empty")) {
-			i++;
-		} else if(attribute.contains("ng-not-empty")) {
-			break;
-		}
-	}*/
 		waitForElementPresent(newPopUp, 50);
 		WebElement newpopupFooter=gettingWebElement(newPopUp);
 	    if(newpopupFooter.isDisplayed()) {
@@ -61,19 +52,35 @@ public class SiteHomePage extends WebBasePage{
 	    	waitForElementtobeClickable(btn_popUpClose, 60);
 	    	clickonButton(btn_popUpClose);
 	    }
-		waitForElementPresent(tocheck_customerDatas, 30);
-		clickonButton(btn_toNavigateLIO);
-		waitForElementPresent(header_check, 20);
-		/*String getHeaderText=gettingText(header_check);
-		String[] headerSplit=getHeaderText.split(":");
-		String head=headerSplit[3];
-        String[] urltoSplit = URL.split("[m/?]");
-        String one=urltoSplit[5].trim();
-		if(getHeaderText.contains(one)) {*/
+		waitForpresenceOfElementLocated(tocheck_customerDatas, 60);
+		if(surveytype.equals("LIS")) {
+//			waitForElementPresent(checkbox_LISEquipments, 30);
+			List<WebElement> equipments=gettingWebElementsfromList(checkbox_LISEquipments);
+			for(WebElement equipment: equipments) {
+				equipment.click();
+				break;
+			}
+			waitForElementtobeClickable(btn_LISOk, 30);
+			clickonButton(btn_LISOk);
+		} else if(surveytype.equals("LIO")) {
+			clickonButton(btn_toNavigateLIO);
+		}
+			waitForElementPresent(header_check, 20);
 			waitForElementtobeClickable(txt_customerContact, 30);
+			if(gettingWebElement(txt_customerContact).getAttribute("class").contains("ng-not-empty")) {
+				clearValue(txt_customerContact);
+			}
 			enteringValueinTextField(txt_customerContact, sitecustomercontact);
+			if(gettingWebElement(txt_street).getAttribute("class").contains("ng-not-empty")) {
+				clearValue(txt_street);
+			}
 			enteringValueinTextField(txt_street, MSS_Street);
-			enteringValueinTextField(txt_postalCode, sitepostalcode);
+			if(gettingWebElement(txt_postalCode).getAttribute("class").contains("ng-empty")) {
+				enteringValueinTextField(txt_postalCode, sitepostalcode);
+			}
+			if(gettingWebElement(txt_city).getAttribute("class").contains("ng-not-empty")) {
+				clearValue(txt_city);
+			}
 			enteringValueinTextField(txt_city, sitecity);
 			clickonButton(lookup_surveyor);
 			waitForElementPresent(lnk_assigntoMe, 20);
@@ -93,9 +100,15 @@ public class SiteHomePage extends WebBasePage{
 		return outlookURLLaunch;
 	}
 	
-	@Step("Check if the Select LIS or LIO Pop-up is displayed")
-	public boolean isDisplayed() {
-		return waitForElementPresent(popup_toSelectLIS, 80) != null;
+	@Step("Check if the Select LIS/LIO or Create Survey header is displayed")
+	public boolean isDisplayed(String mobileMenutoSelect) {
+		By headertoCheck;
+		if(mobileMenutoSelect.equals("Survey Manager")) {
+			headertoCheck= header_SiteSurveyLink;
+		} else {
+			headertoCheck= popup_toSelectLIS;
+		}
+		return waitForElementPresent(headertoCheck, 180) != null;
 
 	}
 }

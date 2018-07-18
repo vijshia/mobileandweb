@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.kone.framework.listener.TestNGListener"/>
+  </listeners>
+  <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey(failed)">
+    <parameter name="mobileMenutoSelect" value="Survey Manager"/>
+    <parameter name="dataSource" value="properties/testdata/testdata.properties"/>
+    <classes>
+      <class name="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity">
+        <methods>
+          <include name="loginSiteSurvey"/>
+          <include name="closeWebdriver"/>
+          <include name="getDriver"/>
+          <include name="loginSalesForce" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity -->
+    </classes>
+  </test> <!-- Answer in VbMobile and Link the Survey in Mobile SiteSurvey(failed) -->
+</suite> <!-- Failed suite [Suite] -->

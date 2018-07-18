@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.kone.app.pages.konesitesurvey.SiteHomePage;
@@ -40,6 +41,8 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 	protected String sitePostalCode;
 	protected String siteCity;
 	protected String siteSelectPlannedTypes;
+	protected String siteSelectSurveyType;
+	protected String salesForceenvironment;
 	
 	protected String Excel_ValuetoStore;
 	
@@ -72,6 +75,10 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 					siteCity = Excel_ValuetoStore;				
 				}else if (key.equals("MSS_SelectPlannedTypes")) {
 					siteSelectPlannedTypes = Excel_ValuetoStore;				
+				}else if (key.equals("MSS_SurveyType")) {
+					siteSelectSurveyType = Excel_ValuetoStore;				
+				}else if (key.equals("SF_Environment")) {
+					salesForceenvironment = Excel_ValuetoStore;				
 				}
 		}
 		
@@ -80,15 +87,19 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 	}
 	
     @Test(groups={ "web", "login_salesforce" })
-    void loginSalesForce() {
-    	wdriver.navigate().to("https://kone--qa.cs85.my.salesforce.com/006/o");
-//    	wdriver.navigate().to("https://test.salesforce.com/");
+    @Parameters({"mobileMenutoSelect"})
+    void loginSalesForce(String mobileMenutoSelect) {
+    	if(salesForceenvironment.equals("QA")) {
+    		wdriver.navigate().to("https://kone--qa.cs85.my.salesforce.com/006/o");
+    	} else if(salesForceenvironment.equals("FULL")) {
+    		wdriver.navigate().to("https://test.salesforce.com/");
+    	}
     	wdriver.manage().window().maximize();
-    	mainScreen=loginScreen.signIn(this.salesForceloginUser, this.salesForceloginPassword);
+    	mainScreen=loginScreen.signIn(this.salesForceenvironment, this.salesForceloginUser, this.salesForceloginPassword);
     	searchResultScreen=mainScreen.searchOpportunity(this.salesForceOpportunityName);
-    	siteLoginScreen=searchResultScreen.clickonOpportunity(this.salesForceOpportunityName);
-    	siteHomeScreen=siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword, this.siteFrontlineCountry);
-    	outlookURLLaunch=siteHomeScreen.createTask(this.siteCustomerContact, this.siteStreet, this.sitePostalCode, this.siteCity, this.siteSelectPlannedTypes);
+    	siteLoginScreen=searchResultScreen.clickonOpportunity(this.salesForceOpportunityName, mobileMenutoSelect);
+    	siteHomeScreen=siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword, this.siteFrontlineCountry, mobileMenutoSelect);
+    	outlookURLLaunch=siteHomeScreen.createTask(this.siteSelectSurveyType, this.siteCustomerContact, this.siteStreet, this.sitePostalCode, this.siteCity, this.siteSelectPlannedTypes);
 //    	outlookloginScreen=outlookURLLaunch.launchOutLookURL();
 //    	outlookHomeScreen=outlookloginScreen.emailLogin(this.salesForceloginUser, this.sitePassword);
 //    	outlookHomeScreen.getTaskID();

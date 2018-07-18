@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Mobile Site Survey End-to-End Test" verbose="1">
+	<listeners>
+    	<listener class-name="com.kone.framework.listener.TestNGListener" />
+  	</listeners>
+  	
+  	<test name="Create Survey in Salesforce LIO_FULL, then Answer in VbMobile" group-by-instances="true">
+        <!-- parameter name="dataSource" value="properties/testdata/testdata.properties" /-->
+        <parameter name="siteSelectPlannedTypes" value="Full" />
+        <groups>
+            <dependencies>
+                <group name="vbmobie_login" depends-on="login_salesforce" />
+                <group name="survey" depends-on="vbmobie_login" />
+            </dependencies>
+		 </groups>
+        <classes>
+            <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
+        </classes>
+     </test>
+     <test name="Create Survey in Salesforce LIO_Budget, then Answer in VbMobile" group-by-instances="true">
+        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
+        <parameter name="siteSelectPlannedTypes" value="Budget" />
+        <groups>
+            <dependencies>
+                <group name="vbmobie_login" depends-on="login_salesforce" />
+                <group name="survey" depends-on="vbmobie_login" />
+            </dependencies>
+		 </groups>
+        <classes>
+            <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
+        </classes>
+     </test>
+     <test name="Create Survey in Salesforce LIS_Budget, then Answer in VbMobile" group-by-instances="true">
+        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
+        <parameter name="siteSelectPlannedTypes" value="Budget" />
+        <groups>
+            <dependencies>
+                <group name="vbmobie_login" depends-on="login_salesforce" />
+                <group name="survey" depends-on="vbmobie_login" />
+            </dependencies>
+		 </groups>
+        <classes>
+            <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
+        </classes>
+     </test>
+     <test name="Create Survey in Salesforce LIS_Full, then Answer in VbMobile" group-by-instances="true">
+        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
+        <parameter name="siteSelectPlannedTypes" value="Full" />
+        <groups>
+            <dependencies>
+                <group name="vbmobie_login" depends-on="login_salesforce" />
+                <group name="survey" depends-on="vbmobie_login" />
+            </dependencies>
+		 </groups>
+        <classes>
+            <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
+        </classes>
+     </test>
+</suite>
