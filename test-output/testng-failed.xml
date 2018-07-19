@@ -10,10 +10,10 @@
     <classes>
       <class name="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity">
         <methods>
-          <include name="loginSiteSurvey"/>
+          <include name="loginSiteSurvey" invocation-numbers="0"/>
           <include name="closeWebdriver"/>
           <include name="getDriver"/>
-          <include name="loginSalesForce" invocation-numbers="0"/>
+          <include name="loginSalesForce"/>
         </methods>
       </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity -->
     </classes>

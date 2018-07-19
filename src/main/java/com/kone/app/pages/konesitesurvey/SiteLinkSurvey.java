@@ -41,11 +41,16 @@ public class SiteLinkSurvey extends WebBasePage{
 			clickonButton(btn_search);
 			List<WebElement> tableelements = gettingWebElementsfromList(table_elements);
 			for(WebElement tableelement: tableelements) {
-				Log.info(tableelement.getText());
+//				Log.info(tableelement.getText());
 			}
 			clickonButton(btn_ADDtoCRM);
 		
-		SiteLinkSurvey sitelinksurvey=new SiteLinkSurvey();
+			SiteLinkSurvey sitelinksurvey=new SiteLinkSurvey();
 		return sitelinksurvey;
+	}
+
+	@Step("Check if the SiteSurvey Home screen to Link Survey is displayed")
+	public boolean isDisplayed() {
+		return waitForElementPresent(newPopUp, 15) != null;
 	}
 }

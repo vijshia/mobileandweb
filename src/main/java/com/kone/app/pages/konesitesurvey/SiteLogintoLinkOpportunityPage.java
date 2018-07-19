@@ -6,13 +6,11 @@ import ru.yandex.qatools.allure.annotations.Step;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class SiteLoginPage extends WebBasePage {
+public class SiteLogintoLinkOpportunityPage extends WebBasePage {
 	
-	public SiteLoginPage() {
+	public SiteLogintoLinkOpportunityPage() {
 		wdriver = WebContext.wdriver;
 	}	
-
-	public static By lnk_country=By.xpath("//em[text()='Replace']"); //By.xpath("(//*[starts-with(text(),'Oman')])[last()]");
 	
 	private By txt_userName = By.id("username");
 	private By txt_password = By.id("password");
@@ -22,7 +20,7 @@ public class SiteLoginPage extends WebBasePage {
 	
 
 	@Step("Login to Mobile Site Survey ")
-	public SiteHomePage siteSurveySignIn(String username, String password, String sitefrontlinecountry, String mobileMenutoSelect) {
+	public SiteLinkSurvey siteSurveySignIntoLinkOpportunity(String username, String password, String sitefrontlinecountry) {
 		
 		waitForElementPresent(txt_userName, 10);
 		enteringValueinTextField(txt_userName, username);
@@ -34,6 +32,7 @@ public class SiteLoginPage extends WebBasePage {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}*/
+		
 		clickonButton(lookup_frontLine);
 		waitForElementPresent(txt_frontLine, 30);
 		enteringValueinTextField(txt_frontLine, sitefrontlinecountry);
@@ -41,15 +40,10 @@ public class SiteLoginPage extends WebBasePage {
 		/*waitForElementPresent(txt_frontLine, 10);
 		String frontLine=gettingText(txt_frontLine);*/
 		clickonButton(btn_login);
+
 		
-		SiteHomePage siteHomeScreen=new SiteHomePage();
-		Assert.assertTrue(siteHomeScreen.isDisplayed(mobileMenutoSelect));
-		return siteHomeScreen;
-	}
-
-	@Step("Check if the Site Survey Login screen is displayed")
-	public boolean isDisplayed() {
-		return waitForElementPresent(txt_userName, 15) != null;
-
+		SiteLinkSurvey sitelinksurvey=new SiteLinkSurvey();
+		Assert.assertTrue(sitelinksurvey.isDisplayed());
+		return sitelinksurvey;
 	}
 }

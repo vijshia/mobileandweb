@@ -10,7 +10,7 @@
         <groups>
             <dependencies>
                 <group name="vbmobie_login" depends-on="login_salesforce" />
-                <group name="survey" depends-on="vbmobie_login" />
+                <group name="vbmobie_survey" depends-on="vbmobie_login" />
             </dependencies>
 		 </groups>
         <classes>

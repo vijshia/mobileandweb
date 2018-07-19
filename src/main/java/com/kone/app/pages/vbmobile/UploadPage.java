@@ -21,6 +21,7 @@ public static AppiumDriver<MobileElement> driver;
     private By uploadAndReleaseBtn = By.xpath("//button[@aria-label='upload']");
     private By spinner = By.xpath("//div[@class='md-half-circle']");
     private By approvingText = By.xpath("//*[starts-with(text(),'Currently Approving')]");
+    private By getSurveyData = By.xpath("//*[@class='spinner']/..//div/p/span"); /*By.xpath("//android.view.View[contains(@text, '/-.')]"); */
 	
 	public UploadPage() {
 		
@@ -30,23 +31,20 @@ public static AppiumDriver<MobileElement> driver;
 	public void uploadSurvey() {
 		
 		waitForElementNotPresent(spinner, 100);
-		waitForElementPresent(uploadAndReleaseBtn, 50);
+		waitForElementPresent(uploadAndReleaseBtn, TASK_DOWNLOAD_TIMEOUT);
 		driver.findElement(uploadAndReleaseBtn).click();
 		Log.info("Click on element: " + uploadAndReleaseBtn);
-		
-		waitForElementPresent(approvingText, 40);
-		
+		waitForElementPresent(approvingText, TASK_DOWNLOAD_TIMEOUT);
 
-		By getSurveyData = By.xpath("//*[@class='spinner']/..//div/p/span"); /*By.xpath("//android.view.View[contains(@text, '/-.')]"); */
-		Boolean isdisplayed=driver.findElement(getSurveyData).isDisplayed();
-		Log.info(isdisplayed.toString());
-		List<MobileElement> retrivesurveydatas = driver.findElements(getSurveyData);
-	
-		for(MobileElement retrivesurveydata: retrivesurveydatas) {
-			retrivesurveydata.getText();
-			Log.info(retrivesurveydata.getText());
+		List<MobileElement> retrivetaskiddatas = driver.findElements(getSurveyData);
+		for(MobileElement retrivetaskid: retrivetaskiddatas) {
+			if(retrivetaskid.getText().contains("Task:")) {
+				String taskid_tosplit[] = retrivetaskid.getText().split(":");
+				taskIDtoLink = taskid_tosplit[1].trim();
+				Log.info("TaskID retrived from Mobile: "+taskIDtoLink);
+			}
 		}	
-		waitForElementPresent(successApproveText, 180);
+		waitForElementPresent(successApproveText, 180); //*[@id='toast-success']
 	}
 	
 	

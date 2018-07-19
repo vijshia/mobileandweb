@@ -11,8 +11,8 @@
         <parameter name="mobileMenutoSelect" value="Survey Manager" />
         <groups>
             <dependencies>
-                <!--group name="surveytolink" depends-on="vbmobie_login" /-->
-                <!--group name="linkSurveytoSalesforce" depends-on="surveytolink" /-->
+                <!--group name="vbmobie_surveytolink" depends-on="vbmobie_login" /-->
+                <!--group name="linkSurveytoSalesforce" depends-on="vbmobie_surveytolink" /-->
                 <group name="linkSurveytoSitefromSalesforce" depends-on="linkSurveytoSalesforce" />
             </dependencies>
 		 </groups>

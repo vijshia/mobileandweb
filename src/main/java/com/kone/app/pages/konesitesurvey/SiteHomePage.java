@@ -109,6 +109,5 @@ public class SiteHomePage extends WebBasePage{
 			headertoCheck= popup_toSelectLIS;
 		}
 		return waitForElementPresent(headertoCheck, 180) != null;
-
 	}
 }

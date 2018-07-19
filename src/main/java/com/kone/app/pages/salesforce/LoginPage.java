@@ -28,7 +28,8 @@ public static WebDriver wdriver;
 		}
 		
 		waitForElementPresent(usernameInput, 30);
-		wdriver.findElement(usernameInput).sendKeys(email);	
+		enteringPassword(usernameInput, email);
+//		wdriver.findElement(usernameInput).sendKeys(email);	
 		enteringPassword(passwordInput, password);
 //		wdriver.findElement(passwordInput).sendKeys(password);
 		wdriver.findElement(signInButton).click();

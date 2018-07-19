@@ -33,7 +33,7 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
 		surveyManagerScreen = new SurveyManagerPage();
 	}
     
-    @Test(groups= {"survey"})
+    @Test(groups= {"vbmobie_survey"})
     @Parameters({"mobileMenutoSelect"})
     void answerSurveyTest(String mobileMenutoSelect) {
     	mobileMenutoSelect = "New Task";

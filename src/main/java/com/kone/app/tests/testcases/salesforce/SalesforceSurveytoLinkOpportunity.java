@@ -4,15 +4,13 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import com.kone.app.pages.konesitesurvey.SiteHomePage;
 import com.kone.app.pages.konesitesurvey.SiteLinkSurvey;
 import com.kone.app.pages.konesitesurvey.SiteLoginPage;
 import com.kone.app.pages.salesforce.LoginPage;
 import com.kone.app.pages.salesforce.MainPage;
 import com.kone.app.pages.salesforce.SelectOpportunityPage;
 import com.kone.app.tests.testcases.SalesforceBaseTest;
-import com.kone.app.pages.vbmobile.UploadPage;
+import com.kone.framework.utility.Log;
 
 
 public class SalesforceSurveytoLinkOpportunity extends SalesforceBaseTest{
@@ -21,7 +19,6 @@ public class SalesforceSurveytoLinkOpportunity extends SalesforceBaseTest{
 	private MainPage mainScreen;
 	private SelectOpportunityPage searchResultScreen;
 	private SiteLoginPage siteLoginScreen;
-	private SiteHomePage siteHomeScreen;
 	private SiteLinkSurvey sitelinkSurvey;
 	
 	protected String salesForceloginUser;
@@ -90,16 +87,12 @@ public class SalesforceSurveytoLinkOpportunity extends SalesforceBaseTest{
     	mainScreen=loginScreen.signIn(this.salesForceenvironment, this.salesForceloginUser, this.salesForceloginPassword);
     	searchResultScreen=mainScreen.searchOpportunity(this.salesForceOpportunityName);
     	siteLoginScreen=searchResultScreen.clickonOpportunity(this.salesForceOpportunityName, mobileMenutoSelect);
-    	siteHomeScreen=siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword, this.siteFrontlineCountry, mobileMenutoSelect);
-/*    	taskID = UploadPage.taskIDtoLink;
-    	taskID = "27114";
-    	sitelinkSurvey.linkSurveytoOpportunity(taskID);*/
     }
     
     @Test(groups={ "web", "linkSurveytoSitefromSalesforce" })
-    void loginSiteSurvey() {
-    	taskID = UploadPage.taskIDtoLink;
-    	taskID = "27114";
+    @Parameters({"mobileMenutoSelect"})
+    void loginSiteSurvey(String mobileMenutoSelect) {
+    	siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword, this.siteFrontlineCountry, mobileMenutoSelect);
     	sitelinkSurvey.linkSurveytoOpportunity(taskID);
     }
 }

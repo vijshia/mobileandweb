@@ -1,18 +1,11 @@
 package com.kone.app.tests.testcases.salesforce;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map.Entry;
-
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.kone.app.pages.konesitesurvey.SiteHomePage;
 import com.kone.app.pages.konesitesurvey.SiteLoginPage;
-import com.kone.app.pages.outlook.OutlookHomePage;
-import com.kone.app.pages.outlook.OutlookLoginPage;
-import com.kone.app.pages.outlook.OutlookURLLaunch;
 import com.kone.app.pages.salesforce.LoginPage;
 import com.kone.app.pages.salesforce.MainPage;
 import com.kone.app.pages.salesforce.SelectOpportunityPage;
@@ -26,9 +19,9 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 	private SelectOpportunityPage searchResultScreen;
 	private SiteLoginPage siteLoginScreen;
 	private SiteHomePage siteHomeScreen;
-	private OutlookLoginPage outlookloginScreen;
+/*	private OutlookLoginPage outlookloginScreen;
 	private OutlookHomePage outlookHomeScreen;
-	private OutlookURLLaunch outlookURLLaunch;
+	private OutlookURLLaunch outlookURLLaunch;*/
 	
 	protected String salesForceloginUser;
 	protected String salesForceloginPassword;
@@ -99,7 +92,7 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
     	searchResultScreen=mainScreen.searchOpportunity(this.salesForceOpportunityName);
     	siteLoginScreen=searchResultScreen.clickonOpportunity(this.salesForceOpportunityName, mobileMenutoSelect);
     	siteHomeScreen=siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword, this.siteFrontlineCountry, mobileMenutoSelect);
-    	outlookURLLaunch=siteHomeScreen.createTask(this.siteSelectSurveyType, this.siteCustomerContact, this.siteStreet, this.sitePostalCode, this.siteCity, this.siteSelectPlannedTypes);
+    	/*outlookURLLaunch=*/siteHomeScreen.createTask(this.siteSelectSurveyType, this.siteCustomerContact, this.siteStreet, this.sitePostalCode, this.siteCity, this.siteSelectPlannedTypes);
 //    	outlookloginScreen=outlookURLLaunch.launchOutLookURL();
 //    	outlookHomeScreen=outlookloginScreen.emailLogin(this.salesForceloginUser, this.sitePassword);
 //    	outlookHomeScreen.getTaskID();

@@ -44,7 +44,7 @@ public static AndroidDriver<MobileElement> driver;
 		driver.findElement(selectedFrontLine).click();
 		driver.findElement(signInButton).click();
 		
-		waitForElementPresent(downloading, 10);
+		waitForElementPresent(downloading, 20);
 		waitForElementNotPresent(downloading, 30);		
 		waitForElementPresent(releaseNote, 5);
 		driver.findElement(closeButton).click();
