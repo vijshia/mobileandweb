@@ -24,26 +24,24 @@ public class SiteLinkSurvey extends WebBasePage{
 		
 		waitForElementPresent(newPopUp, 50);
 		WebElement newpopupFooter=gettingWebElement(newPopUp);
-	    if(newpopupFooter.isDisplayed()) {
-	    	waitForElementPresent(btn_popUpClose, 60);
-	    	waitForElementtobeClickable(btn_popUpClose, 60);
-	    	clickonButton(btn_popUpClose);
-	    }
+		    if(newpopupFooter.isDisplayed()) {
+		    	waitForElementPresent(btn_popUpClose, 60);
+		    	waitForElementtobeClickable(btn_popUpClose, 60);
+		    	clickonButton(btn_popUpClose);
+		    }
 	    waitForElementPresent(txt_search, 30);
 			if(gettingWebElement(txt_search).getAttribute("class").contains("ng-not-empty")) {
 				clearValue(txt_search);
 			}
-			enteringValueinTextField(txt_search, taskid);
-			
-			WebDriverWait wait = new WebDriverWait(wdriver, 30);
-			wait.until(ExpectedConditions.attributeContains(txt_search, "class", "ng-not-empty"));
-			Log.info("waited till search field attribute as not empty");
-			clickonButton(btn_search);
-			List<WebElement> tableelements = gettingWebElementsfromList(table_elements);
+		enteringValueinTextField(txt_search, taskid);
+		waitForElementContainsAttribute(txt_search, 30, "class", "ng-not-empty");
+		clickonButton(btn_search);
+		waitForElementPresent(table_elements, 40);
+		List<WebElement> tableelements = gettingWebElementsfromList(table_elements);
 			for(WebElement tableelement: tableelements) {
 //				Log.info(tableelement.getText());
 			}
-			clickonButton(btn_ADDtoCRM);
+		clickonButton(btn_ADDtoCRM);
 		
 			SiteLinkSurvey sitelinksurvey=new SiteLinkSurvey();
 		return sitelinksurvey;

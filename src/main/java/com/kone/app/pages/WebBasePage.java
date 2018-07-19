@@ -64,6 +64,15 @@ public class WebBasePage {
 		return wdriver.findElement(by);
 	}
 	
+	@Step("Wait for the Element with the Attribute Located: {0} AttributeName: {2} AttributeValue: {3} - Timeout: {1} seconds")
+	public WebElement waitForElementContainsAttribute(By by, int seconds, String attributename, String attributevalue) {
+
+		Log.info("Wait for Presence of Element Located: " + by + " / With Timeout: " + seconds);
+		WebDriverWait wait = new WebDriverWait(wdriver, seconds);
+		wait.until(ExpectedConditions.attributeContains(by, attributename, attributevalue));
+		return wdriver.findElement(by);
+	}
+	
 /*	@Step("Wait for element present stalenessOf: {0} - Timeout: {1} seconds")
 	public WebElement waitForElementPresentstalenessOf(By by, int seconds) {
 
