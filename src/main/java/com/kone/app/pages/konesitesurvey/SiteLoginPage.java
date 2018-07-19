@@ -38,8 +38,6 @@ public class SiteLoginPage extends WebBasePage {
 		waitForElementPresent(txt_frontLine, 30);
 		enteringValueinTextField(txt_frontLine, sitefrontlinecountry);
 		clickonButton(stringtoXpathEqualssitefrontlinecountry(sitefrontlinecountry));
-		/*waitForElementPresent(txt_frontLine, 10);
-		String frontLine=gettingText(txt_frontLine);*/
 		clickonButton(btn_login);
 		
 		SiteHomePage siteHomeScreen=new SiteHomePage();
@@ -49,7 +47,7 @@ public class SiteLoginPage extends WebBasePage {
 
 	@Step("Check if the Site Survey Login screen is displayed")
 	public boolean isDisplayed() {
-		return waitForElementPresent(txt_userName, 15) != null;
+		return waitForElementPresent(txt_userName, 25) != null;
 
 	}
 }

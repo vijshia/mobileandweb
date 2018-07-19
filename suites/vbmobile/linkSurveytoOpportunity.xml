@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-
-<listeners>
+<suite name="Mobile Site Survey Test Automation">
+	<listeners>
     	<listener class-name="com.kone.framework.listener.TestNGListener" />
   	</listeners>
   	
   	<test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey" group-by-instances="true">
-        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
         <parameter name="mobileMenutoSelect" value="Survey Manager" />
         <groups>
             <dependencies>
@@ -21,6 +19,5 @@
             <!--class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyLinktoOpportunityTestFactory" /-->
 			<class name="com.kone.app.tests.factories.salesforce.SalesforceSurveytoLinkOpportunityTestFactory" />
         </classes>  
-
   </test> <!-- Test -->
 </suite> <!-- Suite -->

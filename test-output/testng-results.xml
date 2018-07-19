@@ -1,58 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="39314" started-at="2018-07-19T07:45:08Z" finished-at="2018-07-19T07:45:48Z">
+  <suite name="Mobile Site Survey End-to-End Test" duration-ms="63950" started-at="2018-07-19T11:37:02Z" finished-at="2018-07-19T11:38:06Z">
     <groups>
-      <group name="linkSurveytoSitefromSalesforce">
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@4cebf524]" name="loginSiteSurvey" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
-      </group> <!-- linkSurveytoSitefromSalesforce -->
       <group name="web">
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@4cebf524]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@4cebf524]" name="loginSiteSurvey" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
+        <method signature="SalesforceAuthenticationTests.loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@6de5e190]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests"/>
       </group> <!-- web -->
-      <group name="linkSurveytoSalesforce">
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@4cebf524]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
-      </group> <!-- linkSurveytoSalesforce -->
+      <group name="login_salesforce">
+        <method signature="SalesforceAuthenticationTests.loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@6de5e190]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests"/>
+      </group> <!-- login_salesforce -->
     </groups>
-    <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey" duration-ms="39314" started-at="2018-07-19T07:45:08Z" finished-at="2018-07-19T07:45:48Z">
-      <class name="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity">
-        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@4cebf524]" name="getDriver" is-config="true" duration-ms="21" started-at="2018-07-19T13:15:08Z" finished-at="2018-07-19T13:15:08Z">
+    <test name="Create LIS_Budget Survey in Salesforce, then Answer in VbMobile" duration-ms="63950" started-at="2018-07-19T11:37:02Z" finished-at="2018-07-19T11:38:06Z">
+      <class name="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests">
+        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@6de5e190]" name="getDriver" is-config="true" duration-ms="21" started-at="2018-07-19T17:07:02Z" finished-at="2018-07-19T17:07:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getDriver -->
-        <test-method status="PASS" signature="loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@4cebf524]" name="loginSalesForce" duration-ms="37117" started-at="2018-07-19T13:15:08Z" finished-at="2018-07-19T13:15:46Z">
+        <test-method status="PASS" signature="loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@6de5e190]" name="loginSalesForce" duration-ms="63799" started-at="2018-07-19T17:07:02Z" finished-at="2018-07-19T17:08:06Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Survey Manager]]>
+                <![CDATA[Survey Manager_1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[LIo]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[FRB Budget]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSalesForce -->
-        <test-method status="FAIL" signature="loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@4cebf524]" name="loginSiteSurvey" duration-ms="1236" depends-on-groups="linkSurveytoSalesforce" started-at="2018-07-19T13:15:46Z" finished-at="2018-07-19T13:15:47Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Survey Manager]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerExceptionat com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity.loginSiteSurvey(SalesforceSurveytoLinkOpportunity.java:101)at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)at java.lang.reflect.Method.invoke(Unknown Source)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginSiteSurvey -->
-        <test-method status="PASS" signature="closeWebdriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@4cebf524]" name="closeWebdriver" is-config="true" duration-ms="1696" started-at="2018-07-19T13:15:48Z" finished-at="2018-07-19T13:15:50Z">
+        <test-method status="PASS" signature="closeWebdriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@6de5e190]" name="closeWebdriver" is-config="true" duration-ms="1343" started-at="2018-07-19T17:08:07Z" finished-at="2018-07-19T17:08:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeWebdriver -->
-      </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity -->
-    </test> <!-- Answer in VbMobile and Link the Survey in Mobile SiteSurvey -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests -->
+    </test> <!-- Create LIS_Budget Survey in Salesforce, then Answer in VbMobile -->
+  </suite> <!-- Mobile Site Survey End-to-End Test -->
 </testng-results>

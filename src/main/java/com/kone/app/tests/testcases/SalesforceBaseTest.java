@@ -4,15 +4,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
-
 import ru.yandex.qatools.allure.annotations.Step;
+
 
 
 public class SalesforceBaseTest {
@@ -44,7 +42,7 @@ public class SalesforceBaseTest {
 		}
 	}
 	
-	@BeforeSuite(alwaysRun = false)
+	@BeforeSuite(alwaysRun = true)
 	public void getDriver() {
 		wdriver = WebContext.wdriver;
 	}

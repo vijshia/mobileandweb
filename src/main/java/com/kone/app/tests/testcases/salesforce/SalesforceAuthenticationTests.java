@@ -66,13 +66,13 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 					sitePostalCode = Excel_ValuetoStore;				
 				}else if (key.equals("MSS_City")) {
 					siteCity = Excel_ValuetoStore;				
-				}else if (key.equals("MSS_SelectPlannedTypes")) {
+				}else if (key.equals("SF_Environment")) {
+					salesForceenvironment = Excel_ValuetoStore;				
+				}/*else if (key.equals("MSS_SelectPlannedTypes")) {
 					siteSelectPlannedTypes = Excel_ValuetoStore;				
 				}else if (key.equals("MSS_SurveyType")) {
 					siteSelectSurveyType = Excel_ValuetoStore;				
-				}else if (key.equals("SF_Environment")) {
-					salesForceenvironment = Excel_ValuetoStore;				
-				}
+				}*/
 		}
 		
 		loginScreen = new LoginPage();
@@ -80,8 +80,8 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 	}
 	
     @Test(groups={ "web", "login_salesforce" })
-    @Parameters({"mobileMenutoSelect"})
-    void loginSalesForce(String mobileMenutoSelect) {
+    @Parameters({"mobileMenutoSelect", "websurveytype", "websiteselectplannedtype"})
+    void loginSalesForce(String mobileMenutoSelect, String websurveytype, String websiteselectplannedtype) {
     	if(salesForceenvironment.equals("QA")) {
     		wdriver.navigate().to("https://kone--qa.cs85.my.salesforce.com/006/o");
     	} else if(salesForceenvironment.equals("FULL")) {
@@ -92,7 +92,7 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
     	searchResultScreen=mainScreen.searchOpportunity(this.salesForceOpportunityName);
     	siteLoginScreen=searchResultScreen.clickonOpportunity(this.salesForceOpportunityName, mobileMenutoSelect);
     	siteHomeScreen=siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword, this.siteFrontlineCountry, mobileMenutoSelect);
-    	/*outlookURLLaunch=*/siteHomeScreen.createTask(this.siteSelectSurveyType, this.siteCustomerContact, this.siteStreet, this.sitePostalCode, this.siteCity, this.siteSelectPlannedTypes);
+    	/*outlookURLLaunch=*/siteHomeScreen.createTask(websurveytype, this.siteCustomerContact, this.siteStreet, this.sitePostalCode, this.siteCity, websiteselectplannedtype);
 //    	outlookloginScreen=outlookURLLaunch.launchOutLookURL();
 //    	outlookHomeScreen=outlookloginScreen.emailLogin(this.salesForceloginUser, this.sitePassword);
 //    	outlookHomeScreen.getTaskID();

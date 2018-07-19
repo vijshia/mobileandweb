@@ -53,7 +53,7 @@ public class SiteHomePage extends WebBasePage{
 	    	clickonButton(btn_popUpClose);
 	    }
 		waitForpresenceOfElementLocated(tocheck_customerDatas, 60);
-		if(surveytype.equals("LIS")) {
+		if(surveytype.equalsIgnoreCase("LIS")) {
 //			waitForElementPresent(checkbox_LISEquipments, 30);
 			List<WebElement> equipments=gettingWebElementsfromList(checkbox_LISEquipments);
 			for(WebElement equipment: equipments) {
@@ -62,7 +62,7 @@ public class SiteHomePage extends WebBasePage{
 			}
 			waitForElementtobeClickable(btn_LISOk, 30);
 			clickonButton(btn_LISOk);
-		} else if(surveytype.equals("LIO")) {
+		} else if(surveytype.equalsIgnoreCase("LIO")) {
 			clickonButton(btn_toNavigateLIO);
 		}
 			waitForElementPresent(header_check, 20);
