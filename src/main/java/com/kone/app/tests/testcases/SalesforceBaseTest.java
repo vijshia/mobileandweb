@@ -42,7 +42,7 @@ public class SalesforceBaseTest {
 		}
 	}
 	
-	@BeforeSuite(alwaysRun = true)
+	@BeforeSuite(alwaysRun = false)
 	public void getDriver() {
 		wdriver = WebContext.wdriver;
 	}
