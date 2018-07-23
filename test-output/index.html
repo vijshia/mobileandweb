@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,  1 skipped,  </span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,24 +102,24 @@
                     <div class="method-list-content failed suite-Mobile_Site_Survey_Test_Automation">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Mobile_Site_Survey_Test_Automation" title="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity" hash-for-method="loginSiteSurvey(Survey Manager)">loginSiteSurvey(Survey Manager)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Mobile_Site_Survey_Test_Automation" title="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity" hash-for-method="loginSalesForce(Survey Manager)">loginSalesForce(Survey Manager)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Mobile_Site_Survey_Test_Automation -->
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Mobile_Site_Survey_Test_Automation" class="hide-methods passed suite-Mobile_Site_Survey_Test_Automation"> (hide)</a> <!-- hide-methods passed suite-Mobile_Site_Survey_Test_Automation -->
-                      <a href="#" panel-name="suite-Mobile_Site_Survey_Test_Automation" class="show-methods passed suite-Mobile_Site_Survey_Test_Automation"> (show)</a> <!-- show-methods passed suite-Mobile_Site_Survey_Test_Automation -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Mobile_Site_Survey_Test_Automation" class="hide-methods skipped suite-Mobile_Site_Survey_Test_Automation"> (hide)</a> <!-- hide-methods skipped suite-Mobile_Site_Survey_Test_Automation -->
+                      <a href="#" panel-name="suite-Mobile_Site_Survey_Test_Automation" class="show-methods skipped suite-Mobile_Site_Survey_Test_Automation"> (show)</a> <!-- show-methods skipped suite-Mobile_Site_Survey_Test_Automation -->
                     </span>
-                    <div class="method-list-content passed suite-Mobile_Site_Survey_Test_Automation">
+                    <div class="method-list-content skipped suite-Mobile_Site_Survey_Test_Automation">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Mobile_Site_Survey_Test_Automation" title="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity" hash-for-method="loginSalesForce(Survey Manager)">loginSalesForce(Survey Manager)</a> <!-- method navigator-link -->
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Mobile_Site_Survey_Test_Automation" title="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity" hash-for-method="loginSiteSurvey">loginSiteSurvey</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Mobile_Site_Survey_Test_Automation -->
+                    </div> <!-- method-list-content skipped suite-Mobile_Site_Survey_Test_Automation -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -139,34 +139,36 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginSiteSurvey(Survey Manager)">
-                  </a> <!-- loginSiteSurvey(Survey Manager) -->
-                  <span class="method-name">loginSiteSurvey</span>
+                  <a name="loginSalesForce(Survey Manager)">
+                  </a> <!-- loginSalesForce(Survey Manager) -->
+                  <span class="method-name">loginSalesForce</span>
                   <span class="parameters">(Survey Manager)</span>
                   <div class="stack-trace">java.lang.NullPointerException
-	at com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity.loginSiteSurvey(SalesforceSurveytoLinkOpportunity.java:96)
+	at com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity.loginSalesForce(SalesforceSurveytoLinkOpportunity.java:88)
 ... Removed 25 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Mobile_Site_Survey_Test_Automation-class-failed -->
-          <div class="suite-Mobile_Site_Survey_Test_Automation-class-passed">
+          <div class="suite-Mobile_Site_Survey_Test_Automation-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginSalesForce(Survey Manager)">
-                  </a> <!-- loginSalesForce(Survey Manager) -->
-                  <span class="method-name">loginSalesForce</span>
-                  <span class="parameters">(Survey Manager)</span>
+                  <a name="loginSiteSurvey">
+                  </a> <!-- loginSiteSurvey -->
+                  <span class="method-name">loginSiteSurvey</span>
+                  <div class="stack-trace">java.lang.Throwable: Method SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@74baefb0] depends on not successfully finished methods in group &quot;linkSurveytoSalesforce&quot;
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Mobile_Site_Survey_Test_Automation-class-passed -->
+          </div> <!-- suite-Mobile_Site_Survey_Test_Automation-class-skipped -->
         </div> <!-- panel Mobile_Site_Survey_Test_Automation -->
         <div panel-name="test-xml-Mobile_Site_Survey_Test_Automation" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -260,16 +262,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginSalesForce')
 data.setCell(0, 2, 'com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity')
-data.setCell(0, 3, 35482);
+data.setCell(0, 3, 34982);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'loginSiteSurvey')
 data.setCell(1, 2, 'com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity')
-data.setCell(1, 3, 10932);
+data.setCell(1, 3, 0);
 window.suiteTableData['Mobile_Site_Survey_Test_Automation']= { tableData: data, tableDiv: 'times-div-Mobile_Site_Survey_Test_Automation'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 46 seconds</span>
+              <span class="suite-total-time">Total running time: 34 seconds</span>
               <div id="times-div-Mobile_Site_Survey_Test_Automation">
               </div> <!-- times-div-Mobile_Site_Survey_Test_Automation -->
             </div> <!-- times-div -->
@@ -296,23 +298,19 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity</div> <!-- chronological-class-name -->
-              <div class="configuration-suite before">
+              <div class="configuration-test before">
                 <span class="method-name">getDriver</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-suite before -->
-              <div class="test-method">
-                <span class="method-name">loginSalesForce(Survey Manager)</span>
-                <span class="method-start">187 ms</span>
-              </div> <!-- test-method -->
+              </div> <!-- configuration-test before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">loginSiteSurvey(Survey Manager)</span>
-                <span class="method-start">35741 ms</span>
+                <span class="method-name">loginSalesForce(Survey Manager)</span>
+                <span class="method-start">5930 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">closeWebdriver</span>
-                <span class="method-start">47575 ms</span>
+                <span class="method-start">42455 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

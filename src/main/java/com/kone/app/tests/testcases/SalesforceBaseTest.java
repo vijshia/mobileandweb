@@ -7,6 +7,8 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
 import ru.yandex.qatools.allure.annotations.Step;

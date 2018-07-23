@@ -5,12 +5,18 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.outlook.OutlookURLLaunch;
+import com.kone.framework.context.WebContext;
+
 import ru.yandex.qatools.allure.annotations.Step;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
 public class SiteHomePage extends WebBasePage{
+	
+	public SiteHomePage(){
+		wdriver = WebContext.wdriver;
+	}	
 	
 	private By popup_toSelectLIS=By.xpath("//*[contains(text(),'(LIS)')]");
 	private By header_SiteSurveyLink=By.xpath("//*[starts-with(text(),'Create Surveying Task(s) for account:') and contains(text(),'Opportunity:')]");

@@ -10,9 +10,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.salesforce.MainPage;
+import com.kone.framework.context.WebContext;
+
 import ru.yandex.qatools.allure.annotations.Step;
 
 public class OutlookHomePage extends WebBasePage {
+	
+	public OutlookHomePage() {
+		wdriver = WebContext.wdriver;
+	}
 
 	private By header_Office365 = By.xpath("//*[text()='Office 365']");
 	private By lnk_MailTimeStamp = By.xpath("//*[starts-with(text(),'New Survey Task Created')]/../../..//span[contains(text(),'PM') or contains(text(),'AM')]");

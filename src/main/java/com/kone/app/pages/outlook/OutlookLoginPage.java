@@ -10,6 +10,10 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 public class OutlookLoginPage extends WebBasePage {
 	
+	public OutlookLoginPage() {
+		wdriver = WebContext.wdriver;
+	}
+	
 	private By txt_EmailSignin = By.xpath("//*[@type='email' or @placeholder='someone@example.com ' or contains(@aria-label,'email')]");
 	private By btn_Next = By.xpath("//*[contains(@type, 'submit') or contains(@value,'Next')]");
 	private By progressBar = By.xpath("//*[contains(@class,'progress-container')]");

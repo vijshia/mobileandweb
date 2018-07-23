@@ -5,9 +5,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import com.kone.app.pages.WebBasePage;
 import ru.yandex.qatools.allure.annotations.Step;
+
+import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
 
 public class SiteLinkSurvey extends WebBasePage{
+	
+	public SiteLinkSurvey(){
+		wdriver = WebContext.wdriver;
+	}	
 
 	private By newPopUp=By.xpath("//*[@class='modal-body ng-scope']");
 	private By btn_popUpClose=By.xpath("//*[@id='closeReleaseNotesBtn']");

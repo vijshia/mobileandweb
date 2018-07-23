@@ -3,12 +3,13 @@ package com.kone.app.pages.konesitesurvey;
 import com.kone.app.pages.WebBasePage;
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
+
 import ru.yandex.qatools.allure.annotations.Step;
+
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class SiteLoginPage extends WebBasePage {
@@ -66,7 +67,7 @@ public class SiteLoginPage extends WebBasePage {
 			if(gettingWebElement(txt_search).getAttribute("class").contains("ng-not-empty")) {
 				clearValue(txt_search);
 			}
-		enteringValueinTextField(txt_search, "27141");
+		enteringValueinTextField(txt_search, taskid);
 		waitForElementContainsAttribute(txt_search, 30, "class", "ng-not-empty");
 		clickonButton(btn_search);
 		waitForElementPresent(table_elements, 40);
@@ -76,7 +77,7 @@ public class SiteLoginPage extends WebBasePage {
 		int i=1;/
 			for(WebElement tableelement: tableelements) {
 				String gettaskid=tableelement.getText();
-				if(gettaskid.equals("27141")) {
+				if(gettaskid.equals(taskid)) {
 					Log.info("taskID: "+gettaskid+" identified in table");
 //					condition1=true;
 					break;
@@ -97,6 +98,7 @@ public class SiteLoginPage extends WebBasePage {
 		clickonButton(btn_ADDtoCRM);
 		waitForElementPresent(successApproveText, 180);
 		Log.info("End");
+		Log.info("E");
 		/--------------------------------------------------------------*/
 		
 		SiteHomePage siteHomeScreen=new SiteHomePage();

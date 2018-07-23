@@ -11,6 +11,7 @@ import com.kone.app.pages.salesforce.MainPage;
 import com.kone.app.pages.salesforce.SelectOpportunityPage;
 import com.kone.app.tests.testcases.SalesforceBaseTest;
 import com.kone.framework.utility.Log;
+import com.kone.app.pages.vbmobile.UploadPage;
 
 
 public class SalesforceSurveytoLinkOpportunity extends SalesforceBaseTest{
@@ -92,6 +93,8 @@ public class SalesforceSurveytoLinkOpportunity extends SalesforceBaseTest{
     @Test(groups={ "web", "linkSurveytoSitefromSalesforce" })
     @Parameters({"mobileMenutoSelect"})
     void loginSiteSurvey(String mobileMenutoSelect) {
+    	taskID=UploadPage.taskIDtoLink;
+//    	taskID="27145";
     	siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword, this.siteFrontlineCountry, mobileMenutoSelect);
     	sitelinkSurvey.linkSurveytoOpportunity(taskID);
     }

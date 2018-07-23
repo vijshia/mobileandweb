@@ -2,13 +2,19 @@ package com.kone.app.pages.outlook;
 
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.outlook.OutlookLoginPage;
+import com.kone.framework.context.WebContext;
+
 import ru.yandex.qatools.allure.annotations.Step;
 import static com.kone.app.pages.WebBasePage.wdriver;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
 public class OutlookURLLaunch extends WebBasePage {
-
+	
+	public OutlookURLLaunch() {
+		wdriver = WebContext.wdriver;
+	}
+	
     private By searchButton = By.id("phSearchButton");
     
 	@Step("Launch OutLook URL")
