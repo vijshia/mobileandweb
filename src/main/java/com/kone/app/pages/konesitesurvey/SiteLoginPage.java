@@ -79,13 +79,14 @@ public class SiteLoginPage extends WebBasePage {
 				String gettaskid=tableelement.getText();
 				if(gettaskid.equals(taskid)) {
 					Log.info("taskID: "+gettaskid+" identified in table");
+					Assert.assertTrue(gettaskid==taskid);
 //					condition1=true;
 					break;
 				}/*else if(gettaskid.equals("ADD TO CRM  VIEW SURVEY")) {
 					if(i==2) {
 						WebDriverWait wait = new WebDriverWait(wdriver, 30);
 						wait.until(ExpectedConditions.elementToBeClickable(tableelement));
-						Log.info("Element is avilable now to click");
+						Log.info("Element is available now to click");
 						tableelement.click();
 						condition2=true;
 					} i++;

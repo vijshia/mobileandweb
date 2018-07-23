@@ -3,6 +3,8 @@ package com.kone.app.pages.konesitesurvey;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
 import com.kone.app.pages.WebBasePage;
 import ru.yandex.qatools.allure.annotations.Step;
 
@@ -49,13 +51,14 @@ public class SiteLinkSurvey extends WebBasePage{
 				String gettaskid=tableelement.getText();
 				if(gettaskid.equals(taskid)) {
 					Log.info("taskID: "+gettaskid+" identified in table");
+					Assert.assertTrue(gettaskid==taskid);
 //					condition1=true;
 					break;
 				}/*else if(gettaskid.equals("ADD TO CRM  VIEW SURVEY")) {
 					if(i==2) {
 						WebDriverWait wait = new WebDriverWait(wdriver, 30);
 						wait.until(ExpectedConditions.elementToBeClickable(tableelement));
-						Log.info("Element is avilable now to click");
+						Log.info("Element is available now to click");
 						tableelement.click();
 						condition2=true;
 					} i++;
