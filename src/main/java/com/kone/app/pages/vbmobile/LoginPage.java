@@ -27,7 +27,7 @@ public static AndroidDriver<MobileElement> driver;
 	private By closeButton = By.xpath("//md-icon[text()='close']");
 	private By releaseNote = By.xpath("//*[contains(text(), 'Release notes')]");
 	private By downloading = By.xpath("//*[contains(text(), 'Downloading')]");
-	private By popUp_ReleaseNotesClose = By.xpath("//*[text()='close']");
+//	private By popUp_ReleaseNotesClose = By.xpath("//*[text()='close']");
 	private By popUp_AppUpdateDownload = By.xpath("//*[text()='Download']");
 	private By popUp_AppUpdateCancel = By.xpath("//*[text()='Cancel']");
 	
@@ -49,7 +49,7 @@ public static AndroidDriver<MobileElement> driver;
 		waitForElementPresent(releaseNote, 5);
 		driver.findElement(closeButton).click();
 		
-		waitForElementPresent(popUp_AppUpdateDownload, 100);
+		waitForElementPresent(popUp_AppUpdateDownload, 180);
 		waitForElementPresent(popUp_AppUpdateDownload, 50);
 		Log.info("Wait for element present: " + popUp_AppUpdateDownload);
 		driver.findElement(popUp_AppUpdateCancel).click();

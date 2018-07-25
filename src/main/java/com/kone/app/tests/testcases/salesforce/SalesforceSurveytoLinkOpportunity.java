@@ -4,13 +4,12 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.kone.app.pages.konesitesurvey.SiteLinkSurvey;
+import com.kone.app.pages.konesitesurvey.SiteHomePage;
 import com.kone.app.pages.konesitesurvey.SiteLoginPage;
 import com.kone.app.pages.salesforce.LoginPage;
 import com.kone.app.pages.salesforce.MainPage;
 import com.kone.app.pages.salesforce.SelectOpportunityPage;
 import com.kone.app.tests.testcases.SalesforceBaseTest;
-import com.kone.framework.utility.Log;
 import com.kone.app.pages.vbmobile.UploadPage;
 
 
@@ -20,7 +19,7 @@ public class SalesforceSurveytoLinkOpportunity extends SalesforceBaseTest{
 	private MainPage mainScreen;
 	private SelectOpportunityPage searchResultScreen;
 	private SiteLoginPage siteLoginScreen;
-	private SiteLinkSurvey sitelinkSurvey;
+	private SiteHomePage siteHomeScreen;
 	
 	protected String salesForceloginUser;
 	protected String salesForceloginPassword;
@@ -94,8 +93,7 @@ public class SalesforceSurveytoLinkOpportunity extends SalesforceBaseTest{
     @Parameters({"mobileMenutoSelect"})
     void loginSiteSurvey(String mobileMenutoSelect) {
     	taskID=UploadPage.taskIDtoLink;
-//    	taskID="27145";
-    	siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword, this.siteFrontlineCountry, mobileMenutoSelect);
-    	sitelinkSurvey.linkSurveytoOpportunity(taskID);
+    	siteHomeScreen=siteLoginScreen.siteSurveySignIn(this.siteloginUser, this.sitePassword, this.siteFrontlineCountry, mobileMenutoSelect);
+    	siteHomeScreen.linkSurveytoOpportunity(taskID);
     }
 }

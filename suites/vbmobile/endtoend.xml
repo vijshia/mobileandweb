@@ -11,14 +11,14 @@
         <parameter name="websiteselectplannedtype" value="FRB Budget" />
         <groups>
             <dependencies>
-                <!-- group name="vbmobie_login" depends-on="login_salesforce" /-->
-                <!-- group name="vbmobie_survey" depends-on="vbmobie_login" /-->
+                <group name="vbmobie_login" depends-on="login_salesforce" />
+                <group name="vbmobie_survey" depends-on="vbmobie_login" />
             </dependencies>
 		 </groups>
         <classes>
             <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
-            <!-- class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" /-->
-            <!-- class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" /-->
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
         </classes>
      </test>
 

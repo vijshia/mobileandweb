@@ -6,8 +6,9 @@
   	</listeners>
   	
   	<test name="Create Survey in Salesforce LIO_FULL, then Answer in VbMobile" group-by-instances="true">
-        <!-- parameter name="dataSource" value="properties/testdata/testdata.properties" /-->
-        <parameter name="siteSelectPlannedTypes" value="Full" />
+        <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
+        <parameter name="websurveytype" value="LIO" />
+        <parameter name="websiteselectplannedtype" value="FRB Full" />
         <groups>
             <dependencies>
                 <group name="vbmobie_login" depends-on="login_salesforce" />
@@ -21,8 +22,9 @@
         </classes>
      </test>
      <test name="Create Survey in Salesforce LIO_Budget, then Answer in VbMobile" group-by-instances="true">
-        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
-        <parameter name="siteSelectPlannedTypes" value="Budget" />
+        <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
+        <parameter name="websurveytype" value="LIO" />
+        <parameter name="websiteselectplannedtype" value="FRB Budget" />
         <groups>
             <dependencies>
                 <group name="vbmobie_login" depends-on="login_salesforce" />
@@ -36,8 +38,9 @@
         </classes>
      </test>
      <test name="Create Survey in Salesforce LIS_Budget, then Answer in VbMobile" group-by-instances="true">
-        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
-        <parameter name="siteSelectPlannedTypes" value="Budget" />
+        <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
+        <parameter name="websurveytype" value="LIS" />
+        <parameter name="websiteselectplannedtype" value="FRB Budget" />
         <groups>
             <dependencies>
                 <group name="vbmobie_login" depends-on="login_salesforce" />
@@ -51,8 +54,9 @@
         </classes>
      </test>
      <test name="Create Survey in Salesforce LIS_Full, then Answer in VbMobile" group-by-instances="true">
-        <parameter name="dataSource" value="properties/testdata/testdata.properties" />
-        <parameter name="siteSelectPlannedTypes" value="Full" />
+        <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
+        <parameter name="websurveytype" value="LIS" />
+        <parameter name="websiteselectplannedtype" value="FRB Full" />
         <groups>
             <dependencies>
                 <group name="vbmobie_login" depends-on="login_salesforce" />

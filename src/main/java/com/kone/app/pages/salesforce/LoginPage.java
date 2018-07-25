@@ -41,7 +41,7 @@ public static WebDriver wdriver;
 
 	@Step("Check if the User Name field is displayed")
 	public boolean isDisplayed() {
-		return waitForElementPresent(usernameInput, 5) != null;
+		return waitForElementPresent(usernameInput, 25) != null;
 	}
 
 }

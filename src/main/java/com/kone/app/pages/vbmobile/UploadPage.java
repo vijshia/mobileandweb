@@ -41,7 +41,7 @@ public static AppiumDriver<MobileElement> driver;
 			if(retrivetaskid.getText().contains("Task:")) {
 				String taskid_tosplit[] = retrivetaskid.getText().split(":");
 				taskIDtoLink = taskid_tosplit[1].trim();
-				Log.info("TaskID retrived from Mobile APP: "+taskIDtoLink);
+				Log.info("TaskID retrived from Mobile Application: "+taskIDtoLink);
 			}
 		}	
 		waitForElementPresent(successApproveText, 180); //*[@id='toast-success']
