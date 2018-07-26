@@ -58,13 +58,8 @@ public class SiteHomePage extends WebBasePage{
 		dateformat = new SimpleDateFormat("ddMMMhhmm_ssaa").format(Calendar.getInstance().getTime());
 		MSS_Street=sitestreet+"_"+dateformat;
 		
-		waitForElementPresent(newPopUp, 50);
-		WebElement newpopupFooter=gettingWebElement(newPopUp);
-	    if(newpopupFooter.isDisplayed()) {
-	    	waitForElementPresent(btn_popUpClose, 60);
-	    	waitForElementtobeClickable(btn_popUpClose, 60);
-	    	clickonButton(btn_popUpClose);
-	    }
+//		isReleaseNotePopUpDisplaying();
+		
 		waitForpresenceOfElementLocated(tocheck_customerDatas, 60);
 		if(surveytype.equalsIgnoreCase("LIS")) {
 //			waitForElementPresent(checkbox_LISEquipments, 30);
@@ -114,16 +109,11 @@ public class SiteHomePage extends WebBasePage{
 	}
 	
 	
-	@Step("Link the Survey created in VBMobile to the Oppornity")
+	@Step("Link the Survey created in VBMobile to the Opportunity")
 	public void linkSurveytoOpportunity(String taskid) {
 		
-		waitForElementPresent(newPopUp, 50);
-		WebElement newpopupFooter=gettingWebElement(newPopUp);
-		    if(newpopupFooter.isDisplayed()) {
-		    	waitForElementPresent(btn_popUpClose, 60);
-		    	waitForElementtobeClickable(btn_popUpClose, 60);
-		    	clickonButton(btn_popUpClose);
-		    }
+//		isReleaseNotePopUpDisplaying();
+		
 	    waitForElementPresent(txt_search, 30);
 			if(gettingWebElement(txt_search).getAttribute("class").contains("ng-not-empty")) {
 				clearValue(txt_search);
@@ -160,6 +150,18 @@ public class SiteHomePage extends WebBasePage{
 		clickonButton(btn_ADDtoCRM);
 		waitForElementPresent(successApproveText, 180);
 	}
+	
+	@Step("Release Note Pop-up displaying in Site Survey Home Screen")
+	public void isReleaseNotePopUpDisplaying() {
+		
+		waitForElementPresent(newPopUp, 50);
+		WebElement newpopupFooter=gettingWebElement(newPopUp);
+		    if(newpopupFooter.isDisplayed()) {
+		    	waitForElementPresent(btn_popUpClose, 60);
+		    	waitForElementtobeClickable(btn_popUpClose, 60);
+		    	clickonButton(btn_popUpClose);
+		    }
+	}   
 	
 	@Step("Check if the Select LIS/LIO or Create Survey header is displayed")
 	public boolean isDisplayed(String mobileMenutoSelect) {

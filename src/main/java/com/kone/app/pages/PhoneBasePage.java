@@ -260,4 +260,25 @@ public class PhoneBasePage {
 		}
 		return null;
 	}
+	
+	@Step("Get Mobile Element: {0}")
+	public MobileElement gettingMobileElement(By by) {
+		MobileElement localvariable = null;
+		try {
+			Log.info("Getting MobileElement " + by);
+			localvariable = driver.findElement(by);
+			return localvariable;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@Step("Clearing value in the Element: {0}")
+	public MobileElement clearValue(By by) {
+
+		Log.info("Clear action performed in the link or button " + by);
+		driver.findElement(by).clear();
+		return null;
+	}
 }

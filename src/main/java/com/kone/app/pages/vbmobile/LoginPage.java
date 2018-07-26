@@ -35,7 +35,13 @@ public static AndroidDriver<MobileElement> driver;
 	public SurveyManagerPage signIn(String email, String password, String frontline) {
 
 		waitForElementPresent(usernameInput, 30);
+		if(gettingMobileElement(usernameInput).getAttribute("class").contains("ng-not-empty")) {
+			clearValue(usernameInput);
+		}
 		driver.findElement(usernameInput).sendKeys(email);
+		if(gettingMobileElement(passwordInput).getAttribute("class").contains("ng-not-empty")) {
+			clearValue(passwordInput);
+		}
 		driver.findElement(passwordInput).sendKeys(password);
 		driver.findElement(frontLineInput).click();
 		driver.findElement(searchFrontLineInput).sendKeys(frontline);
