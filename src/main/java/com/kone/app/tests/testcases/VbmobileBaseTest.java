@@ -62,20 +62,12 @@ public class VbmobileBaseTest {
 	@AfterTest(alwaysRun = true)
 	public void logoutApplication() {
 		
-		Log.info("-----AfterTest-----");
-		/*driver.findElement(menuButton).click();
-    	Log.info("Wait for element present: " + logoutMenu + " / With Timeout: " + 50);
-    	WebDriverWait wait = new WebDriverWait(driver, 50);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated(logoutMenu));
-    	Log.info("Wait executed");
-		driver.findElement(logoutMenu).click();
-		Log.info("Logout clicked in mobile from AfterTest");*/
-		
 		SurveyManagerPage surveyManagerScreen = new SurveyManagerPage();
 		surveyManagerScreen.openSideMenu("Logout");
-		Log.info("OPENSIDE MENU in AfterTest in Mobile");
+
 		SideMenuPage sideMenupage = new SideMenuPage();
 		sideMenupage.logout();
+		Log.info("*********@AfterTest Completed*********");
 	}
 	
 	@Step("Waiting for {0} millisecond(s)")

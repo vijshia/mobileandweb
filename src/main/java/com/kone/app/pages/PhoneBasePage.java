@@ -219,6 +219,14 @@ public class PhoneBasePage {
     	wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
 	
+	@Step("Wait for element Clickable: {0} - Timeout: {1} seconds")
+    public void waitForElementClickable(By by, long seconds) {
+    	
+    	Log.info("Wait for element Clickable: " + by + " / With Timeout: " + seconds);
+    	WebDriverWait wait = new WebDriverWait(driver, seconds);
+    	wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
+	
 	@Step("Converting userdata to Xpath key Contains : {0}")
 	public By stringtoXpathEquals(String To_Replaced) {
 		try {

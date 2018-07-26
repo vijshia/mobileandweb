@@ -21,7 +21,7 @@ public static AndroidDriver<MobileElement> driver;
 	
 	private By usernameInput = By.name("username");
 	private By passwordInput = By.name("password");
-	private By frontLineInput = By.id("input_2");
+	private By frontLineInput = By.xpath("(//*[starts-with(@id,'input_')])[last()]");
 	private By searchFrontLineInput = By.xpath("//*[@aria-label='search']");
 	private By signInButton = By.xpath("//md-icon[text()='done']");
 	private By closeButton = By.xpath("//md-icon[text()='close']");
@@ -39,6 +39,7 @@ public static AndroidDriver<MobileElement> driver;
 			clearValue(usernameInput);
 		}
 		driver.findElement(usernameInput).sendKeys(email);
+		waitForElementClickable(passwordInput, 30);
 		if(gettingMobileElement(passwordInput).getAttribute("class").contains("ng-not-empty")) {
 			clearValue(passwordInput);
 		}
