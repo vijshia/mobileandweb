@@ -16,7 +16,7 @@ public class SurveyManagerPage extends PhoneBasePage {
 	
     public static AppiumDriver<MobileElement> driver;
     
-    private By menuButton = By.xpath("//*[@aria-label='SideMenu']");
+    private By menuButton = By.xpath("//*[contains(@aria-label,'Menu')]");
 	
 	public SurveyManagerPage() {
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;

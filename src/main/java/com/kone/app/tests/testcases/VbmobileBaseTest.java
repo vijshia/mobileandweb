@@ -28,7 +28,7 @@ public class VbmobileBaseTest {
 	protected static AndroidDriver<MobileElement> driver;
 	
 	private static Properties appData;
-	private By menuButton = By.xpath("//*[@aria-label='SideMenu']");
+	private By menuButton = By.xpath("//*[@aria-label='Menu']");
 	private By logoutMenu = By.xpath("//*[text()='Logout']");
 	
 	static {
@@ -63,14 +63,14 @@ public class VbmobileBaseTest {
 	public void logoutApplication() {
 		
 		Log.info("-----AfterTest-----");
-/*		driver.findElement(menuButton).click();
+		/*driver.findElement(menuButton).click();
     	Log.info("Wait for element present: " + logoutMenu + " / With Timeout: " + 50);
     	WebDriverWait wait = new WebDriverWait(driver, 50);
     	wait.until(ExpectedConditions.visibilityOfElementLocated(logoutMenu));
     	Log.info("Wait executed");
 		driver.findElement(logoutMenu).click();
-		Log.info("Logout clicked in mobile from AfterTest");
-		*/
+		Log.info("Logout clicked in mobile from AfterTest");*/
+		
 		SurveyManagerPage surveyManagerScreen = new SurveyManagerPage();
 		surveyManagerScreen.openSideMenu("Logout");
 		Log.info("OPENSIDE MENU in AfterTest in Mobile");
