@@ -5,7 +5,7 @@
     	<listener class-name="com.kone.framework.listener.TestNGListener" />
   	</listeners>
   	
-  	<test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey_(1)" group-by-instances="true">
+  	<test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:1" group-by-instances="true">
         <parameter name="mobileMenutoSelect" value="Survey Manager" />
         <groups>
             <dependencies>
@@ -21,7 +21,7 @@
         </classes>  
   </test> <!-- Test -->
   
-    <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey_(2)" group-by-instances="true">
+    <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2" group-by-instances="true">
         <parameter name="mobileMenutoSelect" value="Survey Manager" />
         <groups>
             <dependencies>
