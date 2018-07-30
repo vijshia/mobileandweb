@@ -169,7 +169,7 @@ public static AndroidDriver<MobileElement> driver;
 	                           "/../input";
 
 		By questionElement = By.xpath(questionXpath);
-		
+//		Log.info("*********questionXpath=>"+questionElement.toString());
 		if(scrollToElement(questionElement)) {
 			
 			driver.findElement(questionElement).sendKeys(answer);
@@ -268,6 +268,11 @@ public static AndroidDriver<MobileElement> driver;
 		
 		for (String[] item : surveyData) {
 			Log.info("Question: " + item[0] + "/" + item[1] + "/" + item[2] + "/" + item[3]);
+			
+			if(item[3].contains("Trapdoor")) {
+				Log.info("BreakPOint");
+			}
+			
 			/* Open the survey section */
 			openSection(item[0]);
 			

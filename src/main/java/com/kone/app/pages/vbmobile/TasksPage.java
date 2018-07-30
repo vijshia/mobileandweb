@@ -15,7 +15,7 @@ public class TasksPage extends PhoneBasePage{
 	
 public static AppiumDriver<MobileElement> driver;
 
-	protected static final long TASK_DOWNLOAD_TIMEOUT = 60;
+	protected static final long TASK_DOWNLOAD_TIMEOUT = 180;
 	
     private By openAndAcceptedTab = By.xpath("//*[text()='Open & Accepted']");
 //    private By completedTab = By.xpath("//*[text()='Completed']");

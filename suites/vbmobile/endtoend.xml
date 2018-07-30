@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Mobile Site Survey End-to-End Test" verbose="1">
+<suite name="MobileSiteSurvey LIO-Budget / Full Test" verbose="1">
 	<listeners>
     	<listener class-name="com.kone.framework.listener.TestNGListener" />
   	</listeners>
   	     	      	
-<test name="Create LIS_Budget Survey in Salesforce, then Answer in VbMobile" group-by-instances="true">
+<test name="Create LIO_Budget Survey in Salesforce, then Answer in VbMobile" group-by-instances="true">
         <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
-        <parameter name="websurveytype" value="LIS" />
+        <parameter name="websurveytype" value="LIO" />
         <parameter name="websiteselectplannedtype" value="FRB Budget" />
+        <groups>
+            <dependencies>
+                <group name="vbmobie_login" depends-on="login_salesforce" />
+                <group name="vbmobie_survey" depends-on="vbmobie_login" />
+            </dependencies>
+		 </groups>
+        <classes>
+            <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
+        </classes>
+     </test>
+     
+     <test name="Create LIO_Full Survey in Salesforce, then Answer in VbMobile" group-by-instances="true">
+        <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
+        <parameter name="websurveytype" value="LIO" />
+        <parameter name="websiteselectplannedtype" value="FRB Full" />
         <groups>
             <dependencies>
                 <group name="vbmobie_login" depends-on="login_salesforce" />

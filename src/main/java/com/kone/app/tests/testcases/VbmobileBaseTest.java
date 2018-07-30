@@ -55,7 +55,7 @@ public class VbmobileBaseTest {
 	public void logoutApplication() {
 		
 		Log.info("");
-		Log.info("**************************** AfterTest Execution has been Started ****************************");
+		Log.info("**************************** Mobile AfterTest Execution has been Started ****************************");
 		SurveyManagerPage surveyManagerScreen = new SurveyManagerPage();
 		surveyManagerScreen.openSideMenu("Logout");
 
@@ -64,7 +64,7 @@ public class VbmobileBaseTest {
 
 		driver.resetApp();
 		driver.context("WEBVIEW_com.kone.vbmobile.debug");
-		Log.info("**************************** AfterTest Execution has been Completed ****************************");
+		Log.info("**************************** Mobile AfterTest Execution has been Completed ****************************");
 		Log.info("");
 	}
 	

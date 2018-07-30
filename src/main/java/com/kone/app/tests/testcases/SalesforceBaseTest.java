@@ -27,7 +27,6 @@ public class SalesforceBaseTest {
 	private static Properties appData;
 	private static Properties testData;
 	private By successApproveText=By.xpath("//*[text()='Task successfully attached.']");
-	private By lnk_SiteLogout=By.xpath("//*[text()=' Logout']/..");
 	private By dd_SalesLogout=By.xpath("//*[@id='globalHeaderNameMink']/*[@class='zen-selectArrow']");
 	private By lnk_SalesLogout=By.xpath("//*[text()='Logout']");
 	
@@ -67,19 +66,16 @@ public class SalesforceBaseTest {
 	@AfterTest(alwaysRun = true)
 	public void logoutApplication() {
 		
-		WebDriverWait wait = new WebDriverWait(wdriver, 50);
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(successApproveText));
-		Log.info("Wait for element Not present: " + successApproveText + " / With Timeout: " + 50);	
-		wdriver.findElement(lnk_SiteLogout).click();
-		
-		MainPage mainScreen = new MainPage();
-		Assert.assertTrue(mainScreen.isDisplayed(), "Failed to logout SiteSurvey");
-		
+		Log.info("");
+		Log.info("**************************** Web AfterTest Execution has been Started ****************************");
 		wdriver.findElement(dd_SalesLogout).click();
 		wdriver.findElement(lnk_SalesLogout).click();
 		
 		LoginPage loginpage = new LoginPage();
 		Assert.assertTrue(loginpage.isDisplayed(), "Failed to logout SalesForce");
+		wdriver.manage().deleteAllCookies();
+		Log.info("**************************** Web AfterTest Execution has been Completed ****************************");
+		Log.info("");
 	}
 	
 	@Step("Waiting for {0} millisecond(s)")

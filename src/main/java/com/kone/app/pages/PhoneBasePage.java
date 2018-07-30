@@ -29,7 +29,7 @@ public class PhoneBasePage {
 	private By Replaced_Xpath;
 	
 	protected By searchButton = By.xpath("//md-icon[text()='search']");
-	protected static final long DEFAULT_WAIT_ELEMENT_TIMEOUT = 10;
+	protected static final long DEFAULT_WAIT_ELEMENT_TIMEOUT = 180;
 	protected static final long DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT = 30;
 	
 	

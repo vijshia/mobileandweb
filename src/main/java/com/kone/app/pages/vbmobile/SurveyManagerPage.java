@@ -17,6 +17,7 @@ public class SurveyManagerPage extends PhoneBasePage {
     public static AppiumDriver<MobileElement> driver;
     
     private By menuButton = By.xpath("//*[contains(@aria-label,'Menu')]");
+    private By spinner = By.xpath("//*[@class='md-half-circle']");
 	
 	public SurveyManagerPage() {
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
@@ -37,6 +38,8 @@ public class SurveyManagerPage extends PhoneBasePage {
 	public SurveyPage openSurvey(String taskId) {
 		
 		By surveyTaskId = By.xpath("//span[text()='" + taskId + "']");
+		waitForElementNotPresent(spinner, 100);
+		waitForElementClickable(surveyTaskId, 60);
 		driver.findElement(surveyTaskId).click();
 		SurveyPage surveyScreen = new SurveyPage();
 		Assert.assertTrue(surveyScreen.

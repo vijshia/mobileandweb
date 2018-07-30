@@ -56,7 +56,7 @@ public static AndroidDriver<MobileElement> driver;
 		waitForElementPresent(releaseNote, 5);
 		driver.findElement(closeButton).click();
 		
-		waitForElementPresent(popUp_AppUpdateDownload, 180);
+		waitForElementPresent(popUp_AppUpdateDownload, 300);
 		waitForElementPresent(popUp_AppUpdateDownload, 50);
 		Log.info("Wait for element present: " + popUp_AppUpdateDownload);
 		driver.findElement(popUp_AppUpdateCancel).click();

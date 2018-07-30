@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.outlook.OutlookURLLaunch;
+import com.kone.app.pages.salesforce.MainPage;
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
 
@@ -48,6 +49,7 @@ public class SiteHomePage extends WebBasePage{
 	private By table_elements=By.xpath("//*[@ng-repeat='task in tasks']/..//div");
 	private By btn_ADDtoCRM=By.xpath("//*[@class='zmdi zmdi-cloud-upload']/..");
 	private By successApproveText=By.xpath("//*[text()='Task successfully attached.']");
+	private By lnk_SiteLogout=By.xpath("//*[text()=' Logout']/..");
 	
 	public static String MSS_Street;
 	public static String dateformat;
@@ -149,6 +151,11 @@ public class SiteHomePage extends WebBasePage{
 			}
 		clickonButton(btn_ADDtoCRM);
 		waitForElementPresent(successApproveText, 180);
+		waitForElementNotPresent(successApproveText, 180);
+		wdriver.findElement(lnk_SiteLogout).click();
+		
+		MainPage mainScreen = new MainPage();
+		Assert.assertTrue(mainScreen.isDisplayed(), "Failed to logout SiteSurvey");
 	}
 	
 	@Step("Release Note Pop-up displaying in Site Survey Home Screen")
