@@ -4,17 +4,9 @@
   <listeners>
     <listener class-name="com.kone.framework.listener.TestNGListener"/>
   </listeners>
-  <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:1(failed)">
+  <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2(failed)">
     <parameter name="mobileMenutoSelect" value="Survey Manager"/>
     <classes>
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
-        <methods>
-          <include name="getDriver"/>
-          <include name="logoutApplication"/>
-          <include name="stopApiumServer"/>
-          <include name="loginTest"/>
-        </methods>
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
       <class name="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity">
         <methods>
           <include name="loginSiteSurvey"/>
@@ -24,42 +16,20 @@
           <include name="loginSalesForce"/>
         </methods>
       </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity -->
+      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
+        <methods>
+          <include name="getDriver"/>
+          <include name="logoutApplication"/>
+          <include name="stopApiumServer"/>
+          <include name="loginTest"/>
+        </methods>
+      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
       <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity">
         <methods>
           <include name="getDriver"/>
           <include name="logoutApplication"/>
           <include name="stopApiumServer"/>
           <include name="answerSurveyTest" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity -->
-    </classes>
-  </test> <!-- Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:1(failed) -->
-  <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2(failed)">
-    <parameter name="mobileMenutoSelect" value="Survey Manager"/>
-    <classes>
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
-        <methods>
-          <include name="getDriver"/>
-          <include name="logoutApplication"/>
-          <include name="stopApiumServer"/>
-          <include name="loginTest"/>
-        </methods>
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
-      <class name="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity">
-        <methods>
-          <include name="loginSiteSurvey"/>
-          <include name="closeWebdriver"/>
-          <include name="logoutApplication"/>
-          <include name="getDriver"/>
-          <include name="loginSalesForce"/>
-        </methods>
-      </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity -->
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity">
-        <methods>
-          <include name="getDriver"/>
-          <include name="logoutApplication"/>
-          <include name="stopApiumServer"/>
-          <include name="answerSurveyTest"/>
         </methods>
       </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity -->
     </classes>

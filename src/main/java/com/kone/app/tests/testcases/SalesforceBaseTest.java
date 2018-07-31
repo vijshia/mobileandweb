@@ -73,7 +73,7 @@ public class SalesforceBaseTest {
 		
 		LoginPage loginpage = new LoginPage();
 		Assert.assertTrue(loginpage.isDisplayed(), "Failed to logout SalesForce");
-		wdriver.manage().deleteAllCookies();
+//		wdriver.manage().deleteAllCookies();
 		Log.info("**************************** Web AfterTest Execution has been Completed ****************************");
 		Log.info("");
 	}

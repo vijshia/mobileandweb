@@ -2,6 +2,9 @@ package com.kone.app.pages.konesitesurvey;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.kone.app.pages.WebBasePage;
 import com.kone.app.pages.outlook.OutlookURLLaunch;
@@ -49,6 +52,7 @@ public class SiteHomePage extends WebBasePage{
 	private By table_elements=By.xpath("//*[@ng-repeat='task in tasks']/..//div");
 	private By btn_ADDtoCRM=By.xpath("//*[@class='zmdi zmdi-cloud-upload']/..");
 	private By successApproveText=By.xpath("//*[text()='Task successfully attached.']");
+	private By successApproveCountdown=By.xpath("//button[@ng-show='showCountDown(message)']");
 	private By lnk_SiteLogout=By.xpath("//*[text()=' Logout']/..");
 	
 	public static String MSS_Street;
@@ -151,8 +155,9 @@ public class SiteHomePage extends WebBasePage{
 			}
 		clickonButton(btn_ADDtoCRM);
 		waitForElementPresent(successApproveText, 180);
-		waitForElementNotPresent(successApproveText, 180);
-		wdriver.findElement(lnk_SiteLogout).click();
+		WebDriverWait wait = new WebDriverWait(wdriver, 100);
+		wait.until(ExpectedConditions.invisibilityOfElementWithText(successApproveText, "Task successfully attached."));
+		clickonButton(lnk_SiteLogout);
 		
 		MainPage mainScreen = new MainPage();
 		Assert.assertTrue(mainScreen.isDisplayed(), "Failed to logout SiteSurvey");
