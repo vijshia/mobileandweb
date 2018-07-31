@@ -43,7 +43,7 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
     	surveyName = SiteHomePage.MSS_Street;
     	tasksScreen.downloadTaksById(surveyName);
     	surveyScreen = surveyManagerScreen.openSurvey(surveyName);
-    	surveyScreen.answerSurvey(surveyData, mobileMenutoSelect);
+//    	surveyScreen.answerSurvey(surveyData, mobileMenutoSelect);
     	uploadPage = surveyScreen.completeSurvey();
     	uploadPage.uploadSurvey();
     }

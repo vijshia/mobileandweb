@@ -4,7 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.Set;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -73,7 +76,14 @@ public class SalesforceBaseTest {
 		
 		LoginPage loginpage = new LoginPage();
 		Assert.assertTrue(loginpage.isDisplayed(), "Failed to logout SalesForce");
-//		wdriver.manage().deleteAllCookies();
+		
+/*		Set<Cookie> allCookies = wdriver.manage().getCookies();
+		for (Cookie cookie : allCookies) {
+		    cookie = null;
+		    wdriver.manage().addCookie(cookie);
+		}*/
+		wdriver.manage().deleteAllCookies();
+		wdriver.navigate().refresh();
 		Log.info("**************************** Web AfterTest Execution has been Completed ****************************");
 		Log.info("");
 	}

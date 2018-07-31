@@ -32,7 +32,7 @@ public static AppiumDriver<MobileElement> driver;
 	@Step("Download task which has id {0}")
 	public SurveyManagerPage downloadTaksById(String taskId) {
 		
-		waitForElementPresent(plannedSurveyType, 30); /* Wait for tasks loaded*/
+		waitForElementPresent(plannedSurveyType, TASK_DOWNLOAD_TIMEOUT); /* Wait for tasks loaded*/
 		driver.findElement(searchButton).click();
 		driver.findElement(taskSearchInput).sendKeys(taskId);
 		driver.hideKeyboard();
