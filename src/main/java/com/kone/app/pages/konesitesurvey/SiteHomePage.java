@@ -2,7 +2,6 @@ package com.kone.app.pages.konesitesurvey;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -11,7 +10,6 @@ import com.kone.app.pages.outlook.OutlookURLLaunch;
 import com.kone.app.pages.salesforce.MainPage;
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
-
 import ru.yandex.qatools.allure.annotations.Step;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,9 +20,9 @@ public class SiteHomePage extends WebBasePage{
 	public SiteHomePage(){
 		wdriver = WebContext.wdriver;
 	}	
+	public static By header_SiteSurveyLink=By.xpath("//*[starts-with(text(),'Create Surveying Task(s) for account:') and contains(text(),'Opportunity:')]");
 	
 	private By popup_toSelectLIS=By.xpath("//*[contains(text(),'(LIS)')]");
-	private By header_SiteSurveyLink=By.xpath("//*[starts-with(text(),'Create Surveying Task(s) for account:') and contains(text(),'Opportunity:')]");
 //	private By tocheck_customerData=By.xpath("//*[text()='Customer Id SAP']/..//input");  //*[@class='form-control ng-pristine ng-untouched ng-valid ng-not-empty']
 	private By tocheck_customerDatas=By.xpath("//*[text()='Customer Id SAP']/..//input[contains(@class, 'ng-not-empty')]");
 /*	private By btn_search=By.xpath("//*[@ng-click='searchEquipment()']");
@@ -52,7 +50,7 @@ public class SiteHomePage extends WebBasePage{
 	private By table_elements=By.xpath("//*[@ng-repeat='task in tasks']/..//div");
 	private By btn_ADDtoCRM=By.xpath("//*[@class='zmdi zmdi-cloud-upload']/..");
 	private By successApproveText=By.xpath("//*[text()='Task successfully attached.']");
-	private By successApproveCountdown=By.xpath("//button[@ng-show='showCountDown(message)']");
+//	private By successApproveCountdown=By.xpath("//button[@ng-show='showCountDown(message)']");
 	private By lnk_SiteLogout=By.xpath("//*[text()=' Logout']/..");
 	
 	public static String MSS_Street;

@@ -4,19 +4,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.Set;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import com.kone.app.pages.salesforce.LoginPage;
-import com.kone.app.pages.salesforce.MainPage;
 import com.kone.framework.context.WebContext;
 import com.kone.framework.utility.Log;
 import ru.yandex.qatools.allure.annotations.Step;
@@ -29,7 +24,7 @@ public class SalesforceBaseTest {
 	
 	private static Properties appData;
 	private static Properties testData;
-	private By successApproveText=By.xpath("//*[text()='Task successfully attached.']");
+//	private By successApproveText=By.xpath("//*[text()='Task successfully attached.']");
 	private By dd_SalesLogout=By.xpath("//*[@id='globalHeaderNameMink']/*[@class='zen-selectArrow']");
 	private By lnk_SalesLogout=By.xpath("//*[text()='Logout']");
 	
@@ -77,12 +72,13 @@ public class SalesforceBaseTest {
 		LoginPage loginpage = new LoginPage();
 		Assert.assertTrue(loginpage.isDisplayed(), "Failed to logout SalesForce");
 		
-/*		Set<Cookie> allCookies = wdriver.manage().getCookies();
-		for (Cookie cookie : allCookies) {
-		    cookie = null;
-		    wdriver.manage().addCookie(cookie);
-		}*/
 		wdriver.manage().deleteAllCookies();
+		JavascriptExecutor js = (JavascriptExecutor) wdriver;
+		/*js.executeScript("window.sessionStorage.clear();");
+		js.executeScript("window.localStorage.clear();");*/
+		js.executeScript(String.format("window.sessionStorage.clear();"));
+		js.executeScript(String.format("window.localStorage.clear();"));
+		
 		wdriver.navigate().refresh();
 		Log.info("**************************** Web AfterTest Execution has been Completed ****************************");
 		Log.info("");
