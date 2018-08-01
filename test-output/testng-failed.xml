@@ -9,22 +9,6 @@
     <parameter name="mobileMenutoSelect" value="Survey Manager_1"/>
     <parameter name="websurveytype" value="LIO"/>
     <classes>
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests">
-        <methods>
-          <include name="getDriver"/>
-          <include name="logoutApplication"/>
-          <include name="answerSurveyTest"/>
-          <include name="stopApiumServer"/>
-        </methods>
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests -->
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
-        <methods>
-          <include name="getDriver"/>
-          <include name="logoutApplication"/>
-          <include name="stopApiumServer"/>
-          <include name="loginTest"/>
-        </methods>
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
       <class name="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests">
         <methods>
           <include name="closeWebdriver"/>
@@ -40,22 +24,6 @@
     <parameter name="mobileMenutoSelect" value="Survey Manager_1"/>
     <parameter name="websurveytype" value="LIO"/>
     <classes>
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests">
-        <methods>
-          <include name="getDriver"/>
-          <include name="logoutApplication"/>
-          <include name="answerSurveyTest"/>
-          <include name="stopApiumServer"/>
-        </methods>
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests -->
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
-        <methods>
-          <include name="getDriver"/>
-          <include name="logoutApplication"/>
-          <include name="stopApiumServer"/>
-          <include name="loginTest"/>
-        </methods>
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
       <class name="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests">
         <methods>
           <include name="closeWebdriver"/>

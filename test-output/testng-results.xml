@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="6" total="12" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="MobileSiteSurvey LIO-Budget / Full Test" duration-ms="503122" started-at="2018-08-01T08:48:32Z" finished-at="2018-08-01T08:56:56Z">
+  <suite name="MobileSiteSurvey LIO-Budget / Full Test" duration-ms="117637" started-at="2018-08-01T12:21:20Z" finished-at="2018-08-01T12:23:17Z">
     <groups>
-      <group name="vbmobie_survey">
-        <method signature="VbmobileSurveyTests.answerSurveyTest(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests@5d589727]" name="answerSurveyTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests"/>
-        <method signature="VbmobileSurveyTests.answerSurveyTest(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests@64eb79d]" name="answerSurveyTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests"/>
-      </group> <!-- vbmobie_survey -->
       <group name="web">
-        <method signature="SalesforceAuthenticationTests.loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@16352a9f]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests"/>
-        <method signature="SalesforceAuthenticationTests.loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@33963f9a]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests"/>
+        <method signature="SalesforceAuthenticationTests.loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@72663b1e]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests"/>
+        <method signature="SalesforceAuthenticationTests.loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@4fa5fae0]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests"/>
       </group> <!-- web -->
       <group name="login_salesforce">
-        <method signature="SalesforceAuthenticationTests.loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@16352a9f]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests"/>
-        <method signature="SalesforceAuthenticationTests.loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@33963f9a]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests"/>
+        <method signature="SalesforceAuthenticationTests.loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@72663b1e]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests"/>
+        <method signature="SalesforceAuthenticationTests.loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@4fa5fae0]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests"/>
       </group> <!-- login_salesforce -->
-      <group name="vbmobie_login">
-        <method signature="VbmobileAuthenticationTests.loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@7188b0db]" name="loginTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests"/>
-        <method signature="VbmobileAuthenticationTests.loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@300f34aa]" name="loginTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests"/>
-      </group> <!-- vbmobie_login -->
     </groups>
-    <test name="Create LIO_Budget Survey in Salesforce, then Answer in VbMobile" duration-ms="257927" started-at="2018-08-01T08:48:32Z" finished-at="2018-08-01T08:52:50Z">
+    <test name="Create LIO_Budget Survey in Salesforce, then Answer in VbMobile" duration-ms="74669" started-at="2018-08-01T12:21:20Z" finished-at="2018-08-01T12:22:34Z">
       <class name="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests">
-        <test-method status="PASS" signature="loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@16352a9f]" name="loginSalesForce" duration-ms="61920" started-at="2018-08-01T14:18:33Z" finished-at="2018-08-01T14:19:34Z">
+        <test-method status="PASS" signature="loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@72663b1e]" name="loginSalesForce" duration-ms="68689" started-at="2018-08-01T17:51:20Z" finished-at="2018-08-01T17:52:28Z">
           <params>
             <param index="0">
               <value>
@@ -44,46 +36,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSalesForce -->
-        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@16352a9f]" name="logoutApplication" is-config="true" duration-ms="6042" started-at="2018-08-01T14:22:34Z" finished-at="2018-08-01T14:22:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logoutApplication -->
-        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@7188b0db]" name="logoutApplication" is-config="true" duration-ms="9907" started-at="2018-08-01T14:22:40Z" finished-at="2018-08-01T14:22:50Z">
+        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@72663b1e]" name="logoutApplication" is-config="true" duration-ms="5821" started-at="2018-08-01T17:52:28Z" finished-at="2018-08-01T17:52:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutApplication -->
       </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests -->
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@7188b0db]" name="loginTest" duration-ms="73389" depends-on-groups="login_salesforce" started-at="2018-08-01T14:19:34Z" finished-at="2018-08-01T14:20:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests">
-        <test-method status="PASS" signature="answerSurveyTest(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests@5d589727]" name="answerSurveyTest" duration-ms="106504" depends-on-groups="vbmobie_login" started-at="2018-08-01T14:20:48Z" finished-at="2018-08-01T14:22:34Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Survey Manager_1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- answerSurveyTest -->
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests -->
     </test> <!-- Create LIO_Budget Survey in Salesforce, then Answer in VbMobile -->
-    <test name="Create LIO_Full Survey in Salesforce, then Answer in VbMobile" duration-ms="244910" started-at="2018-08-01T08:52:51Z" finished-at="2018-08-01T08:56:56Z">
+    <test name="Create LIO_Full Survey in Salesforce, then Answer in VbMobile" duration-ms="42637" started-at="2018-08-01T12:22:35Z" finished-at="2018-08-01T12:23:17Z">
       <class name="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests">
-        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@33963f9a]" name="getDriver" is-config="true" duration-ms="30" started-at="2018-08-01T14:18:29Z" finished-at="2018-08-01T14:18:29Z">
+        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@4fa5fae0]" name="getDriver" is-config="true" duration-ms="29" started-at="2018-08-01T17:51:20Z" finished-at="2018-08-01T17:51:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getDriver -->
-        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@300f34aa]" name="getDriver" is-config="true" duration-ms="3777" started-at="2018-08-01T14:18:29Z" finished-at="2018-08-01T14:18:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getDriver -->
-        <test-method status="PASS" signature="loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@33963f9a]" name="loginSalesForce" duration-ms="39679" started-at="2018-08-01T14:22:51Z" finished-at="2018-08-01T14:23:30Z">
+        <test-method status="PASS" signature="loginSalesForce(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@4fa5fae0]" name="loginSalesForce" duration-ms="38136" started-at="2018-08-01T17:52:35Z" finished-at="2018-08-01T17:53:13Z">
           <params>
             <param index="0">
               <value>
@@ -104,42 +69,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSalesForce -->
-        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@33963f9a]" name="logoutApplication" is-config="true" duration-ms="6954" started-at="2018-08-01T14:26:38Z" finished-at="2018-08-01T14:26:45Z">
+        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@4fa5fae0]" name="logoutApplication" is-config="true" duration-ms="4498" started-at="2018-08-01T17:53:13Z" finished-at="2018-08-01T17:53:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutApplication -->
-        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@300f34aa]" name="logoutApplication" is-config="true" duration-ms="10062" started-at="2018-08-01T14:26:45Z" finished-at="2018-08-01T14:26:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logoutApplication -->
-        <test-method status="PASS" signature="closeWebdriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@33963f9a]" name="closeWebdriver" is-config="true" duration-ms="468" started-at="2018-08-01T14:26:56Z" finished-at="2018-08-01T14:26:56Z">
+        <test-method status="PASS" signature="closeWebdriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests@4fa5fae0]" name="closeWebdriver" is-config="true" duration-ms="81" started-at="2018-08-01T17:53:17Z" finished-at="2018-08-01T17:53:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeWebdriver -->
-        <test-method status="PASS" signature="stopApiumServer()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@300f34aa]" name="stopApiumServer" is-config="true" duration-ms="1" started-at="2018-08-01T14:26:56Z" finished-at="2018-08-01T14:26:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stopApiumServer -->
       </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests -->
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@300f34aa]" name="loginTest" duration-ms="64880" depends-on-groups="login_salesforce" started-at="2018-08-01T14:23:30Z" finished-at="2018-08-01T14:24:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests">
-        <test-method status="PASS" signature="answerSurveyTest(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests@64eb79d]" name="answerSurveyTest" duration-ms="123325" depends-on-groups="vbmobie_login" started-at="2018-08-01T14:24:35Z" finished-at="2018-08-01T14:26:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Survey Manager_1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- answerSurveyTest -->
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests -->
     </test> <!-- Create LIO_Full Survey in Salesforce, then Answer in VbMobile -->
   </suite> <!-- MobileSiteSurvey LIO-Budget / Full Test -->
 </testng-results>
