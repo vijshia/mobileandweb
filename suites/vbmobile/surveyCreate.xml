@@ -37,36 +37,36 @@
             <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
         </classes>
      </test>
-     <test name="Create Survey in Salesforce LIS_Budget, then Answer in VbMobile" group-by-instances="true">
-        <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
-        <parameter name="websurveytype" value="LIS" />
-        <parameter name="websiteselectplannedtype" value="FRB Budget" />
+
+  	<test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:1" group-by-instances="true">
+        <parameter name="mobileMenutoSelect" value="Survey Manager" />
         <groups>
             <dependencies>
-                <group name="vbmobie_login" depends-on="login_salesforce" />
-                <group name="vbmobie_survey" depends-on="vbmobie_login" />
+                <group name="vbmobie_surveytolink" depends-on="vbmobie_login"/>
+                <group name="linkSurveytoSalesforce" depends-on="vbmobie_surveytolink"/>
+                <group name="linkSurveytoSitefromSalesforce" depends-on="linkSurveytoSalesforce"/>
             </dependencies>
 		 </groups>
         <classes>
-            <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
             <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
-        </classes>
-     </test>
-     <test name="Create Survey in Salesforce LIS_Full, then Answer in VbMobile" group-by-instances="true">
-        <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
-        <parameter name="websurveytype" value="LIS" />
-        <parameter name="websiteselectplannedtype" value="FRB Full" />
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyLinktoOpportunityTestFactory" />
+			<class name="com.kone.app.tests.factories.salesforce.SalesforceSurveytoLinkOpportunityTestFactory" />
+        </classes>  
+  </test> <!-- Test -->
+  
+    <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2" group-by-instances="true">
+        <parameter name="mobileMenutoSelect" value="Survey Manager" />
         <groups>
             <dependencies>
-                <group name="vbmobie_login" depends-on="login_salesforce" />
-                <group name="vbmobie_survey" depends-on="vbmobie_login" />
+                <group name="vbmobie_surveytolink" depends-on="vbmobie_login"/>
+                <group name="linkSurveytoSalesforce" depends-on="vbmobie_surveytolink"/>
+                <group name="linkSurveytoSitefromSalesforce" depends-on="linkSurveytoSalesforce"/>
             </dependencies>
 		 </groups>
         <classes>
-            <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
             <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
-        </classes>
-     </test>
+            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyLinktoOpportunityTestFactory" />
+			<class name="com.kone.app.tests.factories.salesforce.SalesforceSurveytoLinkOpportunityTestFactory" />
+        </classes>  
+  </test>
 </suite>

@@ -68,7 +68,7 @@
                     </property>
                 </properties>
                 <suiteXmlFiles>
-                    <suiteXmlFile>suites/vbmobile/endtoend.xml</suiteXmlFile>
+                    <suiteXmlFile>suites/vbmobile/surveyCreate.xml</suiteXmlFile>
                 </suiteXmlFiles>
             </configuration>
             <dependencies>
