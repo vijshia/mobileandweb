@@ -21,9 +21,9 @@ public class SiteLoginPage extends WebBasePage {
 	private By lookup_frontLine = By.id("frontline_chosen");
 	private By txt_frontLine=By.xpath("(//*[@class='chosen-search'])[last()-1]/*[@type='text']");
 	private By btn_login=By.id("loginBtn");
-//	private By spinner=By.xpath("//*[contains(@id,'spinner')]");
-//	private By applicationStartingText=By.xpath("//*[text()='Starting Application...']");
+	private By headers=By.xpath("//*[starts-with(text(),'Create Surveying Task(s) for account:') and contains(text(),'Opportunity:') or @id='username']");
 	private boolean loginSkip;
+//	By spinnercheck=By.xpath("//*[contains(@id,'spinner') or text()='Starting Application...']");
 
 
 	@Step("Login to Mobile Site Survey ")
@@ -55,27 +55,19 @@ public class SiteLoginPage extends WebBasePage {
 
 	@Step("Check if the Site Survey Login screen is displayed")
 	public boolean isDisplayed() {
-		By headercheck = null;
-		By spinnercheck=By.xpath("//*[contains(@id,'spinner') or text()='Starting Application...']");
-		By headers=By.xpath("//*[starts-with(text(),'Create Surveying Task(s) for account:') and contains(text(),'Opportunity:') or @id='username']");
 
-		waitForElementPresent(spinnercheck, 60);
+		By headercheck = null;
+//		waitForElementPresent(spinnercheck, 60);
 		waitForElementPresent(headers, 60);
 		
-		Log.info("*******************************");
-		Log.info(wdriver.getCurrentUrl());
-		Log.info(wdriver.getPageSource());
-		Log.info("*******************************");
-		
 		if(wdriver.getCurrentUrl().contains("crmlogin?")) {
-			Log.info("LOGIN Page");
+			Log.info("LOGIN Page is Displaying");
 			headercheck=txt_userName;
 		} else if(wdriver.getCurrentUrl().contains("crmpick?") || wdriver.getCurrentUrl().contains("crmopp?")){
-			Log.info("Home Page");
+			Log.info("Home Page is Displaying hence LOGIN will be skipped");
 			headercheck=header_SiteSurveyLink;
 			loginSkip=true;
 		}
-
 /*		List<WebElement> checkcount=gettingWebElementsfromList(headers);
 			String elements=Integer.toString(checkcount.size());
 			Log.info(elements);	
@@ -85,8 +77,6 @@ public class SiteLoginPage extends WebBasePage {
 				headercheck=header_SiteSurveyLink;
 				loginSkip=true;
 			} */
-			String flag=Boolean.toString(loginSkip);
-			Log.info(flag);
 		return waitForElementPresent(headercheck, 25) != null;
 
 	}
