@@ -4,26 +4,11 @@
   <listeners>
     <listener class-name="com.kone.framework.listener.TestNGListener"/>
   </listeners>
-  <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2(failed)">
-    <parameter name="mobileMenutoSelect" value="Survey Manager"/>
+  <test name="Create Survey in Salesforce LIO_FULL, then Answer in VbMobile(failed)">
+    <parameter name="websiteselectplannedtype" value="FRB Full"/>
+    <parameter name="mobileMenutoSelect" value="Survey Manager_1"/>
+    <parameter name="websurveytype" value="LIO"/>
     <classes>
-      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity">
-        <methods>
-          <include name="getDriver"/>
-          <include name="logoutApplication"/>
-          <include name="stopApiumServer"/>
-          <include name="answerSurveyTest"/>
-        </methods>
-      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity -->
-      <class name="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity">
-        <methods>
-          <include name="loginSiteSurvey"/>
-          <include name="closeWebdriver"/>
-          <include name="logoutApplication"/>
-          <include name="getDriver"/>
-          <include name="loginSalesForce"/>
-        </methods>
-      </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity -->
       <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
         <methods>
           <include name="getDriver"/>
@@ -32,6 +17,22 @@
           <include name="loginTest"/>
         </methods>
       </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
+      <class name="com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests">
+        <methods>
+          <include name="closeWebdriver"/>
+          <include name="logoutApplication"/>
+          <include name="getDriver"/>
+          <include name="loginSalesForce"/>
+        </methods>
+      </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceAuthenticationTests -->
+      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests">
+        <methods>
+          <include name="getDriver"/>
+          <include name="logoutApplication"/>
+          <include name="answerSurveyTest" invocation-numbers="0"/>
+          <include name="stopApiumServer"/>
+        </methods>
+      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveyTests -->
     </classes>
-  </test> <!-- Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2(failed) -->
+  </test> <!-- Create Survey in Salesforce LIO_FULL, then Answer in VbMobile(failed) -->
 </suite> <!-- Failed suite [Mobile Site Survey End-to-End Test] -->

@@ -53,20 +53,5 @@
 			<class name="com.kone.app.tests.factories.salesforce.SalesforceSurveytoLinkOpportunityTestFactory" />
         </classes>  
   </test> <!-- Test -->
-  
-    <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2" group-by-instances="true">
-        <parameter name="mobileMenutoSelect" value="Survey Manager" />
-        <groups>
-            <dependencies>
-                <group name="vbmobie_surveytolink" depends-on="vbmobie_login"/>
-                <group name="linkSurveytoSalesforce" depends-on="vbmobie_surveytolink"/>
-                <group name="linkSurveytoSitefromSalesforce" depends-on="linkSurveytoSalesforce"/>
-            </dependencies>
-		 </groups>
-        <classes>
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyLinktoOpportunityTestFactory" />
-			<class name="com.kone.app.tests.factories.salesforce.SalesforceSurveytoLinkOpportunityTestFactory" />
-        </classes>  
-  </test>
+
 </suite>
