@@ -119,7 +119,8 @@ public class SiteHomePage extends WebBasePage{
 //		isReleaseNotePopUpDisplaying();
 		
 	    waitForElementPresent(txt_search, 120);
-	    waitForElementContainsAttribute(txt_search, 100, "class", "-empty");
+	    waitForElementPresent(table_elements, 120);
+//	    waitForElementContainsAttribute(txt_search, 100, "class", "-empty");
 			if(gettingWebElement(txt_search).getAttribute("class").contains("ng-not-empty")) {
 				clearValue(txt_search);
 			}

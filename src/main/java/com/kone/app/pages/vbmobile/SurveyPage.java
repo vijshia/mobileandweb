@@ -269,9 +269,9 @@ public static AndroidDriver<MobileElement> driver;
 		for (String[] item : surveyData) {
 			Log.info("Question: " + item[0] + "/" + item[1] + "/" + item[2] + "/" + item[3]);
 			
-			if(item[3].contains("Trapdoor")) {
+/*			if(item[3].contains("Trapdoor")) {
 				Log.info("BreakPOint");
-			}
+			}*/
 			
 			/* Open the survey section */
 			openSection(item[0]);
@@ -305,7 +305,7 @@ public static AndroidDriver<MobileElement> driver;
 	}
 	
 	public boolean isDisplayed(long timeout) {
-		return waitForElementPresent(progressBar, timeout) != null;
+		return waitForElementPresent(sectionListButton, timeout) != null;
 	}
 
 }
