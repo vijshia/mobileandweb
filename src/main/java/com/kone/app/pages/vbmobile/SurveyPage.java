@@ -22,7 +22,7 @@ public static AndroidDriver<MobileElement> driver;
 	}
 	
 	private By filterButton = By.xpath("//*[text()='filter_list']");
-	private By progressBar = By.xpath("//md-progress-linear");
+//	private By progressBar = By.xpath("//md-progress-linear");
 	private By sectionListButton = By.xpath("//md-icon[text()='list' " + 
 	                                        "and @class='md-default-theme material-icons']");
 	private By bottomSheetButton = By.xpath("//button[@aria-label='open bottom sheet']");
