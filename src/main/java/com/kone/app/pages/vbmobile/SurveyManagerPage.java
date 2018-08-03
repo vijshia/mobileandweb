@@ -41,6 +41,7 @@ public class SurveyManagerPage extends PhoneBasePage {
 		waitForElementNotPresent(spinner, 100);
 		waitForElementClickable(surveyTaskId, 60);
 		driver.findElement(surveyTaskId).click();
+		waitForElementNotPresent(surveyTaskId, DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT);
 		SurveyPage surveyScreen = new SurveyPage();
 		Assert.assertTrue(surveyScreen.
 				isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), 
