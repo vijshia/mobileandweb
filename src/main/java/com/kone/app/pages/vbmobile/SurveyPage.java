@@ -44,7 +44,7 @@ public static AndroidDriver<MobileElement> driver;
 		/* Check if section is already opened */
 		By currentSection = By.xpath("//button/span[contains(text(), '" + section + "')]");
 		
-		if (!isElementPresent(currentSection, 2)) {
+		if (!isElementPresent(currentSection, 20)) {
 			
 			driver.findElement(sectionListButton).click();
 			
