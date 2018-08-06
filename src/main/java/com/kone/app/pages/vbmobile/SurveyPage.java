@@ -79,6 +79,8 @@ public static AndroidDriver<MobileElement> driver;
 		
 		By dropDownElement = By.xpath(dropDownXpath);
 		Log.info("***Question to xpath"+dropDownElement);
+		MobileElement quest=driver.findElement(dropDownElement);
+		Log.info("<>"+quest.getAttribute("@placeholder"));
 		// including condition to check element is not present then to scroll
 		if (!isElementPresent(dropDownElement, 20)) {
 			scrollToElement(dropDownElement);
