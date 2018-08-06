@@ -78,6 +78,7 @@ public static AndroidDriver<MobileElement> driver;
 							   "contains(@placeholder, '" + question + "')]";
 		
 		By dropDownElement = By.xpath(dropDownXpath);
+		// including condition to check element is not present then to scroll
 		if (!isElementPresent(dropDownElement, 20)) {
 			scrollToElement(dropDownElement);
 		}
@@ -86,7 +87,10 @@ public static AndroidDriver<MobileElement> driver;
 		// Find and select the answer from drop down list
 		String answerXpath = "//div[contains(text(),'" + answer + "')]";
 		By answerElement = By.xpath(answerXpath);
-		scrollToElement(answerElement);
+		// including condition to check element is not present then to scroll
+		if (!isElementPresent(answerElement, 20)) {
+			scrollToElement(answerElement);
+		}
 		driver.findElement(answerElement).click();
 		
 		// Verify that answer is selected
