@@ -78,7 +78,9 @@ public static AndroidDriver<MobileElement> driver;
 							   "contains(@placeholder, '" + question + "')]";
 		
 		By dropDownElement = By.xpath(dropDownXpath);
-		scrollToElement(dropDownElement);
+		if (!isElementPresent(dropDownElement, 20)) {
+			scrollToElement(dropDownElement);
+		}
 		driver.findElement(dropDownElement).click();
 		
 		// Find and select the answer from drop down list
