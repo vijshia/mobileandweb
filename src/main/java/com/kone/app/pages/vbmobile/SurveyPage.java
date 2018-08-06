@@ -78,25 +78,31 @@ public static AndroidDriver<MobileElement> driver;
 							   "contains(@placeholder, '" + question + "')]";
 		
 		By dropDownElement = By.xpath(dropDownXpath);
+		Log.info("***Question to xpath"+dropDownElement);
 		// including condition to check element is not present then to scroll
 		if (!isElementPresent(dropDownElement, 20)) {
 			scrollToElement(dropDownElement);
+			Log.info("***Question not displaying so scroll done");
 		}
 		driver.findElement(dropDownElement).click();
+		Log.info("***Question is displaying hence got clicked");
 		
 		// Find and select the answer from drop down list
 		String answerXpath = "//div[contains(text(),'" + answer + "')]";
 		By answerElement = By.xpath(answerXpath);
+		Log.info("***Answer to xpath"+answerElement);
 		// including condition to check element is not present then to scroll
 		if (!isElementPresent(answerElement, 20)) {
 			scrollToElement(answerElement);
+			Log.info("***Answer not displaying so scroll done");
 		}
 		driver.findElement(answerElement).click();
-		
+		Log.info("***Answer is displaying hence got clicked");
 		// Verify that answer is selected
 		String selectedAnswerXpath = "//md-select[@aria-label='dropdown']" +
 				                     "//span[contains(text(), '" + answer + "')]";
 		driver.findElementByXPath(selectedAnswerXpath);
+		Log.info("***Answer is selected"+selectedAnswerXpath);
 	}
 	
 	/**
