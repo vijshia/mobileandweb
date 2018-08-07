@@ -34,8 +34,8 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
 	}
     
     @Test(groups= {"vbmobie_survey"})
-    @Parameters({"mobileMenutoSelect"})
-    void answerSurveyTest(String mobileMenutoSelect) {
+    @Parameters({"mobileMenutoSelect", "websiteselectplannedtype"})
+    void answerSurveyTest(String mobileMenutoSelect, String websiteselectplannedtype) {
     	mobileMenutoSelect = "New Task";
     	tasksScreen = surveyManagerScreen.
     					openSideMenu(mobileMenutoSelect).
@@ -43,7 +43,7 @@ public class VbmobileSurveyTests extends VbmobileBaseTest{
     	surveyName = SiteHomePage.MSS_Street;
     	tasksScreen.downloadTaksById(surveyName);
     	surveyScreen = surveyManagerScreen.openSurvey(surveyName);
-    	surveyScreen.answerSurvey(surveyData, mobileMenutoSelect);
+    	surveyScreen.answerSurvey(surveyData, mobileMenutoSelect, websiteselectplannedtype);
     	uploadPage = surveyScreen.completeSurvey();
     	uploadPage.uploadSurvey();
     }

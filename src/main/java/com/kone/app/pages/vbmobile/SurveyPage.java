@@ -277,7 +277,7 @@ public static AndroidDriver<MobileElement> driver;
 	}
 	
 	@Step("Answer survey questions")
-	public void answerSurvey(ArrayList<String[]> surveyData, String mobileMenutoSelect) {
+	public void answerSurvey(ArrayList<String[]> surveyData, String mobileMenutoSelect, String websiteselectplannedtype) {
 		
 		for (String[] item : surveyData) {
 			Log.info("Question: " + item[0] + "/" + item[1] + "/" + item[2] + "/" + item[3]);
@@ -290,7 +290,7 @@ public static AndroidDriver<MobileElement> driver;
 			openSection(item[0]);
 			
 			/* Survey to Link not having Branch Number field as drop down hence converting the parameter to number field */
-			if(item[2].equals("Branch Number") && mobileMenutoSelect.equals("Survey Manager")) {
+			if(websiteselectplannedtype.equals("FRB Full")) {
 				item[1] = "number";
 				item[2] = "Branch";
 			}
@@ -299,6 +299,7 @@ public static AndroidDriver<MobileElement> driver;
 			String type = item[1].toLowerCase();
 			String question = item[2];
 			String answer = item[3];
+			Log.info(type+" <=type/question=>"+question);
 			
 			if (type.equals("dropdown")) {
 				answerFromDropdown(question, answer);

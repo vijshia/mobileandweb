@@ -16,6 +16,7 @@ public class CreateTaskinSurveyManagerPage  extends PhoneBasePage{
 	
 	public static AppiumDriver<MobileElement> driver;
 	public static String SurveyIDtoLink;
+	public static By plannedSurveyTypeStatus = By.xpath("//*[contains(text(),'Replace')]/..");
 	
 	private By header_SurveyManager = By.xpath("//span[text()='Survey Manager']");
 	private By btn_add = By.xpath("(//*[text()='add'])[last()]");
@@ -23,14 +24,15 @@ public class CreateTaskinSurveyManagerPage  extends PhoneBasePage{
 	private By dd_EquipmentType = By.xpath("(//*[text()='Equipment Type'])[last()]/../..");
 	private By header_PlannedSurveyType = By.xpath("//*[text()='Planned Survey Type']");
 	private By btn_CreateTask = By.xpath("//*[text()='Create Task']/..");
-	
+	private By checkbox_FRBFull=By.xpath("//*[contains(text(),'FRB Full')]/../div[@class='md-container']");
+	private By checkbox_FRBBudget=By.xpath("//*[contains(text(),'FRB Budget')]/../div[@class='md-container']");	
 	
 	public CreateTaskinSurveyManagerPage() {
 		driver = (AndroidDriver<MobileElement>)TestContext.driver;
 	}
 	
 	@Step("Creating Task in Survey Manager {0}")
-	public SurveyPage CreateTaskinSurveyManager(String elevatorytype) { //FRB Elevator, AMP Elevator, TRB Elevator, C4L Escalator
+	public SurveyPage CreateTaskinSurveyManager(String elevatorytype, String websiteselectplannedtype) { //FRB Elevator, AMP Elevator, TRB Elevator, C4L Escalator
 		
 		clickonButton(btn_add);
 		waitForElementPresent(lnk_Createnewofflineblanksurvey, 30);
@@ -40,6 +42,21 @@ public class CreateTaskinSurveyManagerPage  extends PhoneBasePage{
 		waitForElementPresent(stringtoXpathEquals(elevatorytype), 30);
 		clickonButton(stringtoXpathEquals(elevatorytype));
 		waitForElementPresent(header_PlannedSurveyType, 30);
+			if(websiteselectplannedtype.equalsIgnoreCase("FRB Full")) {
+				Log.info("Planned Survey Type is given as FRB Full");
+				String isCheckboxChecked=gettingMobileElement(stringtoXpathContains(websiteselectplannedtype)).getAttribute("aria-checked");
+				if(isCheckboxChecked.equals("false")) {
+					clickonButton(checkbox_FRBFull);
+				}
+				Assert.assertTrue(isCheckboxChecked.equals("true"), "FRB Full checkbox is Checked");
+			} else if(websiteselectplannedtype.equalsIgnoreCase("FRB Budget")) {
+				Log.info("Planned Survey Type is given as FRB Budget");
+				clickonButton(checkbox_FRBFull);
+				clickonButton(checkbox_FRBBudget);
+				String isCheckboxChecked=gettingMobileElement(stringtoXpathContains(websiteselectplannedtype)).getAttribute("aria-checked");
+				String isCheckboxChecked_Full=gettingMobileElement(stringtoXpathContains("FRB Full")).getAttribute("aria-checked");
+				Assert.assertTrue(isCheckboxChecked.equals("true") && isCheckboxChecked_Full.equals("false"), "FRB Budget checkbox is Checked & FRB Full checkbox is Unchecked");
+			}
 		clickonButton(btn_CreateTask);
 		
 		SurveyPage surveyScreen = new SurveyPage();

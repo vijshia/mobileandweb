@@ -21,6 +21,7 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import ru.yandex.qatools.allure.annotations.Step;
 import static com.kone.app.pages.vbmobile.SideMenuPage.menutoSelect;
+import static com.kone.app.pages.vbmobile.CreateTaskinSurveyManagerPage.plannedSurveyTypeStatus;
 
 public class PhoneBasePage {
 	
@@ -227,10 +228,23 @@ public class PhoneBasePage {
     	wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 	
-	@Step("Converting userdata to Xpath key Contains : {0}")
+	@Step("Converting userdata to Xpath key Equals : {0}")
 	public By stringtoXpathEquals(String To_Replaced) {
 		try {
 			String str3 = menutoSelect.toString();
+			String Value_Replaced = str3.replace("Replace", To_Replaced);
+			String Full_Replaced = Value_Replaced.replace("By.xpath: //", "//");
+			Replaced_Xpath = By.xpath(Full_Replaced);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return Replaced_Xpath;
+	}
+	
+	@Step("Converting userdata to Xpath key Contains : {0}")
+	public By stringtoXpathContains(String To_Replaced) {
+		try {
+			String str3 = plannedSurveyTypeStatus.toString();
 			String Value_Replaced = str3.replace("Replace", To_Replaced);
 			String Full_Replaced = Value_Replaced.replace("By.xpath: //", "//");
 			Replaced_Xpath = By.xpath(Full_Replaced);

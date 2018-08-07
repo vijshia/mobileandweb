@@ -32,11 +32,11 @@ public class VbmobileSurveytoLinkOpportunity extends VbmobileBaseTest{
 	}
     
     @Test(groups= {"vbmobie_surveytolink"})
-    @Parameters({"mobileMenutoSelect"})
-    void answerSurveyTest(String mobileMenutoSelect) {
+    @Parameters({"mobileMenutoSelect", "websiteselectplannedtype"})
+    void answerSurveyTest(String mobileMenutoSelect, String websiteselectplannedtype) {
     	CreateTaskinSurveyManagerPage = surveyManagerScreen.openSideMenu(mobileMenutoSelect).surveyManager(mobileMenutoSelect);
-    	surveyScreen = CreateTaskinSurveyManagerPage.CreateTaskinSurveyManager("FRB Elevator");
-//    	surveyScreen.answerSurvey(surveyData, mobileMenutoSelect); 
+    	surveyScreen = CreateTaskinSurveyManagerPage.CreateTaskinSurveyManager("FRB Elevator", websiteselectplannedtype);
+    	surveyScreen.answerSurvey(surveyData, mobileMenutoSelect, websiteselectplannedtype); 
     	uploadPage = surveyScreen.completeSurvey();
     	uploadPage.uploadSurvey();
     }
