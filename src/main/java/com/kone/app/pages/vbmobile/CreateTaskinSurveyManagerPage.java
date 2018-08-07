@@ -43,15 +43,15 @@ public class CreateTaskinSurveyManagerPage  extends PhoneBasePage{
 		clickonButton(stringtoXpathEquals(elevatorytype));
 		waitForElementPresent(header_PlannedSurveyType, 30);
 			if(websiteselectplannedtype.equalsIgnoreCase("FRB Full")) {
-				Log.info("PlannedSurveyType in testdata is given as FRB Full");
+				Log.info("PlannedSurveyType in testdata given as FRB Full");
 				String isCheckboxChecked=gettingMobileElement(stringtoXpathContains(websiteselectplannedtype)).getAttribute("aria-checked");
 				Log.info("PlannedSurveyType in application is: "+isCheckboxChecked);
-				if(isCheckboxChecked.equals("false")) {
-					clickonButton(checkbox_FRBFull);
-				}
+					if(isCheckboxChecked.equals("false")) {
+						clickonButton(checkbox_FRBFull);
+					}
 				Assert.assertTrue(isCheckboxChecked.equals("true"), "FRB Full checkbox is Checked");
 			} else if(websiteselectplannedtype.equalsIgnoreCase("FRB Budget")) {
-				Log.info("PlannedSurveyType in testdata is given as FRB Budget");
+				Log.info("PlannedSurveyType in testdata given as FRB Budget");
 				clickonButton(checkbox_FRBFull);
 				clickonButton(checkbox_FRBBudget);
 				String isCheckboxChecked=gettingMobileElement(stringtoXpathContains(websiteselectplannedtype)).getAttribute("aria-checked");

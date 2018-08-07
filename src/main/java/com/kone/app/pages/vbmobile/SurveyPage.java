@@ -293,6 +293,7 @@ public static AndroidDriver<MobileElement> driver;
 			if(item[2].equals("Branch Number") && websiteselectplannedtype.equals("FRB Full")) {
 				item[1] = "number";
 				item[2] = "Branch";
+				Log.info("Changing Type to: "+item[1]+" and Question to: "+item[2]);
 			}
 			
 			/* Answer the question based on its type */
