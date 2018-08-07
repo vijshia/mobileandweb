@@ -34,6 +34,7 @@ public class CreateTaskinSurveyManagerPage  extends PhoneBasePage{
 	@Step("Creating Task in Survey Manager {0}")
 	public SurveyPage CreateTaskinSurveyManager(String elevatorytype, String websiteselectplannedtype) { //FRB Elevator, AMP Elevator, TRB Elevator, C4L Escalator
 		
+		waitForElementClickable(btn_add, 30);
 		clickonButton(btn_add);
 		waitForElementPresent(lnk_Createnewofflineblanksurvey, 30);
 		clickonButton(lnk_Createnewofflineblanksurvey);
