@@ -8,7 +8,7 @@
   	<test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:1" group-by-instances="true">
         <parameter name="mobileMenutoSelect" value="Survey Manager" />
         <parameter name="websurveytype" value="NA" />
-        <parameter name="websiteselectplannedtype" value="FRB Full" />
+        <parameter name="websiteselectplannedtype" value="FRB Budget" />
         <groups>
             <dependencies>
                 <group name="vbmobie_surveytolink" depends-on="vbmobie_login"/>
@@ -26,7 +26,7 @@
     <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2" group-by-instances="true">
         <parameter name="mobileMenutoSelect" value="Survey Manager" />
         <parameter name="websurveytype" value="NA" />
-        <parameter name="websiteselectplannedtype" value="FRB Budget" />
+        <parameter name="websiteselectplannedtype" value="FRB Full" />
         <groups>
             <dependencies>
                 <group name="vbmobie_surveytolink" depends-on="vbmobie_login"/>

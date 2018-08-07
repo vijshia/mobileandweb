@@ -78,32 +78,32 @@ public static AndroidDriver<MobileElement> driver;
 							   "contains(@placeholder, '" + question + "')]";
 		
 		By dropDownElement = By.xpath(dropDownXpath);
-		Log.info("***Question to xpath"+dropDownElement);
+//		Log.info("***Question to xpath"+dropDownElement);
 
 		// including condition to check element is not present then to scroll
 		if (!isElementPresent(dropDownElement, 40)) {
 			scrollToElement(dropDownElement);
-			Log.info("***Question not displaying so scroll done");
+			Log.info("Question not displaying in current view hence scroll performed");
 		}
 		driver.findElement(dropDownElement).click();
-		Log.info("***Question is displaying hence got clicked");
+		Log.info("Question is displaying in current view and click performed");
 		
 		// Find and select the answer from drop down list
 		String answerXpath = "//div[contains(text(),'" + answer + "')]";
 		By answerElement = By.xpath(answerXpath);
-		Log.info("***Answer to xpath"+answerElement);
+//		Log.info("***Answer to xpath"+answerElement);
 		// including condition to check element is not present then to scroll
 		if (!isElementPresent(answerElement, 20)) {
 			scrollToElement(answerElement);
-			Log.info("***Answer not displaying so scroll done");
+			Log.info("Answer not displaying in current view hence scroll performed");
 		}
 		driver.findElement(answerElement).click();
-		Log.info("***Answer is displaying hence got clicked");
+		Log.info("Answer is displaying in current view and click performed");
 		// Verify that answer is selected
 		String selectedAnswerXpath = "//md-select[@aria-label='dropdown']" +
 				                     "//span[contains(text(), '" + answer + "')]";
 		driver.findElementByXPath(selectedAnswerXpath);
-		Log.info("***Answer is selected"+selectedAnswerXpath);
+		Log.info("Confirming the Answer is selected"+selectedAnswerXpath);
 	}
 	
 	/**
@@ -290,7 +290,7 @@ public static AndroidDriver<MobileElement> driver;
 			openSection(item[0]);
 			
 			/* Survey to Link not having Branch Number field as drop down hence converting the parameter to number field */
-			if(websiteselectplannedtype.equals("FRB Full")) {
+			if(item[2].equals("Branch Number") && websiteselectplannedtype.equals("FRB Full")) {
 				item[1] = "number";
 				item[2] = "Branch";
 			}
@@ -299,7 +299,7 @@ public static AndroidDriver<MobileElement> driver;
 			String type = item[1].toLowerCase();
 			String question = item[2];
 			String answer = item[3];
-			Log.info(type+" <=type/question=>"+question);
+//			Log.info(type+" <=type/question=>"+question);
 			
 			if (type.equals("dropdown")) {
 				answerFromDropdown(question, answer);
