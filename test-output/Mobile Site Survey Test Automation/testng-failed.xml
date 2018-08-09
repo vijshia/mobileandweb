@@ -4,18 +4,36 @@
   <listeners>
     <listener class-name="com.kone.framework.listener.TestNGListener"/>
   </listeners>
-  <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:1(failed)">
+  <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2(failed)">
+    <parameter name="websiteselectplannedtype" value="FRB Full"/>
     <parameter name="mobileMenutoSelect" value="Survey Manager"/>
+    <parameter name="websurveytype" value="NA"/>
     <classes>
       <class name="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity">
         <methods>
-          <include name="loginSiteSurvey" invocation-numbers="0"/>
+          <include name="loginSiteSurvey"/>
           <include name="closeWebdriver"/>
           <include name="logoutApplication"/>
           <include name="getDriver"/>
           <include name="loginSalesForce"/>
         </methods>
       </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity -->
+      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
+        <methods>
+          <include name="getDriver"/>
+          <include name="logoutApplication"/>
+          <include name="stopApiumServer"/>
+          <include name="loginTest"/>
+        </methods>
+      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
+      <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity">
+        <methods>
+          <include name="getDriver"/>
+          <include name="logoutApplication"/>
+          <include name="stopApiumServer"/>
+          <include name="answerSurveyTest"/>
+        </methods>
+      </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity -->
     </classes>
-  </test> <!-- Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:1(failed) -->
+  </test> <!-- Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2(failed) -->
 </suite> <!-- Failed suite [Mobile Site Survey Test Automation] -->

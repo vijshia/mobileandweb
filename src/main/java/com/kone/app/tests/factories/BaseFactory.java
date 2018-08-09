@@ -1,7 +1,5 @@
 package com.kone.app.tests.factories;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,16 +7,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 import org.testng.ITestContext;
 import org.testng.annotations.DataProvider;
 import com.kone.framework.utility.ExcelReader;
 
 public class BaseFactory {
 	
-	protected static final String TEST_DATA_EXCEL_PATH = "input/testdata/KONEMobileSiteSurvey_TestData.xlsx";
+	public static final String TEST_DATA_EXCEL_PATH = "input/testdata/KONEMobileSiteSurvey_TestData.xlsx";
+	public static final String LOGIN_DATA_SHEET = "Login_Data";
 	protected static final String WEB_LOGIN_DATA_SHEET = "Web_Login_Data";
-	protected static final String LOGIN_DATA_SHEET = "Login_Data";
 	protected static final String SURVEY_DATA_SHEET = "Mobile_Data";
 
 	@DataProvider(name = "excelDataProvider")

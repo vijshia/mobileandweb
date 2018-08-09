@@ -35,9 +35,8 @@ public class SalesforceAuthenticationTests extends SalesforceBaseTest{
 	protected String siteCity;
 	protected String siteSelectPlannedTypes;
 	protected String siteSelectSurveyType;
-	protected String salesForceenvironment;
-	
 	protected String Excel_ValuetoStore;
+	protected String salesForceenvironment;
 	
 //	public SalesforceAuthenticationTests(String salesForceUser, String salesForcepassword, String siteUsername, String sitePassword) {
 	public SalesforceAuthenticationTests(HashMap<String, String> exceldatacombined) {

@@ -1,7 +1,5 @@
 package com.kone.app.pages.vbmobile;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import com.kone.app.pages.PhoneBasePage;
