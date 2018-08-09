@@ -69,10 +69,10 @@ public class VbmobileBaseTest {
 		}
 			if(salesForceenvironment.equalsIgnoreCase("FULL")) {
 				driver.context("WEBVIEW_com.kone.vbmobileTrain"); //for Training APP
-				Log.info("Context is switched to: " + driver.getContext()+" (Full SandBox)");
+				Log.info("Context is switched to: " + driver.getContext()+" (Training APP for Full SandBox)");
 			} else if(salesForceenvironment.equalsIgnoreCase("QA")) {
 				driver.context("WEBVIEW_com.kone.vbmobile.debug"); //for Acceptance APP
-				Log.info("Context is switched to: " + driver.getContext()+" (QA SandBox)");
+				Log.info("Context is switched to: " + driver.getContext()+" (Acceptance APP for QA SandBox)");
 			}
 	}
 	
