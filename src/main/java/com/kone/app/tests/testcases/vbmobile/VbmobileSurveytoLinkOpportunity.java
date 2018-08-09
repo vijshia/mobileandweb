@@ -36,7 +36,7 @@ public class VbmobileSurveytoLinkOpportunity extends VbmobileBaseTest{
     void answerSurveyTest(String mobileMenutoSelect, String websiteselectplannedtype) {
     	CreateTaskinSurveyManagerPage = surveyManagerScreen.openSideMenu(mobileMenutoSelect).surveyManager(mobileMenutoSelect);
     	surveyScreen = CreateTaskinSurveyManagerPage.CreateTaskinSurveyManager("FRB Elevator", websiteselectplannedtype);
-//    	surveyScreen.answerSurvey(surveyData, mobileMenutoSelect, websiteselectplannedtype); 
+    	surveyScreen.answerSurvey(surveyData, mobileMenutoSelect, websiteselectplannedtype); 
     	uploadPage = surveyScreen.completeSurvey();
     	uploadPage.uploadSurvey();
     }

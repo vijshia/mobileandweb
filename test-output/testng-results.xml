@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="3" failed="1" ignored="6" total="14" passed="4">
+<testng-results skipped="0" failed="0" ignored="6" total="14" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Mobile Site Survey Test Automation" duration-ms="265267" started-at="2018-08-09T08:21:15Z" finished-at="2018-08-09T08:25:40Z">
+  <suite name="Mobile Site Survey Test Automation" duration-ms="356763" started-at="2018-08-09T09:16:49Z" finished-at="2018-08-09T09:22:46Z">
     <groups>
       <group name="linkSurveytoSitefromSalesforce">
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1fe956e8]" name="loginSiteSurvey" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e]" name="loginSiteSurvey" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
+        <method signature="SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@586e92b2]" name="loginSiteSurvey" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
+        <method signature="SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@594b41df]" name="loginSiteSurvey" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
       </group> <!-- linkSurveytoSitefromSalesforce -->
       <group name="web">
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1fe956e8]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1fe956e8]" name="loginSiteSurvey" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e]" name="loginSiteSurvey" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
+        <method signature="SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@586e92b2]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
+        <method signature="SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@586e92b2]" name="loginSiteSurvey" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
+        <method signature="SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@594b41df]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
+        <method signature="SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@594b41df]" name="loginSiteSurvey" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
       </group> <!-- web -->
       <group name="vbmobie_surveytolink">
-        <method signature="VbmobileSurveytoLinkOpportunity.answerSurveyTest(java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity@37b0cfae]" name="answerSurveyTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity"/>
-        <method signature="VbmobileSurveytoLinkOpportunity.answerSurveyTest(java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity@1b02231b]" name="answerSurveyTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity"/>
+        <method signature="VbmobileSurveytoLinkOpportunity.answerSurveyTest(java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity@7ed8b1e9]" name="answerSurveyTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity"/>
+        <method signature="VbmobileSurveytoLinkOpportunity.answerSurveyTest(java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity@38026edf]" name="answerSurveyTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity"/>
       </group> <!-- vbmobie_surveytolink -->
       <group name="linkSurveytoSalesforce">
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1fe956e8]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
-        <method signature="SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
+        <method signature="SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@586e92b2]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
+        <method signature="SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@594b41df]" name="loginSalesForce" class="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity"/>
       </group> <!-- linkSurveytoSalesforce -->
       <group name="vbmobie_login">
-        <method signature="VbmobileAuthenticationTests.loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@4ef3a9c3]" name="loginTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests"/>
-        <method signature="VbmobileAuthenticationTests.loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@61fa65c7]" name="loginTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests"/>
+        <method signature="VbmobileAuthenticationTests.loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@159fac74]" name="loginTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests"/>
+        <method signature="VbmobileAuthenticationTests.loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@709b21e0]" name="loginTest" class="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests"/>
       </group> <!-- vbmobie_login -->
     </groups>
-    <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:1" duration-ms="236327" started-at="2018-08-09T08:21:15Z" finished-at="2018-08-09T08:25:12Z">
+    <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:1" duration-ms="187073" started-at="2018-08-09T09:16:49Z" finished-at="2018-08-09T09:19:56Z">
       <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@4ef3a9c3]" name="loginTest" duration-ms="25190" started-at="2018-08-09T13:51:15Z" finished-at="2018-08-09T13:51:41Z">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@159fac74]" name="loginTest" duration-ms="23422" started-at="2018-08-09T14:46:49Z" finished-at="2018-08-09T14:47:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
       </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
       <class name="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity">
-        <test-method status="PASS" signature="loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1fe956e8]" name="loginSalesForce" duration-ms="83981" depends-on-groups="vbmobie_surveytolink" started-at="2018-08-09T13:53:11Z" finished-at="2018-08-09T13:54:35Z">
+        <test-method status="PASS" signature="loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@586e92b2]" name="loginSalesForce" duration-ms="35507" depends-on-groups="vbmobie_surveytolink" started-at="2018-08-09T14:48:41Z" finished-at="2018-08-09T14:49:16Z">
           <params>
             <param index="0">
               <value>
@@ -46,7 +46,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSalesForce -->
-        <test-method status="PASS" signature="loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1fe956e8]" name="loginSiteSurvey" duration-ms="26117" depends-on-groups="linkSurveytoSalesforce" started-at="2018-08-09T13:54:35Z" finished-at="2018-08-09T13:55:02Z">
+        <test-method status="PASS" signature="loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@586e92b2]" name="loginSiteSurvey" duration-ms="22229" depends-on-groups="linkSurveytoSalesforce" started-at="2018-08-09T14:49:16Z" finished-at="2018-08-09T14:49:39Z">
           <params>
             <param index="0">
               <value>
@@ -57,17 +57,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSiteSurvey -->
-        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1fe956e8]" name="logoutApplication" is-config="true" duration-ms="8715" started-at="2018-08-09T13:55:02Z" finished-at="2018-08-09T13:55:10Z">
+        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@586e92b2]" name="logoutApplication" is-config="true" duration-ms="6732" started-at="2018-08-09T14:49:39Z" finished-at="2018-08-09T14:49:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutApplication -->
-        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@4ef3a9c3]" name="logoutApplication" is-config="true" duration-ms="1302" started-at="2018-08-09T13:55:10Z" finished-at="2018-08-09T13:55:12Z">
+        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@159fac74]" name="logoutApplication" is-config="true" duration-ms="10478" started-at="2018-08-09T14:49:45Z" finished-at="2018-08-09T14:49:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutApplication -->
       </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity -->
       <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity">
-        <test-method status="PASS" signature="answerSurveyTest(java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity@37b0cfae]" name="answerSurveyTest" duration-ms="90796" depends-on-groups="vbmobie_login" started-at="2018-08-09T13:51:41Z" finished-at="2018-08-09T13:53:11Z">
+        <test-method status="PASS" signature="answerSurveyTest(java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity@7ed8b1e9]" name="answerSurveyTest" duration-ms="88549" depends-on-groups="vbmobie_login" started-at="2018-08-09T14:47:12Z" finished-at="2018-08-09T14:48:41Z">
           <params>
             <param index="0">
               <value>
@@ -85,89 +85,75 @@
         </test-method> <!-- answerSurveyTest -->
       </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity -->
     </test> <!-- Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:1 -->
-    <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2" duration-ms="28560" started-at="2018-08-09T08:25:12Z" finished-at="2018-08-09T08:25:40Z">
+    <test name="Answer in VbMobile and Link the Survey in Mobile SiteSurvey Run:2" duration-ms="169315" started-at="2018-08-09T09:19:56Z" finished-at="2018-08-09T09:22:46Z">
       <class name="com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests">
-        <test-method status="FAIL" signature="loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@61fa65c7]" name="loginTest" duration-ms="25072" started-at="2018-08-09T13:55:12Z" finished-at="2018-08-09T13:55:37Z">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(), 'Downloading')] (tried for 20 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(), 'Downloading')] (tried for 20 second(s) with 500 milliseconds interval)at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)at com.kone.app.pages.PhoneBasePage.waitForElementPresent(PhoneBasePage.java:211)at com.kone.app.pages.vbmobile.LoginPage.signIn(LoginPage.java:53)at com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests.loginTest(VbmobileAuthenticationTests.java:47)at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)at java.lang.reflect.Method.invoke(Unknown Source)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //*[contains(text(), 'Downloading')]For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.htmlBuild info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'System info: host: '5CG71660NZ', ip: '10.114.127.235', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_144'Driver info: driver.version: unknownat org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)at java.util.Optional.orElseThrow(Unknown Source)at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)... 28 more]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@709b21e0]" name="loginTest" duration-ms="21369" started-at="2018-08-09T14:49:56Z" finished-at="2018-08-09T14:50:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
       </class> <!-- com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests -->
       <class name="com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity">
-        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e]" name="getDriver" is-config="true" duration-ms="29" started-at="2018-08-09T13:51:11Z" finished-at="2018-08-09T13:51:11Z">
+        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@594b41df]" name="getDriver" is-config="true" duration-ms="15" started-at="2018-08-09T14:46:45Z" finished-at="2018-08-09T14:46:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getDriver -->
-        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@61fa65c7]" name="getDriver" is-config="true" duration-ms="3877" started-at="2018-08-09T13:51:11Z" finished-at="2018-08-09T13:51:15Z">
+        <test-method status="PASS" signature="getDriver()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@709b21e0]" name="getDriver" is-config="true" duration-ms="3865" started-at="2018-08-09T14:46:45Z" finished-at="2018-08-09T14:46:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getDriver -->
-        <test-method status="SKIP" signature="loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e]" name="loginSalesForce" duration-ms="0" depends-on-groups="vbmobie_surveytolink" started-at="2018-08-09T13:55:39Z" finished-at="2018-08-09T13:55:39Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e] depends on not successfully finished methods in group "vbmobie_surveytolink"]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method SalesforceSurveytoLinkOpportunity.loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e] depends on not successfully finished methods in group "vbmobie_surveytolink"at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:878)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        <test-method status="PASS" signature="loginSalesForce(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@594b41df]" name="loginSalesForce" duration-ms="21931" depends-on-groups="vbmobie_surveytolink" started-at="2018-08-09T14:51:47Z" finished-at="2018-08-09T14:52:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Survey Manager]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSalesForce -->
-        <test-method status="SKIP" signature="loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e]" name="loginSiteSurvey" duration-ms="0" depends-on-groups="linkSurveytoSalesforce" started-at="2018-08-09T13:55:39Z" finished-at="2018-08-09T13:55:39Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e] depends on not successfully finished methods in group "linkSurveytoSalesforce"]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method SalesforceSurveytoLinkOpportunity.loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e] depends on not successfully finished methods in group "linkSurveytoSalesforce"at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:878)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        <test-method status="PASS" signature="loginSiteSurvey(java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@594b41df]" name="loginSiteSurvey" duration-ms="21427" depends-on-groups="linkSurveytoSalesforce" started-at="2018-08-09T14:52:09Z" finished-at="2018-08-09T14:52:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Survey Manager]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSiteSurvey -->
-        <test-method status="FAIL" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e]" name="logoutApplication" is-config="true" duration-ms="35" started-at="2018-08-09T13:55:39Z" finished-at="2018-08-09T13:55:39Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='globalHeaderNameMink']/*[@class='zen-selectArrow']"}  (Session info: chrome=68.0.3440.84)  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)Command duration or timeout: 0 millisecondsFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.htmlBuild info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'System info: host: '5CG71660NZ', ip: '10.114.127.235', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_144'Driver info: org.openqa.selenium.chrome.ChromeDriverCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\CON_SV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.84, webStorageEnabled: true}Session ID: 5b56c1fc999628ac7146e8580e4cfc9f*** Element info: {Using=xpath, value=//*[@id='globalHeaderNameMink']/*[@class='zen-selectArrow']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='globalHeaderNameMink']/*[@class='zen-selectArrow']"}  (Session info: chrome=68.0.3440.84)  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)Command duration or timeout: 0 millisecondsFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.htmlBuild info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'System info: host: '5CG71660NZ', ip: '10.114.127.235', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_144'Driver info: org.openqa.selenium.chrome.ChromeDriverCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\CON_SV~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.84, webStorageEnabled: true}Session ID: 5b56c1fc999628ac7146e8580e4cfc9f*** Element info: {Using=xpath, value=//*[@id='globalHeaderNameMink']/*[@class='zen-selectArrow']}at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)at java.lang.reflect.Constructor.newInstance(Unknown Source)at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:419)at org.openqa.selenium.By$ByXPath.findElement(By.java:353)at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)at com.kone.app.tests.testcases.SalesforceBaseTest.logoutApplication(SalesforceBaseTest.java:69)at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)at java.lang.reflect.Method.invoke(Unknown Source)at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)at org.testng.TestRunner.afterRun(TestRunner.java:725)at org.testng.TestRunner.run(TestRunner.java:509)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@594b41df]" name="logoutApplication" is-config="true" duration-ms="4893" started-at="2018-08-09T14:52:30Z" finished-at="2018-08-09T14:52:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutApplication -->
-        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@61fa65c7]" name="logoutApplication" is-config="true" duration-ms="1332" started-at="2018-08-09T13:55:39Z" finished-at="2018-08-09T13:55:40Z">
+        <test-method status="PASS" signature="logoutApplication()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@709b21e0]" name="logoutApplication" is-config="true" duration-ms="10396" started-at="2018-08-09T14:52:35Z" finished-at="2018-08-09T14:52:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutApplication -->
-        <test-method status="PASS" signature="closeWebdriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@1d1e0f6e]" name="closeWebdriver" is-config="true" duration-ms="87" started-at="2018-08-09T13:55:41Z" finished-at="2018-08-09T13:55:41Z">
+        <test-method status="PASS" signature="closeWebdriver()[pri:0, instance:com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity@594b41df]" name="closeWebdriver" is-config="true" duration-ms="470" started-at="2018-08-09T14:52:46Z" finished-at="2018-08-09T14:52:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeWebdriver -->
-        <test-method status="PASS" signature="stopApiumServer()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@61fa65c7]" name="stopApiumServer" is-config="true" duration-ms="2" started-at="2018-08-09T13:55:41Z" finished-at="2018-08-09T13:55:41Z">
+        <test-method status="PASS" signature="stopApiumServer()[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileAuthenticationTests@709b21e0]" name="stopApiumServer" is-config="true" duration-ms="1" started-at="2018-08-09T14:52:46Z" finished-at="2018-08-09T14:52:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopApiumServer -->
       </class> <!-- com.kone.app.tests.testcases.salesforce.SalesforceSurveytoLinkOpportunity -->
       <class name="com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity">
-        <test-method status="SKIP" signature="answerSurveyTest(java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity@1b02231b]" name="answerSurveyTest" duration-ms="0" depends-on-groups="vbmobie_login" started-at="2018-08-09T13:55:39Z" finished-at="2018-08-09T13:55:39Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method VbmobileSurveytoLinkOpportunity.answerSurveyTest(java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity@1b02231b] depends on not successfully finished methods in group "vbmobie_login"]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method VbmobileSurveytoLinkOpportunity.answerSurveyTest(java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity@1b02231b] depends on not successfully finished methods in group "vbmobie_login"at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:878)at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)at org.testng.TestRunner.privateRun(TestRunner.java:648)at org.testng.TestRunner.run(TestRunner.java:505)at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)at org.testng.SuiteRunner.run(SuiteRunner.java:364)at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)at org.testng.TestNG.runSuites(TestNG.java:1028)at org.testng.TestNG.run(TestNG.java:996)at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        <test-method status="PASS" signature="answerSurveyTest(java.lang.String, java.lang.String)[pri:0, instance:com.kone.app.tests.testcases.vbmobile.VbmobileSurveytoLinkOpportunity@38026edf]" name="answerSurveyTest" duration-ms="89284" depends-on-groups="vbmobie_login" started-at="2018-08-09T14:50:18Z" finished-at="2018-08-09T14:51:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Survey Manager]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[FRB Full]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- answerSurveyTest -->

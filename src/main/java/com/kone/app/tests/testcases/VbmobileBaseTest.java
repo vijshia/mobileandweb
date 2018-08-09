@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.Set;
 import java.util.Map.Entry;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
@@ -91,20 +90,16 @@ public class VbmobileBaseTest {
 		Log.info("**************************** Mobile AfterTest Execution has been Started ****************************");
 		SurveyManagerPage surveyManagerScreen = new SurveyManagerPage();
 		surveyManagerScreen.openSideMenu("Logout");
-
 		SideMenuPage sideMenupage = new SideMenuPage();
 		sideMenupage.logout();
-
 		driver.resetApp();
-	
-		Set<String> contextNames = driver.getContextHandles();
-	     for (String contextName : contextNames) {
-	    	 Log.info(contextName);
-	     }
-		
-	     LoginPage loginScreen = new LoginPage();
-	     Assert.assertTrue(loginScreen.isDisplayed(180), "Failed to logout");
-	     
+		try {
+			getDriver();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	    LoginPage loginScreen = new LoginPage();
+	    Assert.assertTrue(loginScreen.isDisplayed(DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT), "Failed to logout");
 		Log.info("**************************** Mobile AfterTest Execution has been Completed ****************************");
 		Log.info("");
 	}

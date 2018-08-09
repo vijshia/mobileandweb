@@ -289,7 +289,7 @@ public static AndroidDriver<MobileElement> driver;
 			/* Open the survey section */
 			openSection(item[0]);
 			
-			/* Survey to Link not having Branch Number field as drop down hence converting the parameter to number field */
+			/*Survey to Link not having Branch Number field as dropdown hence converting the parameter to number field */
 			if(item[2].equals("Branch Number") && websiteselectplannedtype.equals("FRB Full")) {
 				item[1] = "number";
 				item[2] = "Branch";
