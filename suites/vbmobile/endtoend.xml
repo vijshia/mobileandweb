@@ -7,7 +7,7 @@
   	     	      	
 <test name="Create LIO_Budget Survey in Salesforce, then Answer in VbMobile" group-by-instances="true">
         <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
-        <parameter name="websurveytype" value="LIO" />
+        <parameter name="websurveytype" value="LIs" />
         <parameter name="websiteselectplannedtype" value="FRB Budget" />
         <groups>
             <dependencies>
@@ -24,7 +24,7 @@
      
      <test name="Create LIO_Full Survey in Salesforce, then Answer in VbMobile" group-by-instances="true">
         <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
-        <parameter name="websurveytype" value="LIO" />
+        <parameter name="websurveytype" value="LIs" />
         <parameter name="websiteselectplannedtype" value="FRB Full" />
         <groups>
             <dependencies>

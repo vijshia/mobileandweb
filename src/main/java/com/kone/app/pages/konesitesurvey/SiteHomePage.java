@@ -29,6 +29,7 @@ public class SiteHomePage extends WebBasePage{
 	private By spinner=By.id("loading-bar-spinner");*/
 	private By btn_toNavigateLIO=By.xpath("//*[contains(text(),'LIO')]");
 	private By checkbox_LISEquipments=By.xpath("//*[starts-with(@ng-click,'selectEquipments') and @type='checkbox']");
+	private By data_LISEquipments=By.xpath("//*[contains(@class,'table-')]/tbody/tr");
 	private By btn_LISOk=By.xpath("//*[text()=' OK']");
 	private By header_check=By.xpath("//*[@ng-show='opportunityId']");
 	private By txt_customerContact=By.xpath("(//*[@class='btn btn-default waves-effect']/../..//input)[last()-1]");
@@ -66,10 +67,11 @@ public class SiteHomePage extends WebBasePage{
 		
 		waitForpresenceOfElementLocated(tocheck_customerDatas, 60);
 		if(surveytype.equalsIgnoreCase("LIS")) {
-//			waitForElementPresent(checkbox_LISEquipments, 30);
+			waitForElementPresent(data_LISEquipments, 30);
 			List<WebElement> equipments=gettingWebElementsfromList(checkbox_LISEquipments);
 			for(WebElement equipment: equipments) {
 				equipment.click();
+				Log.info("Equipment has been selected from table");
 				break;
 			}
 			waitForElementtobeClickable(btn_LISOk, 30);
