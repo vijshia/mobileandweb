@@ -44,7 +44,7 @@ public static AppiumDriver<MobileElement> driver;
 				Log.info("TaskID retrived from Mobile Application: "+taskIDtoLink);
 			}
 		}	
-		waitForElementPresent(successApproveText, 180); //*[@id='toast-success']
+		waitForElementPresent(successApproveText, DEFAULT_WAIT_PAGE_DISPLAY_TIMEOUT); //*[@id='toast-success']
 	}
 	
 	
