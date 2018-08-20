@@ -44,7 +44,7 @@ public static AndroidDriver<MobileElement> driver;
 		/* Check if section is already opened */
 		By currentSection = By.xpath("//button/span[contains(text(), '" + section + "')]");
 		
-		if (!isElementPresent(currentSection, 20)) {
+		if (!isElementPresent(currentSection, 5)) {
 			
 			driver.findElement(sectionListButton).click();
 			
@@ -81,7 +81,7 @@ public static AndroidDriver<MobileElement> driver;
 //		Log.info("***Question to xpath"+dropDownElement);
 
 		// including condition to check element is not present then to scroll
-		if (!isElementPresent(dropDownElement, 40)) {
+		if (!isElementPresent(dropDownElement, 5)) {
 			scrollToElement(dropDownElement);
 			Log.info("Question not displaying in current view hence scroll performed");
 		}
@@ -93,7 +93,7 @@ public static AndroidDriver<MobileElement> driver;
 		By answerElement = By.xpath(answerXpath);
 //		Log.info("***Answer to xpath"+answerElement);
 		// including condition to check element is not present then to scroll
-		if (!isElementPresent(answerElement, 20)) {
+		if (!isElementPresent(answerElement, 5)) {
 			scrollToElement(answerElement);
 			Log.info("Answer not displaying in current view hence scroll performed");
 		}

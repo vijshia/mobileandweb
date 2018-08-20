@@ -44,6 +44,7 @@ public static AndroidDriver<MobileElement> driver;
 		}
 		driver.findElement(passwordInput).sendKeys(password);
 		driver.findElement(frontLineInput).click();
+		waitForElementPresent(searchFrontLineInput, 15);
 		driver.findElement(searchFrontLineInput).sendKeys(frontline);
 		By selectedFrontLine = By.xpath("//p[contains(text(), '" + frontline + "')]");
 		waitForElementPresent(selectedFrontLine, 5);
