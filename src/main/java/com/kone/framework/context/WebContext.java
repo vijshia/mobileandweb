@@ -43,10 +43,19 @@ public class WebContext {
 			System.setProperty("webdriver.chrome.driver", 
 			                   System.getProperty("user.dir") + "/drivers/chromedriver");
 			chromeCapabilities = DesiredCapabilities.chrome();
-//			wdriver = new ChromeDriver();
-			try {
-				wdriver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeCapabilities);
-			} catch(MalformedURLException e) {}
+			
+			if(!getCapVal("selenium.remote.chromedriver", "localhost").equals("localhost")) {
+				wdriver = new ChromeDriver();
+			} else {
+				try {
+					wdriver = new RemoteWebDriver(new URL("http://" 
+				                                           + getCapVal("selenium.remote.chromedriver", "localhost") 
+					                                       + ":" 
+				                                           + getCapVal("selenium.remote.chromeport", "4444")
+							                               + "/wd/hub"),
+							                      chromeCapabilities);
+				} catch(MalformedURLException e) {}
+			}
 			
 			Log.info("Created Chrome driver.");
 		}

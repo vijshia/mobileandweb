@@ -29,7 +29,10 @@ public class TestContext {
 		
 	static {
 		
-		AppiumServer.sever.startServer();
+		// Start local appium server if server url is not localhost
+		if(!getCapVal("appium.server.url", "127.0.0.1").equals("127.0.0.1")) {
+			AppiumServer.sever.startServer();
+		}		
 		
 		Log.info("Creating appium driver:");
 		
