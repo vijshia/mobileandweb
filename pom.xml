@@ -59,7 +59,7 @@
             <configuration>
                 <testFailureIgnore>false</testFailureIgnore>
                 <argLine>
-                    -javaagent:"${settings.localRepository}\org\aspectj\aspectjweaver\1.8.13\aspectjweaver-1.8.13.jar"
+                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar"
                 </argLine>
                 <properties>
                     <property>
@@ -68,7 +68,7 @@
                     </property>
                 </properties>
                 <suiteXmlFiles>
-                    <suiteXmlFile>suites/vbmobile/surveyCreate.xml</suiteXmlFile>
+                    <suiteXmlFile>suites/vbmobile/endtoend.xml</suiteXmlFile>
                 </suiteXmlFiles>
             </configuration>
             <dependencies>

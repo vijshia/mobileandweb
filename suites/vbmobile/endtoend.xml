@@ -12,31 +12,31 @@
         <groups>
             <dependencies>
                 <group name="vbmobie_login" depends-on="login_salesforce" />
-                <group name="vbmobie_survey" depends-on="vbmobie_login" />
+<!--                 <group name="vbmobie_survey" depends-on="vbmobie_login" /> -->
             </dependencies>
 		 </groups>
         <classes>
             <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
+<!--             <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" /> -->
+<!--             <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" /> -->
         </classes>
      </test>
      
-     <test name="Create LIO_Full Survey in Salesforce, then Answer in VbMobile" group-by-instances="true">
-        <parameter name="mobileMenutoSelect" value="Survey Manager_1" />
-        <parameter name="websurveytype" value="LIo" />
-        <parameter name="websiteselectplannedtype" value="FRB Full" />
-        <groups>
-            <dependencies>
-                <group name="vbmobie_login" depends-on="login_salesforce" />
-                <group name="vbmobie_survey" depends-on="vbmobie_login" />
-            </dependencies>
-		 </groups>
-        <classes>
-            <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" />
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" />
-            <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" />
-        </classes>
-     </test>
+<!--      <test name="Create LIO_Full Survey in Salesforce, then Answer in VbMobile" group-by-instances="true"> -->
+<!--         <parameter name="mobileMenutoSelect" value="Survey Manager_1" /> -->
+<!--         <parameter name="websurveytype" value="LIo" /> -->
+<!--         <parameter name="websiteselectplannedtype" value="FRB Full" /> -->
+<!--         <groups> -->
+<!--             <dependencies> -->
+<!--                 <group name="vbmobie_login" depends-on="login_salesforce" /> -->
+<!--                 <group name="vbmobie_survey" depends-on="vbmobie_login" /> -->
+<!--             </dependencies> -->
+<!-- 		 </groups> -->
+<!--         <classes> -->
+<!--             <class name="com.kone.app.tests.factories.salesforce.SalesforceAuthenticationTestFactory" /> -->
+<!--             <class name="com.kone.app.tests.factories.vbmobile.VbmobileAuthenticationTestFactory" /> -->
+<!--             <class name="com.kone.app.tests.factories.vbmobile.VbmobileSurveyTestFactory" /> -->
+<!--         </classes> -->
+<!--      </test> -->
 
 </suite>
