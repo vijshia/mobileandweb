@@ -30,7 +30,7 @@ public class TestContext {
 	static {
 		
 		// Start local appium server if server url is not localhost
-		if(!getCapVal("appium.server.url", "127.0.0.1").equals("127.0.0.1")) {
+		if(getCapVal("appium.server.url", "127.0.0.1").equals("127.0.0.1")) {
 			AppiumServer.sever.startServer();
 		}		
 		
@@ -51,7 +51,9 @@ public class TestContext {
 				String capValue = PropertiesLoader.instance.getProperty(property);
 				
 				if(property.contains("chromedriverExecutable")) {
-					capValue = System.getProperty("user.dir") + capValue;
+				       if(getCapVal("appium.server.url", "127.0.0.1").equals("127.0.0.1")) {
+					    capValue = System.getProperty("user.dir") + capValue;
+                                      }
 				}
 				
 				Log.info("    -> Set appium desired capability " + capName +
