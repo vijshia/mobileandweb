@@ -44,7 +44,7 @@ public class WebContext {
 			                   System.getProperty("user.dir") + "/drivers/chromedriver");
 			chromeCapabilities = DesiredCapabilities.chrome();
 			
-			if(!getCapVal("selenium.remote.chromedriver", "localhost").equals("localhost")) {
+			if(getCapVal("selenium.remote.chromedriver", "localhost").equals("localhost")) {
 				wdriver = new ChromeDriver();
 			} else {
 				try {
