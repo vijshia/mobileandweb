@@ -35,7 +35,7 @@ public class WebContext {
 		} else if(browserType.equals("chrome")){
 			
 			System.setProperty("webdriver.chrome.driver", 
-			                   System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
+			                   System.getProperty("user.dir") + "\\drivers\\chromedriver(2.41).exe");
 			wdriver = new ChromeDriver();
 			Log.info("Created Chrome driver.");
 		}
